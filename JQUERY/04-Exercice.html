@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercice 1 en jQuery !</title>
+</head>
+<body>
+    <form action="traitement.php" id="MonFormulaire">
+        <input type="text" required placeholder="Nom et Prénom" id="nomcomplet">
+        <input type="submit" value="Je Valide">
+    </form>
+     <!-- CONSIGNE : Avec l'aide de jQuery, vous devrez :
+    
+        1. A la soumission du formulaire, cacher le formulaire puis :
+        2. Créer un élément <p>
+        3. Dans cet élément, afficher : Bonjour <nomcomplet> correspondant 
+           au nom saisie dans le formulaire.
+
+    Intégration de la librairie jQuery -->
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+    <script>
+
+/*
+//FONCTION QUI CREE DES PARAGRAPHES DANS MA PAGE HTML
+function appendText() {
+    var txt1 = "<p>Text.</p>";               // Create element with HTML  
+    var txt2 = $("<p></p>").text("Text.");   // Create with jQuery
+    var txt3 = document.createElement("p");  // Create with DOM
+    txt3.innerHTML = "Text.";
+    $("body").append(txt1, txt2, txt3);      // Append the new elements 
+}    
+*/
+
+
+// Les evenements ne sont executés que apres que la page soit chargée. c'est prq il n'ya pas besoin
+// d attendre que la page soit chargée pour executer l'événement ci-dessous. 
+
+
+//  $('#MonFormulaire').submit(function() {});
+    $( "#MonFormulaire" ).on( "submit", function(e) {
+    //Cette fonction anonyme sera executée à la soumission du formulaire.
+    
+    // Permet d'annuler l'action par défaut du submit (La redirection HTML)
+    e.preventDefault();
+    //this est l'objet dans lequel on est.
+    console.log($(this));
+
+    // -- Version Courte
+    // replacewith va dégager le formulaire et le remplacer par <p>bonjour Hugo LIEGEARD. Donc le formulaire n'existe plus. On ne peux donc plus, par ex, faire un .show
+    //$(this).replaceWith('<p>bonjour ' + $('#nomcomplet').val() + '!</p>');
+
+
+    // -- Version Longue
+    $( "#MonFormulaire" ).hide();
+
+    //-- --Exemple 1
+    //$('<p>').append('Bonjour ' + $( "#nomcomplet" ).val()+ ' !').appendTo($('body'));     // sur le selecteur  C4EST LE jQUERY
+
+    //-- --Exemple 2
+    $('<p>Bonjour ' + $( "#nomcomplet" ).val()+ ' !</p>').appendTo('body');                 // sur la balise
+});
+
+</script>
+
+
+    <!--<script src="./assets/js/04.essai.js"></script>   -->
+
+</body>
+</html>
+
+

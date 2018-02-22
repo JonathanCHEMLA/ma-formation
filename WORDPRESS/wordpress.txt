@@ -1,0 +1,62 @@
+Adeline Clere
+ Adeline Clereil y a 1 secondeje te remercie :-)
+https://codex.wordpress.org/ 
+https://developer.wordpress.org/themes/basics/template-hierarchy/ 
+https://developer.wordpress.org/files/2014/10/wp-hierarchy.png 
+https://wpformation.com/visual-composer-mise-forme-wordpress/ 
+
+
+Créer theme child : 
+
+! Avoir un h1 à chq pg : home = titre du site, notre nom / pg portfolio = graphiste developpeur integrateur 
+! Settings / Reading : homepg = static pg = home et Posts pg = portfolio par ex 
+Et si autres pages avec des posts, créer des catégories 
+
+
+- choisir theme (dans App. ou télécharger un et le mettre ds wp-content/theme 
+
+- créer dossier theme enfant dans l'IDE .......-child 
+
+- créer style.css 
+> copier entête de style.css parent (/*.....*/ 
+> virer lg : Theme URI: https://www.benjlu.com/portfolio/splendid-portfolio/ (car pas encore créé) 
+> + ajouter : 'Template: splendidportfolio' lg 11 
+
+- Sur : codex.wordpress.org : ( https://codex.wordpress.org/Child_Themes ds notre function.php ) 
+wp.org / support / doc° / working with theme / theme child / copier et coller ds notre functions.php (cf 1.png) : 
+
+<?php 
+function my_theme_enqueue_styles() { 
+
+$parent_style = 'splendid-portfolio-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme. 
+
+wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' ); 
+wp_enqueue_style( 'child-style', 
+get_stylesheet_directory_uri() . '/style.css', 
+array( $parent_style ), 
+wp_get_theme()->get('Version') 
+); 
+} 
+add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' ); 
+?> 
+
+> changer parent_style : copier ds functions parent 'splendid-portfolio-style' de lg 165 
+et coller à la place de 'parent_style' lg 4 
+
+Rq. var_dump(); = console.log => afficher directement dans la pg 
+
+
+- copier fichier index.php du parent dans child 
+
+
+
+- Ajouter une police (lien google font ici) : ds functions ajouter : 
+wp_enqueue_style('child-style-font', 'https://fonts.googleapis.com/css?family=Roboto'); 
+(wp_enqueue_style = rajoute lien...) 
+ou : comme ds functions.php de parent lg 174 : on charge la police depuis template 
+
+- trouver infos sur image header site pkeut-être ds header.php > oui : lg77 > 83S 
+ds theme parent, 'if'... car au cas où pas de'image background choisie par user, il affiche fd noir 
+
+- changer image header : 
+style="background-image: url('https:.... = lg 78, et ajouter 'image' à style="background...

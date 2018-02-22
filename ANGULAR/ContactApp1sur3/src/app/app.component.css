@@ -1,0 +1,11 @@
+header {
+  margin-top: 60px;
+}
+
+.list-group-item {
+  cursor: pointer;
+}
+
+.jumbotron .glyphicon-hand-left {
+  font-size: 70px;
+}

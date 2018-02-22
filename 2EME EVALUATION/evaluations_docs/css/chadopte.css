@@ -1,0 +1,105 @@
+*{
+    box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Merienda', cursive;
+    color:#2F4073;
+    text-align: center;
+}
+
+/*-- -----------------------------------
+                L'ENTETE'
+------------------------------------- -*/
+
+
+#entete{
+    height:150px;
+    padding: 0 auto;
+    background: #B9CDFF url(../img/background.jpg);
+    /*background-size:cover;   */
+}
+h1 {
+    text-align:top;
+    color:#FFF; 
+    text-shadow: 2px 2px 2px #777;
+
+}
+legend h2{
+    font-size: 16px;
+}
+
+.navbar{
+    background: #061339;    
+    padding:10px;/*centre verticalement*/
+
+    /*positionnement de la nav, en haut de la page*/
+    position : absolute;
+    top:0;    
+    left:0;
+
+}
+.navbar p{
+    font-family: 'Merienda', cursive;
+    color:#FFF;
+}
+
+
+/*-- -----------------------------------
+            PREMIERE PARTIE
+------------------------------------- -*/
+#haut{
+    padding:800px;
+    background: #ccc;
+}
+
+
+
+
+/*PROJECTEUR CAROUSSEL*/
+
+
+.projecteur img{
+    width:120%;
+    object-fit: cover;
+}
+
+
+/*Formulaire */
+#formulaire{
+    float:
+}
+
+/*-- -----------------------------------
+            DEUXIEME PARTIE
+------------------------------------- -*/
+    #bas{
+        background:#ddd;
+    }
+
+    #bas h2{
+        font-size: 22px;
+    }
+
+    #bas img{
+        background: #7885A5;
+        width: 250px;
+    }
+
+    #bas:hover img{
+        background: #061339;
+    }
+
+    #div-tete{
+        background:#ddd;
+        margin:30px auto;
+    } 
+
+/*-- -----------------------------------
+            LE FOOTER
+------------------------------------- -*/
+footer{
+    background:#061339;
+    color: #fff;
+    text-align: right;
+}
+

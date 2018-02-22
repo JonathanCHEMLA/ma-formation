@@ -1,0 +1,49 @@
+qui conduit la voiture 503
+
+
+qui conduit quoi
+nom	prenom 	
+Avigny 	Julien
+Alamia 	Morgane
+Pandre 	Philippe
+Pandre 	Philippe
+Blondelle 	Amelie
+
+Ajouter vous dans la table conducteur
+
+afficher tous les conducteurs (sans exception) pour ensuite rajouter les vehicules conduits si c'est le cas.
+
+id_conducteur	prenom	nom	id_association	id_vehicule	id_conducteur 	
+1 	Julien 	Avigny 	1 	501 	1
+2 	Morgane 	Alamia 	2 	502 	2
+3 	Philippe 	Pandre 	3 	503 	3
+4 	Amelie 	Blondelle 	4 	504 	4
+3 	Philippe 	Pandre 	5 	501 	3
+5 	Alex 	Richy 	NULL	NULL	NULL
+7 	Jonathan 	CHEMLA 	NULL	NULL	NULL
+
+
+Ajouter un nouveau vehicule
+
+afficher tous les vehicules (sans exception) pour ensuite rajouter les conducteurs si c'est le cas.
+
+
+
+Afficher tous les conducteurs ainsi que tous les vehicules (sans exception) peu importe les correspondances.
+
+par ex:
++-----------+-----------+
+|Conducteur | vehicule  |
++-----------+-----------+
+|Amelie     | 501       |
+| NULL      | 508       |
+|Pierre     | NULL      |
++-----------+-----------+
+
+select nom, prenom from conducteur c,vehicule v,association_vehicule_conducteur a
+where a.id_conducteur= c.id_conducteur
+and v.id_vehicule= a.id_vehicule
+and a.id_vehicule=503;
+
+
+

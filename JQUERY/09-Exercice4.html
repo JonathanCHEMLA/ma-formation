@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 4</title>
+</head>
+<body>
+       
+    <form id="MonFormulaire" method="post" action="connexion.php">
+        <input type="text" name="email" placeholder="Email" /><br /><br />
+        <input type="text" name="mdp" placeholder="Mot de Passe" /><br /><br />       
+        <input type="submit" id="submit" value="Connexion" />
+	<hr>
+    </form>
+    
+    <!-- CONSIGNE : Avec l'aide de jQuery, vous devrez :
+    
+        // une API c'est   interface qui permet d interroger une base de données //
+
+
+
+        1. A l'aide d'une API de Géolocalisation, vous devrez afficher dans un paragraphe du formulaire
+        l'adresse IP ainsi que la Ville et/ou Code Postal de l'utilisateur connecté.
+        
+        // -- Utilisation de JSONP : geoip.nekudo.com || ipapi.co
+     
+    -->
+   
+    <!-- Intégration de jQuery -->
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+    
+    <script>
+        
+
+
+        $(function() {
+
+            // -- 1. Une requète AJAX Simple
+            $.ajax('http://geoip.nekudo.com/api/')  
+            .done(function(resultat) {     // [...] a abouti, et que le serveur a recupere mes donnees alors la fct function, dans le done est automatiquement appelee
+                console.log(resultat);      // et les données du serveur sont accessible dans la variable resultat. le serveur envoie a ma fct les données au format json
+                console.log(resultat.ip)
+            });//$ : jquery    // url de l'api que l'on veut interroger pour recuperer les données du serveur quand une requete [...]
+
+/*
+                        <script>
+                        function foo(data) {        // data c est resultat dans l exemple du dessus
+                            document.write("City: ", data.city);            //resultat.city
+                            document.write("Country: ", data.country.name);
+                            document.write("Latitude: ", data.location.latitude);
+                            document.write("Longitude: ", data.location.longitude);
+                        }
+                        </script>
+                        <script src="http://geoip.nekudo.com/api?callback=foo"></script>
+*/
+            // -- 2. avec getJSON
+            $.getJSON('https://ipapi.co/json/', function(resultat) {    // c'est comme une requete ajax mais en plus rapide. on aurait tres bien pu utiliser 
+                console.log(resultat);                                  // cette methode (getJSON) pour appeler nekudo et vice versa.
+																							.. que signifie "$."   ?
+                $(`
+                    <p>
+                        Votre IP est surveillée : ${resultat.ip}
+                        <br> ${resultat.org} - ${resultat.region} 
+                   </p>                
+                `).css({'background':'yellow','color':'red'}).appendTo($('form'));
+
+            });
+
+        })
+
+    </script>
+
+</body>
+</html>

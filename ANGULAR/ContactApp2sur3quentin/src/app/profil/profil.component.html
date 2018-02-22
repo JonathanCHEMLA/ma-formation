@@ -1,0 +1,12 @@
+
+  <div class="jumbotron" *ngIf="contact">
+    <h2>
+      {{ contact.name }}
+      <small>{{ contact.username }}</small>
+      <input type="text" class="form-control" [(ngModel)]="contact.name">
+    </h2>
+  </div>
+  <div class="jumbotron" *ngIf="!contact">
+    <span class="glyphicon glyphicon-hand-left"></span>
+    <h2>Bienvenue, choisis un contact !</h2>
+  </div>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 2</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+    <style>
+    
+        main {
+            max-width: 990px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+        
+        section {
+            width: 100%;
+            height: auto;
+            min-height: 200px;
+            margin-bottom: 10px;
+            background-image: linear-gradient(0deg, #EEE 0%, #FFF 100%);
+            border: 1px solid #EEE;
+        }
+        
+        h1 {
+            font-family: 'Roboto Slab', serif;
+            font-weight: normal;
+            text-align: center;
+            color: #000;
+        }
+        
+        article {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        input[type=text] {
+            width: 100%;
+            height: 30px;
+            background-image: linear-gradient(0deg, #EEE 0%, #FFF 100%);
+            border:1px solid #EEE;
+            font-family: 'Roboto Slab', serif;
+            font-size: 14px;
+            text-indent: 10px;
+            margin-bottom: 10px;
+        }
+        mark{
+            background: pink;
+            color: black;
+        }
+    
+    </style>
+</head>
+<body>
+    <!-- CONSIGNE : Avec l'aide de jQuery, vous devrez :
+    
+       1. Définir une structure HTML5 & CSS3 pour afficher des articles.
+       
+       2. Afficher une liste d'articles à partir de l'API :  https://jsonplaceholder.typicode.com/posts
+       
+       3. BONUS : Afficher uniquement les 10 premiers articles.
+       
+       4. BONUS : Mettre en Place Markjs.io afin de surligner des mots dans les différents articles à l'aide d'un champ input.
+     
+    -->
+
+    <main>
+        <input type="text" placeholder="Saisissez un terme à surligner..." id="markJS">
+      
+<!--    <section>
+            <header>
+                <h1>TITRE</h1>
+            </header>
+            <article>
+                MON CONTENU
+            </article>
+        </section>
+  -->
+    </main>
+   
+    <!-- Intégration de jQuery -->
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+
+    <!-- Intégration de MarkJS -->
+    <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.0/jquery.mark.min.js" 
+    integrity="sha256-1iYR6/Bs+CrdUVeCpCmb4JcYVWvvCUEgpSU7HS5xhsY=" 
+    crossorigin="anonymous"></script>
+
+
+
+
+
+<script>
+    // -- On est en attente de jQuery
+    $(function(){
+
+        // -- 1. Récupération des Articles.
+        $.getJSON('https://jsonplaceholder.typicode.com/posts/', function(articles) {
+        
+            $.each(articles, function(indice,articles){     //  on parcourt la collection d articles et la fct anonyme est executee pour chaque article, avec l indice correspondant.
+
+                $(`
+                    <section>
+                        <header>
+                            <h1>${articles.title}</h1>
+                        </header>
+                        <article>
+                                ${articles.body}
+                        </article>
+                    </section>
+                `).appendTo($('main'));
+
+                if(indice===5){         //  arrivé a l indice 5, on fait un return false, qui est l equivalent d un break.
+                    return false;
+                }
+            });    // end $.each
+        });        //end $.getJson
+
+
+        // -- MarkJS
+        $("#markJS").on("input", function(){
+
+            let keyword = $(this).val();  // this c est l element dans lequel tu te trouve. ici on est dans markJS
+            $('section').unmark().mark(keyword);
+
+        });
+
+    });
+
+</script>
+
+    <!-- contact.custom.js -->
+    <!--<script src="assets/js/10.perso.js"></script>-->
+
+</body>
+</html>
