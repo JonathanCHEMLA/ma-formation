@@ -1,0 +1,86 @@
+﻿<html>
+<head><title>VirtualPiano_parMika</title>
+<style type="text/css">
+body {
+   background-color:#CCFF66;
+   color:#000000;
+   font-family:Comic Sans MS,sans-serif;
+   font-size:16px;
+   font-weight:bold;
+   font-style:italic;
+}
+a:link { color:#0000FF; text-decoration:none; }
+a:vlink { color:#880088; text-decoration:none; }
+a:alink { color:#FF0000; text-decoration:none; }
+a:hover { color:#0099FF; text-decoration:none; }
+ input{color:#3366FF}
+</style>
+
+
+<script>
+
+
+
+document.onkeydown = key_$ ;
+note = '';
+_$NasString = ['do1','re1','mi1','fa1','sol1','la1','si1','do2','re2','mi2','fa2','sol2','la2','si2','do3','re3','mi3','fa3','sol3','la3','si3']
+
+
+
+function key_$(event){
+
+	if(event.keyCode == 87){key__$(0);note="Note : "+_$NasString[0]+" - "+0;document.getElementById('son').value+="<"+_$NasString[0]}
+	else if(event.keyCode == 88){key__$(1);note="Note : "+_$NasString[1]+" - "+1;document.getElementById('son').value+="<"+_$NasString[1]}
+	else if(event.keyCode == 67){key__$(2);note="Note : "+_$NasString[2]+" - "+2;document.getElementById('son').value+="<"+_$NasString[2]}
+	else if(event.keyCode == 86){key__$(3);note="Note : "+_$NasString[3]+" - "+3;document.getElementById('son').value+="<"+_$NasString[3]}
+	else if(event.keyCode == 66){key__$(4);note="Note : "+_$NasString[4]+" - "+4;document.getElementById('son').value+="<"+_$NasString[4]}
+	else if(event.keyCode == 78){key__$(5);note="Note : "+_$NasString[5]+" - "+5;document.getElementById('son').value+="<"+_$NasString[5]} 
+	else if(event.keyCode == 188){key__$(6);note="Note : "+_$NasString[6]+" - "+6;document.getElementById('son').value+="<"+_$NasString[6]}
+	else if(event.keyCode == 190){key__$(7);note="Note : "+_$NasString[7]+" - "+7;document.getElementById('son').value+="<"+_$NasString[7]} 
+	else if(event.keyCode ==191 ){key__$(8);note="Note : "+_$NasString[8]+" - "+8;document.getElementById('son').value+="<"+_$NasString[8]} 
+	else if(event.keyCode == 223){key__$(9);note="Note : "+_$NasString[9]+" - "+9;document.getElementById('son').value+="<"+_$NasString[9]} 
+	else if(event.keyCode == 81){key__$(7);note="Note : "+_$NasString[7]+" - "+7;document.getElementById('son').value+="<"+_$NasString[7]}
+	else if(event.keyCode == 83){key__$(8);note="Note : "+_$NasString[8]+" - "+8;document.getElementById('son').value+="<"+_$NasString[8]}
+	else if(event.keyCode == 68){key__$(9);note="Note : "+_$NasString[9]+" - "+9;document.getElementById('son').value+="<"+_$NasString[9]} 
+	else if(event.keyCode == 70){key__$(10);note="Note : "+_$NasString[10]+" - "+10;document.getElementById('son').value+="<"+_$NasString[10]} 
+	else if(event.keyCode == 71){key__$(11);note="Note : "+_$NasString[11]+" - "+11;document.getElementById('son').value+="<"+_$NasString[11]} 
+	else if(event.keyCode == 72){key__$(12);note="Note : "+_$NasString[12]+" - "+12;document.getElementById('son').value+="<"+_$NasString[12]} 
+	else if(event.keyCode == 74){key__$(13);note="Note : "+_$NasString[13]+" - "+13;document.getElementById('son').value+="<"+_$NasString[13]}
+	else if(event.keyCode == 75){key__$(14);note="Note : "+_$NasString[14]+" - "+14;document.getElementById('son').value+="<"+_$NasString[14]}
+	else if(event.keyCode == 76 ){key__$(15);note="Note : "+_$NasString[15]+" - "+15;document.getElementById('son').value+="<"+_$NasString[15]}
+	else if(event.keyCode == 77){key__$(16);note="Note : "+_$NasString[16]+" - "+16;document.getElementById('son').value+="<"+_$NasString[16]}
+	else if(event.keyCode == 192){key__$(17);note="Note : "+_$NasString[17]+" - "+17;document.getElementById('son').value+="<"+_$NasString[17]}
+	else if(event.keyCode == 65){key__$(13);note="Note : "+_$NasString[13]+" - "+13;document.getElementById('son').value+="<"+_$NasString[13]}
+	else if(event.keyCode == 90){key__$(14);note="Note : "+_$NasString[14]+" - "+14;document.getElementById('son').value+="<"+_$NasString[14]}
+	else if(event.keyCode == 69 ){key__$(15);note="Note : "+_$NasString[15]+" - "+15;document.getElementById('son').value+="<"+_$NasString[15]}
+	else if(event.keyCode == 82){key__$(16);note="Note : "+_$NasString[16]+" - "+16;document.getElementById('son').value+="<"+_$NasString[16]}
+	else if(event.keyCode == 84){key__$(17);note="Note : "+_$NasString[17]+" - "+17;document.getElementById('son').value+="<"+_$NasString[17]}
+	else if(event.keyCode == 89){key__$(18);note="Note : "+_$NasString[18]+" - "+18;document.getElementById('son').value+="<"+_$NasString[18]}
+	else if(event.keyCode == 85){key__$(19);note="Note : "+_$NasString[19]+" - "+19;document.getElementById('son').value+="<"+_$NasString[19]}
+	else if(event.keyCode == 73){key__$(20);note="Note : "+_$NasString[20]+" - "+20;document.getElementById('son').value+="<"+_$NasString[20]}
+	else if(event.keyCode == 79 ){key__$(15);note="Note : "+_$NasString[15]+" - "+15;document.getElementById('son').value+="<"+_$NasString[15]}
+	else if(event.keyCode == 80){key__$(16);note="Note : "+_$NasString[16]+" - "+16;document.getElementById('son').value+="<"+_$NasString[16]}
+	else if(event.keyCode == 221){key__$(17);note="Note : "+_$NasString[17]+" - "+17;document.getElementById('son').value+="<"+_$NasString[17]}
+	else if(event.keyCode == 186){key__$(18);note="Note : "+_$NasString[18]+" - "+18;document.getElementById('son').value+="<"+_$NasString[18]}
+	document.getElementById("tt").innerHTML = note}
+function del(){document.getElementById('son').value=""}
+function example(){
+	var ex = ['Tapion Theme (DBZ) : <re2<re2<sol2<mi3<re3<do3<re3<la2<si2<do3<do3<re3<do3<si2<re2<re2<sol2<mi3<re3<do3<re3<la2<si2<do3<do3<si2<la2<sol2<la2<fa2<fa2<si2<mi2<mi2<fa2<si2<mi3<re3<do3<re3<sol2<la2<si2<re3<la2<si2<do3<do3<re3<do3<si2<fa2<fa2<si2<mi2<mi2<fa2<si2<mi3<re3<do3<re3<la2<si2<do3<re3<la2<si2<do3<do3<si2<la2<sol2<la2 End of the Song',
+	'Unknow Name :<fa2f<fa2f<do3k<do3k<re3l<re3l<do3k<si2j<si2j<la2h<la2h<sol2g<sol2g<fa2f<do3k<do3k<si2j<si2j<la2h<la2h<sol2g<do3k<do3k<si2j<si2j<la2h<la2h<sol2g<fa2f<fa2f<do3k<do3k<re3l<re3l<do3k<si2j<si2j<la2h<la2h<sol2g<sol2g<fa2f End of the song'
+	]
+	document.getElementById('son').value = ex[Math.floor(Math.random()*10)%2]
+}
+	</script></head>
+<body onload="gen()">
+<center style="background-color:#FFFF66"><div  title="Développé par Fitiavana Michaël">
+<font size="8" color="#00CCFF">JS Virtual Piano</font> par <a href="http://facebook.com/fitiavana.michael">Fitiavana Michaël</a><br>
+(V 1.0 - Beta Test --<font size="2" color="red"> *Ne marche que sous Chrome(Conseillé) et Opera(déconseillé))</font></div>
+<div id="st_$1"></div>
+<div id="st_$2"></div>
+== Notes Touchées ==<br>
+<textarea  id="son" cols="100" rows="7" title="Ici s'affichera les Notes touchées"></textarea><br>
+<input type="button" value="Effacer les notes" onclick="del()"><input type="button" value="Exemple de Note" onclick="example()"></center></center>
+<center><div id="tt"></div></center>
+
+
+</body></html>
