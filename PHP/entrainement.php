@@ -588,42 +588,42 @@ for($i=0;$i<10;$i++)
 }
 echo "</table>";
 
-
-// correction 1 du prof
 echo "<br>";
 
-$z=0;
-echo "<table>";
 
-for($i=0;$i<10;$i++)
+// Exercice : Faites la même chose en allant de 0 à 99 sur plusieurs lignes sans faire 10 boucles
+
+//correction 1  du prof
+
+$z = 0;
+
+echo '<table border=1>';
+for($ligne = 0; $ligne < 10; $ligne++)
 {
-    echo "<tr>";    
-    for($k=0;$k<10;$k++)
-    {
-        echo "<td>".$z."</td>";
-        $z++;
-    }    
-    echo "</tr>";
+	echo '<tr>';
+	for($cellule = 0; $cellule < 10; $cellule++) // tant que ligne est à zéro, cellule s'incrémente 10 fois, ligne est à 1, cellule s'incrémente 10 fois etc..
+	{
+		echo '<td>' . $z . '</td>'; // $z ne reviens jamais à 0 puisqu'on l'incrémente à chaque tour de boucle
+		$z++; // $z = $z + 1;
+	}
+	echo '</tr>';
 }
-echo "</table>";
-
+echo '</table><br>';
 
 
 // correction 2 du prof
-echo "<br>";
-
-echo "<table>";
-
-for($i=0;$i<10;$i++)
+echo '<table>';
+for($ligne = 0; $ligne < 10; $ligne++)
 {
-    echo "<tr>";    
-    for($k=0;$k<10;$k++)
-    {
-        echo "<td>".(10*$k+$i)."</td>";
-    }    
-    echo "</tr>";
+	echo '<tr>';
+	for($cellule = 0; $cellule < 10; $cellule++)
+	{
+		echo '<td>' . (10 * $ligne + $cellule) . '</td>';	//la cellule du tableau aura une valeur = à 	10 X LE_NUMERO_DE_LA_LIGNE   +    LE_NUMERO_DE_LA_COLONNE 		ex: 61= 6x10  +  1
+		$z++;
+	}
+	echo '</tr>';
 }
-echo "</table>";
+echo '</table>';	
 
 
 echo "<br>";
@@ -719,4 +719,46 @@ echo '<pre>'; print_r($tab_multi); echo '</pre>';
 //Exercice: sortir 'Clere' en passant par les tableaux ARRAY et sans faire de echo "Clere"
 
 echo $tab_multi[1][nom];	//Notice: Use of undefined constant nom - assumed 'nom' in C:\xampp\htdocs\fomation-front\Formation-Front\JS\PHP\entrainement.php on line 721
+echo "<br>";
 echo $tab_multi[1]["nom"];	//Clere
+echo "<br>";
+echo "<br>";
+
+echo "<hr>";
+// Exercice : extraire les valeurs des tableaux multi à l'aide de boucle
+foreach($tab_multi as $valeur)
+{
+	//print_r($valeur);
+	foreach($valeur as $sonNom)
+	{
+		echo $sonNom."<br>";
+	}
+}
+
+echo "<br>";
+echo "<br>";
+
+
+//Correction de Grégory
+foreach($tab_multi as $indice1=>$tableau)
+{
+	echo implode("-",$tableau).'<br>';
+	echo '<hr>';
+}
+
+
+echo "<br>";
+echo "<br>";
+
+// Autre correction de Grégory
+foreach($tab_multi as $indice1 => $tableau)
+{
+	//print_r($valeur);
+	foreach($tableau as $indice2 => $valeurs)
+	{
+		echo $indice2 . ":" . $valeurs."<br>";
+	}
+	echo '<hr>';
+}
+// on aurait pu, opur cette 2eme correction, utiliser une boucle for, mais seulement pour le 1eme foreach car c'est un tableau d'indices
+
