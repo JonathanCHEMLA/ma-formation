@@ -1,5 +1,5 @@
 <!-- 
-	ealiser un formulaire html avec les champs suivants: pseudo, email, valider, en recupernat et affichant les informations directement sur la page formulaire4.php
+	Realiser un formulaire html avec les champs suivants: pseudo, email, valider, en recupernat et affichant les informations directement sur la page formulaire4.php
 -->
 <!DOCTYPE html>
 <html>

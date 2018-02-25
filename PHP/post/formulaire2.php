@@ -39,7 +39,7 @@ $erreur="";
 	{
 		$erreur.= '<div style="background: red; padding: 10px; color: #fff; width: 300px; border-radius: 5px;">Merci de saisir un Nom valide</div>';	
 	}	
-	if(empty($erreur)){
+	if(empty($erreur)){		//	signifie: 	si $erreur="" alors:
 
 
 		foreach($_POST as $indice => $valeur)
@@ -99,7 +99,7 @@ $erreur="";
 
 		<label for="prenom">Prénom</label>
 		<input type="text" placeholder="prenom" name="prenom" id="prenom" pattern="[a-zA-Z0-9.-_]{5,20}" title="caractères acceptés: a-zA-Z0-9.-_ "> <br><br>
-<!---comme le pattern peut etre contourné par l'user malveillant, il vaut mieux mettre un controle en php, plutot que le pattern html-->
+<!---comme le pattern peut etre contourné par l'user malveillant, il vaut mieux mettre un controle en php, plutot que le pattern html.	le pattern est en quelque sorte une "retriction"-->
 		<label for="email">Email</label>
 		<input type="text" placeholder="email" name="email" id="email"> <br><br>
 

@@ -25,7 +25,7 @@ foreach($_POST as $indice=>$info)
 }
 /*
 
-Sans le if, la premiere fois, lorsque nous n'avons rien posté nous avons 2 erreur undifined.  
+Sans le if($_POST), la premiere fois, lorsque nous n'avons rien posté nous avons 2 erreur undifined.  
 mais cela n'empêche pas l'exemple de fonctionner.
 C'est dû au fait que , quand on clique sur le bouton "connection", le code se recharge.
 Il est ré-exécuté, et par consequent, le $_POST  n'est plus undifined.
@@ -66,7 +66,7 @@ Il est ré-exécuté, et par consequent, le $_POST  n'est plus undifined.
 <h1>FORMULAIRE DE CONNEXION</H1>
 <hr>
 
-<form action="" method="post">		<!-- method: comment vont circuler les données.   get: envoyer les info dans l'url dans $_GET,   post: via le formulaire et pas via l'url et on va ensuite les exploiter dans $_POST-->
+<form action="" method="post">		<!-- method: comment vont circuler les données.   get: envoyer les info dans l'url dans $_GET,   post: via le formulaire (et non via l'url) et on va ensuite les exploiter dans $_POST-->
 <label for="pseudo">Pseudo</label>
 <input type="text" name="pseudo" placeholder="Pseudo" id="pseudo"><br><br>	<!--l'atribut name est indispensable pour exploiter les données en php-->
 <label for="mdp">Password</label>

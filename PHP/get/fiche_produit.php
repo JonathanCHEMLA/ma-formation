@@ -5,7 +5,7 @@ echo "<pre>";print_r($_GET);echo "</pre>";
 // afficher les données pour chaque produit avec un affichage conventionnel
 
 
-if($_GET)
+if($_GET)//GET est vide au départ. si on a du contenu dans le GET alors:
 {
     echo '<h1>Voici le détail du produit n° '. $_GET['id_produit'] . '</h1>';
 

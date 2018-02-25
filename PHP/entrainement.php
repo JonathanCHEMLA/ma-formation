@@ -14,7 +14,7 @@ h2{
 echo '<h3>Bonjour</h3>'; //echo est une instruction d'affichage qui se traduit par "affiche-moi"
 // si on regarde le code source de notre page, on ne voit pas le php apparaitre dans ce code source.
 
-//on ne verra le code php car ce langage est INTERPRETé
+//on ne verra pas le code php car ce langage est INTERPRETé
 
 ?>
 
@@ -22,9 +22,9 @@ echo '<h3>Bonjour</h3>'; //echo est une instruction d'affichage qui se traduit p
 
 <?php print 'Nous sommes Mercredi'; 
 /**
- * print est une autre instruction d'affichage. Il n'y a pas de différence entree echo et print 
+ * print est une autre instruction d'affichage. Il n'y a PAS DE DIFFERENCE ENTRE ECHO et PRINT 
  * 
- * On n'est obligé de fermer la balise php "?>"  si sur la page nous codons seuelemnt du PHP
+ * On n'est obligé de fermer la balise php "?>"  si sur la page nous codons seulement du PHP
  */
 echo '<hr><h2>Variables : types / Déclaration / Affectation </h2>';
 //une variable est un espace nommé permettant de conserver une valeur.
@@ -62,9 +62,9 @@ echo gettype($a);	// Il s'agit d'un entier: integer
 echo '<hr><h2> concaténation  </h2>';
 $x="bonjour";
 $y=" tout le monde";
-echo $x.$y."<br>"; // le "." signifie: "suivi de..."
-echo "$x $y <br>"; // entre guillemets, les variables sont évaluées
-echo '$x $y <br><br>'; // entre quote, c'est une chaine de caractères, les variables ne sont pas évaluées
+echo $x.$y."<br>"; // le "." signifie: "suivi de..."											// bonjour tout le monde
+echo "$x $y <br>"; // entre guillemets, les variables sont évaluées								// bonjour tout le monde 
+echo '$x $y <br><br>'; // entre quote, c'est une chaine de caractères, les variables ne sont pas évaluées		// $x $y 
 
 echo 'aujourd\'hui <br>'; 
 echo "hey!".$x.$y;
@@ -87,7 +87,7 @@ echo '<hr><h2>Constante et constante magique</h2>';
 define("CAPITALE", "Paris"); // la premiere info c'est le nom de ma constante. Elle se déclare toujours en majuscule. suivi de la valeur de la constante. 
 echo CAPITALE . "<br>";
 
-// define("CAPITALE","Rome");     Nous renvoie un message d'erreur, nous informant que cette la constant est deja definie.
+// define("CAPITALE","Rome");     Nous renvoie un message d'erreur, nous informant que cette constante est deja definie.
 
 //Constante magique
 echo __FILE__ .'<br>';	//renvoie le chemin complet vers le fichier 
@@ -101,6 +101,8 @@ $rouge="rouge";
 $tiret="-";
 
  echo $bleu.$tiret.$blanc.$tiret.$rouge."<br>";
+ 
+ //correction du prof:
  echo "$bleu-$blanc-$rouge<br>";
  
  //-----------------------------------------------------------------------
@@ -129,15 +131,21 @@ $tiret="-";
   $var2 = "";	// par contre, si $var2 = " "; ce n'est pas vide donc je ne rentrerai pas dans le if.
   //$var3		// on n'a pas defini la variable 3
   if(empty($var3))
+  // il existe 4 CAS qui rendent la VARIABLE: "EMPTY" : 
+		//	- $var3="" 
+		//	- $var3=0 ou 
+		//	- $var3 est INEXISTANT !!!
+		//	- $var3 est NULL
+  
   {
-		echo '0, vide ou non définie';	// ceci s'appelle une instruction
+		echo '0, vide ou non définie: ';	// ceci s'appelle une instruction
 		  echo "<br>";	
   }
   if(empty($var2))
   {
 		echo '0, vide ou non définie';	// ceci s'appelle une instruction
   }
-  // empty teste si une variable a la valeur 0 , si elle est vide: "" ou si elle n'est pas definie.
+  // empty teste si une variable a la valeur 0 , si elle est vide: "" ou si elle n'est pas definie. ou si elle est Null
    echo "<br>";
   if(isset($var2))
   {
@@ -146,16 +154,32 @@ $tiret="-";
     echo "<br>";	
   //----------------------------------------
   
-  $variable2="";
+
+  $tonton=0;
+  if(isset($tonton)){echo "sarah, je t'aime !!";}	
+  //on rentre dans le if seulement si $tonton est DECLARE PLUS HAUT
+  //bref le seul cas pour lequel on ne rentre pas c'est: 
+		//	- $tonton est INEXISTANT !!!
   
   
-  /** si une variable est egale à 0 alors elle est vide **/
+  /** (si une variable est egale à 0 alors elle est vide.) **/
   
-  //isset teste l'existence d'une variable, si elle existe, si elle est déclarée, si elle est définie.
+  //isset teste l'existence d'une variable, si elle existe,c'est à dire si elle est déclarée, c'est à dire si elle est définie.
+  
+  // (
   //empty signifie "vide", c'est à dire : c'est seulement le cas où $variable2="". Si $variable2=0, on serait rentré dans le if car alors ma variable ne serait pas vide... car elle contiendrait 0
-  if(isset($variable2) && !empty($variable2))
+  // )
+  
+  $variable2="";  
+  if(isset($variable2) && !empty($variable2))	
+  // pour afficher le contenu du if, il est necessaire que:
+		//que $variable2 ne soit pas empty, c'est à dire qu'il faut qu'elle soit déclarée 	& 	!= ""	&	!= 0	& !=Null
+		//&
+		//que $variable2 soit isset, 		c'est à dire qu'il faut qu'elle soit déclarée.
+		//En bref, $variable2 doit etre != aux 4 cas de "empty"  pour afficher le contenu du if !
   {
 	  echo 'variable2 existe et n\'est pas vide';
+	  echo "fgdfgfgdfgdfgdfgdfgdfgdfgdfgdfgdfgdfg";
   }
     echo "<br>";	
   //opérateurs de comparaison
@@ -288,7 +312,7 @@ echo "<h2>Fonctions prédéfinies : traitement des chaines </h2>";
 //une fonction prédéfinie permet de réaliser un traitement spécifique
 
 echo "Date: ";
-echo date("d/m/Y"); // avec un y minuscule, ca nous retourne 18 au lieu de 2018.
+echo date("d/m/Y"); // avec un y minuscule, ca nous retourne 18 au lieu de 2018.	//voir aussi les Token en sql.
 // toujours penser à consulter la documentation
 
 	echo "<br>";
@@ -332,21 +356,24 @@ contexte : sur certains articles, on a une accroche puis un lien permettant de v
     echo "<br>";
     echo "<hr>";
 
-$mavar1="";
+//$mavar1="";
  
- if(empty($mavar1))
+ if(empty($mavar1))	//si $mavar1 N'EST PAS déclarée OU si $mavar1=0 OU si $mavar1="" OU si $mavar1=Null
 {
     echo "empty";   //empty:""
     echo "<br>";    
 }
-if(isset($mavar1))
+if(isset($mavar1))	// isset — Détermine si une variable est définie et est différente de NULL. 
+//Donc  si $mavar1 	N'EST PAS DECLAREE OU bien,
+// 		si elle 	EST DECLAREE MAIS 	que $mavar1=Null 	alors Le contenu ci-dessous NE S'AFFICHERA PAS !!!:
 {
     echo "isset";   //
     echo "<br>";
 }
-if(is_null($mavar1))
+if(is_null($mavar1))// ce echo s'affiche lorsqu'on a $mavar1=Null ou lorsque $mavar1 n'est pas déclaré plus haut;
+// Bref is_Null est l'inverse de isset !!!!
 {
-    echo "is null";
+    echo "is null";	
     echo "<br>";
 }
 //if(is_void($mavar1))
@@ -420,7 +447,8 @@ affichagePays();
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------
 $pays = "France";
-
+											/* ------ LE MOT CLE :  GLOBAL ------ */
+								/* Mot à placer dans la fonction pour appeler une variable dans le main */
 function affichageDESpays()
 {
     global $pays; // pour importer une variable déclarée en global vers l'espace local, nous devons utiliser le mot clé "global"
@@ -619,7 +647,7 @@ for($ligne = 0; $ligne < 10; $ligne++)
 	for($cellule = 0; $cellule < 10; $cellule++)
 	{
 		echo '<td>' . (10 * $ligne + $cellule) . '</td>';	//la cellule du tableau aura une valeur = à 	10 X LE_NUMERO_DE_LA_LIGNE   +    LE_NUMERO_DE_LA_COLONNE 		ex: 61= 6x10  +  1
-		$z++;
+
 	}
 	echo '</tr>';
 }
@@ -642,7 +670,7 @@ echo "<H2>Boucle : tableau de données ARRAY </H2>";
 // c est plus perfectionne qu une variable car ca peut contenir plusieurs valeurs.
 
 $liste=array("Grégory","John","Andrei","Adeline");
-echo $liste;	// /!\ azttention erreur, on ne peut pas afficher les données d'un tableau avec une ibnstruction classique
+echo $liste;	// /!\ azttention erreur, on ne peut pas afficher les données d'un tableau avec une instruction classique
 echo "<br>";
 echo "<br>";
 var_dump($liste);
@@ -651,10 +679,11 @@ echo "<br>";
 echo '<pre>'; var_dump($liste); echo '</pre>';
 echo "<br>";
 echo "<br>";
-echo '<pre>'; print_r($liste); echo '</pre>';
+echo '<pre>'; print_r($liste); echo '</pre>';	// Print_r, comme implode, et comme foreach servent à afficher des tableaux. Pas echo !!!
+
 
 //var_dump et print_r sont des instructions d'affichage amélioré. <pre> est une balise HTML
-//permettant de formater le texte, cela nous permet de mettre en formela sortie du print_r
+//permettant de formater le texte, cela nous permet de mettre en forme la sortie du print_r
 //contexte: lorsqu'on récupère des informations en BDD, nous les retrouverons sous forme d'ARRAY
 
 //-------------------------------------------------------------------------------------------------------------------------
@@ -745,6 +774,9 @@ foreach($tab_multi as $indice1=>$tableau)
 	echo implode("-",$tableau).'<br>';
 	echo '<hr>';
 }
+// implode (ou aussi print_r) peut REMPLACER un FOREACH pour AFFICHER l'ensemble des VALEURS d'un tableau sur une MEME LIGNE, séparés par un SEPARATEUR que l'on définit. ex: - , " " , ...
+// implode( $separateur , $tableau );
+//Il existe une fonction totalement similaire à la fonction implode, il s’agit de la fonction join().
 
 
 echo "<br>";

@@ -19,8 +19,8 @@ if($_POST)
 	$email="jonathanchemla55@gmail.com";
 	 mail($email,$_POST["sujet"],$_POST["message"],$_POST["email"]);
 
-
-
+	// mail( qui va recevoir le message ? , objet ? , message ? , qui envoie le message ? );
+	
 }
 
 ?>
