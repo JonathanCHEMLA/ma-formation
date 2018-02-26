@@ -1,0 +1,197 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Ubuntu', sans-serif;
+	background: #E8E8E8;
+}
+
+header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: -webkit-linear-gradient(left, #2092bd, #4bc5d6); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(left, #2092bd, #4bc5d6); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(left, #2092bd, #4bc5d6); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(left, #2092bd, #4bc5d6); /* Standard syntax */
+	background: -ms-linear-background(left, #2092bd, #4bc5d6); /* IE 10 */
+	/*background: #0747A6;*/
+	/*background: #344953;*/
+}
+
+header #btn-menu {
+	font-size: 30px;
+	color: #2c40a2;
+	cursor: pointer;	
+	padding-left: 10px;
+}
+
+header #btn-menu:hover {
+	color: white;
+}
+
+header .navegation {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, .0);
+	transition: background 0.4s;
+	overflow: scroll;
+}
+
+header .navegation ul {
+	width: 300px;
+	height: 100%;
+	background: white;
+	list-style: none;
+	position: absolute;
+	top: 0;
+	left: -300px;
+}
+
+.derecho {
+	float: right;
+	margin-right: 10px; 
+}
+
+.menu-horizontal {
+	list-style: none;
+}
+
+.menu-horizontal li.item-menu {
+	display: inline-block;
+	height: 100%;
+}
+
+.menu-horizontal .item-menu a {
+	color: #2c40a2;
+	font-size: 30px;
+	cursor: pointer;
+	padding-left: 20px;
+	display: block;
+	padding: 10px;
+}
+
+.menu-horizontal .item-menu ul.desplegable {
+	display: none;
+	list-style: none;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	width: auto;
+	background: white;
+}
+
+.menu-horizontal .item-menu ul.desplegable li a {
+	display: block;
+	padding: 10px;
+	border-bottom: 1px solid #C6D0DA;
+	font-size: 20px;
+	font-weight: 200;
+	color: #575D69;
+}
+
+.menu-horizontal .item-menu ul.desplegable li:hover {
+	background: -webkit-linear-gradient(left, #2092bd, #4bc5d6); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(left, #2092bd, #4bc5d6); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(left, #2092bd, #4bc5d6); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(left, #2092bd, #4bc5d6); /* Standard syntax */
+	background: -ms-linear-background(left, #2092bd, #4bc5d6); /* IE 10 */
+}
+
+.menu-horizontal .item-menu ul.desplegable li a:hover {
+	color: white;
+}
+
+.menu-horizontal .item-menu:hover ul.desplegable {
+	display: block;
+	position: absolute;
+}
+
+.main {
+	margin-top: 70px; 
+}
+
+header .menu-horizontal a {
+	text-decoration: none;
+}
+
+.navegation .menu a {
+	display: block;
+	padding: 10px;
+	border-bottom: 1px solid #C6D0DA;
+	font-size: 20px;
+	font-weight: 200;
+	color: #575D69;
+}
+
+.navegation .menu li.title-menu {
+	background: #82decc;
+	/*background: #5F6F81;*/
+	text-align: center;
+}
+
+.navegation .menu li.title-menu a {
+	color: white;
+}
+
+.navegation .menu li i.icon {
+	margin-right: 12px;
+}
+
+.navegation .menu .item-submenu .icon-derecho {
+	float: right;
+}
+
+.navegation .menu .item-submenu .icon-izquierdo {
+	float: left;
+}
+
+.navegation .menu .item-submenu .submenu li.title-menu {
+	background: white;
+}
+
+.navegation .menu .item-submenu .submenu li.title-menu a {
+	color: #575D69;
+}
+
+.navegation .menu ul li.go-back {
+	background: #82decc;
+}
+
+.navegation .menu ul li.go-back a {
+	font-size: 15px;
+	color: white;
+	cursor: pointer;
+	
+}
+
+.navegation .menu li:hover {
+	background: -webkit-linear-gradient(left, #2092bd, #4bc5d6); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(left, #2092bd, #4bc5d6); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(left, #2092bd, #4bc5d6); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(left, #2092bd, #4bc5d6); /* Standard syntax */
+	background: -ms-linear-background(left, #2092bd, #4bc5d6); /* IE 10 */
+	/*background: #0747A6;
+	background: #5F6F81;*/
+}
+
+.navegation .menu li.title-menu:hover {
+	background: #82decc;
+}
+
+header .menu-horizontal a:hover {
+	color: white;
+}
+
+@media screen and (max-width: 300px)  {
+	header .navegation ul {
+		width: 100%;
+	}
+}

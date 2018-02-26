@@ -1,0 +1,206 @@
+/*------------------------------------------------------------------
+  SETTINGS
+------------------------------------------------------------------*/
+/**** COLORS ****/
+/* Colors provided by Open Color https://yeun.github.io/open-color/ */
+$white: #ffffff;
+$grey-1: #f1f3f5;
+$grey-2: #e9ecef;
+$grey-5: #adb5bd;
+$grey-6: #868e96;
+$primary: #5c7cfa;
+
+/**** SPACING ****/
+$menu-height: 50px; // set height of the navbar
+$menu-width: 350px; // set width for mobile vertical view
+
+/**** NAVBAR LAYOUT + STYLING ****/
+.modern-nav {
+  background-color: $white;
+  box-shadow: 4px 0px 5px -2px rgba(0,0,0,.1);
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  height: 100vh;
+  position: fixed;
+  transition: transform 300ms ease;
+  transform: translateX(-$menu-width);
+  top: 0;
+  width: $menu-width;
+  z-index: 20;
+
+  .modern-nav-toggle {
+    color: $grey-1;
+    position: absolute;
+    top: 5px;
+    right: -40px;
+    &:before {
+      content: "\f0c9";
+      font-family: "FontAwesome";
+      font-size: 1.75rem;
+    }
+    &:hover {
+      color: $white;
+      cursor: pointer;
+    }
+  }
+
+  .modern-nav-list {
+    display: flex;
+    list-style-type: none;
+    flex: 1;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+
+    .modern-nav-list-item {
+      display: flex;
+      flex-direction: column;
+      min-height: $menu-height;
+
+      .modern-nav-list-item-link {
+        align-items: center;
+        border-left: 4px solid transparent;
+        color: $grey-6;
+        display: flex;
+        flex: 1;
+        min-height: $menu-height;
+        padding: 0 1rem;
+        transition: all 300ms ease;
+        &:hover {
+          background-color: $grey-1;
+          border-color: $grey-5;
+          text-decoration: none;
+        }
+        &-active {
+          border-color: $primary;
+        }
+        &:focus {
+          text-decoration: none;
+        }
+      }
+
+      .modern-nav-sub {
+        background-color: $grey-1;
+        display: none;
+        flex-direction: column;
+        z-index: 50;
+
+        .modern-nav-sub-list {
+          padding: 1rem;
+          list-style-type: none;
+          margin: 0;
+
+          .modern-nav-sub-list-item {
+            .modern-nav-sub-list-item-link {
+              color: $grey-6;
+              display: inline-block;
+              padding: 5px 10px;
+              margin-bottom: 0.25rem;
+              &:hover {
+                background-color: $grey-2;
+                text-decoration: none;
+              }
+              img {
+                width: 100%;
+              }
+            }
+          }
+          .modern-nav-sub-list-title {
+            color: $grey-5;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 5px 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+  }
+  &-open {
+    transform: translateX(0);
+    .modern-nav-toggle:before {
+      content: "\f00d";
+    }
+  }
+}
+
+.modern-nav-overlay {
+  background-color: rgba(0,0,0,0.4);
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 10;
+  &-open {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .modern-nav-toggle {
+    display: none;
+  }
+  .modern-nav {
+    align-items: center;
+    border-bottom: 1px solid $grey-1;
+    box-shadow: none;
+    flex-direction: row;
+    height: auto;
+    left: auto;
+    padding: 0 1rem;
+    position: relative;
+    transform: none;
+    top: auto;
+    width: auto;
+    .modern-nav-list {
+      flex-direction: row;
+      .modern-nav-list-item {
+        flex-direction: row;
+        .modern-nav-list-item-link {
+          border-left: none;
+          border-bottom: 2px solid transparent;
+          &:hover {
+            background-color: $grey-1;
+            border-color: $grey-5;
+            text-decoration: none;
+          }
+          &-active {
+            border-color: $primary;
+          }
+        }
+        .modern-nav-sub {
+          display: flex;
+          flex-direction: row;
+          left: 0;
+          min-height: 200px;
+          opacity: 0;
+          position: absolute;
+          transform: translateY(-1000px);
+          transition: opacity 700ms;
+          width: 100%;
+        }
+      }
+      .modern-nav-parent-item {
+        &:hover {
+          .modern-nav-sub {
+            opacity: 1;
+            transform: translateY($menu-height);
+          }
+        }
+        &:after {
+          color: $grey-5;
+          content: "\f107";
+          font-size: 0.75rem;
+          font-family: "FontAwesome";
+          left: -10px;
+          top: 15px;
+          position: relative;
+        }
+      }
+    }
+  }
+}

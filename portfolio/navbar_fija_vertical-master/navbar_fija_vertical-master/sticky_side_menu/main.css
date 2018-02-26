@@ -1,0 +1,33 @@
+.container {
+  margin: 0 0 0 150px;
+  width: 720px;
+  padding-left:20px;
+}
+
+nav{
+  background-color: rgba(57, 54, 54, 0.9);
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+nav ul{
+  list-style-type:none;
+  padding: 0;
+}
+
+nav ul a{
+  color: white;
+  text-decoration: none;
+  padding: 0 1em 0 1em;
+}
+
+nav ul li{
+  margin: 2em 0 2em 0;
+  border-bottom: 1px solid #383A3F;
+  padding-bottom: 1.5em;
+}
+
+
+

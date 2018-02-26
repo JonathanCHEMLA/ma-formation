@@ -1,0 +1,53 @@
+.container {
+  margin: 0 0 0 150px;
+  width: 720px;
+  padding-left:20px;
+}
+
+button {
+  font-size: 3em;
+  float: left;
+  display: block;
+  /*width: 20%;*/
+  margin: 0 auto;
+  border-right: 2px solid black;
+  background-color:  #C7CACD;
+  position: fixed;
+  left: 0;
+  top: 0;
+  /*padding-bottom: 100%;*/
+}
+
+
+nav ul {
+  float: left;
+  /*display: none;*/
+  /*width: 20%;*/
+  margin: 0 auto;
+  border-right: 2px solid black;
+  background-color:  #C7CACD;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: block;
+  list-style-type: none;
+  border-bottom: 1px solid black;
+  padding: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#bottom {
+  padding-bottom: 500%;
+}
+
+#tache {
+  float: right;
+}
