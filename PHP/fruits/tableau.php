@@ -61,16 +61,24 @@ foreach($tab_fruits as $mon_fruit)
 }
 echo "</table>";
 
-//7 correction du prof:
+
+// Réponse 7 :
 echo "<table border=1><tr>";
-echo "<th>Poids </th>";
-foreach($tab_fruits as $indice => $fruit)
+echo "<th>Poids</th>";
+foreach($tab_fruits as $indice_fruit => $fruit)
 {
-    echo "<th>$fruit</th>";
+	echo "<th>$fruit</th>";
 }
-echo '<tr>';
-foreach( )
-//..
-
-
-
+echo '</tr>';
+foreach($tab_poids as $poids)
+{
+	echo '<tr>';
+	echo "<th>$poids g</th>";
+	foreach($tab_fruits as $fruit)
+	{
+		echo "<td>" . calcul($fruit, $poids) . "</td>";
+	}
+	echo '</tr>';
+}
+echo "</table>";
+?>

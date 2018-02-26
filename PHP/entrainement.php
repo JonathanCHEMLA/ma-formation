@@ -725,7 +725,7 @@ echo '<pre>'; print_r($couleur); echo '</pre>';
 
 echo "<br>";
 //Afficher successivement les données (indice,valeur) du tableau représenté par la variable $couleur
-foreach($couleur as $indice => $valeur)
+foreach($couleur as $indice => $valeur) // FOREACH fonctionne aussi bien pour les tableaux Array que pour les objets à parcourir
 {
 	echo $indice. "=>".$valeur. "<br>";
 }
@@ -755,10 +755,10 @@ echo "<br>";
 
 echo "<hr>";
 // Exercice : extraire les valeurs des tableaux multi à l'aide de boucle
-foreach($tab_multi as $valeur)
+foreach($tab_multi as $valeur)  // FOREACH fonctionne aussi bien pour les tableaux Array que pour les objets à parcourir
 {
 	//print_r($valeur);
-	foreach($valeur as $sonNom)
+	foreach($valeur as $sonNom) // FOREACH fonctionne aussi bien pour les tableaux Array que pour les objets à parcourir
 	{
 		echo $sonNom."<br>";
 	}
@@ -769,9 +769,9 @@ echo "<br>";
 
 
 //Correction de Grégory
-foreach($tab_multi as $indice1=>$tableau)
+foreach($tab_multi as $indice1=>$tableau)   // FOREACH fonctionne aussi bien pour les tableaux Array que pour les objets à parcourir
 {
-	echo implode("-",$tableau).'<br>';
+	echo implode("-",$tableau).'<br>';  // ATTENTION ! Ne pas oublier de mettre le ECHO devant implode
 	echo '<hr>';
 }
 // implode (ou aussi print_r) peut REMPLACER un FOREACH pour AFFICHER l'ensemble des VALEURS d'un tableau sur une MEME LIGNE, séparés par un SEPARATEUR que l'on définit. ex: - , " " , ...
@@ -783,10 +783,10 @@ echo "<br>";
 echo "<br>";
 
 // Autre correction de Grégory
-foreach($tab_multi as $indice1 => $tableau)
+foreach($tab_multi as $indice1 => $tableau) // FOREACH fonctionne aussi bien pour les tableaux Array que pour les objets à parcourir
 {
 	//print_r($valeur);
-	foreach($tableau as $indice2 => $valeurs)
+	foreach($tableau as $indice2 => $valeurs)   // FOREACH fonctionne aussi bien pour les tableaux Array que pour les objets à parcourir
 	{
 		echo $indice2 . ":" . $valeurs."<br>";
 	}
@@ -794,3 +794,42 @@ foreach($tab_multi as $indice1 => $tableau)
 }
 // on aurait pu, opur cette 2eme correction, utiliser une boucle for, mais seulement pour le 1eme foreach car c'est un tableau d'indices
 
+
+echo '<h2>Classe et Objet</h2>';
+// un objet est un autre type de données. 
+//Un peu à la manière d'un ARRAY, de regrouper des informations.
+// Cependant cela va beaucoup plus loin, car on peut y declarer des variables (appelées: propriétés) mais aussi des fonctions (appelées: méthodes)
+
+class Etudiant  // la class est la boite dans laquelle on a toutes les pieces necessaires pour créer ma voiture par ex
+{
+    public $prenom="Grégory";       // public permet de préciser que l'element sera visible de partour (il y a aussi protected et private)
+    public $age=25;                 // déclaration d'une propriété public
+    public function pays()          // déclaration d'une fonction public
+    {
+        return "France";
+    }
+}
+
+$objet = new Etudiant();       //l'objet est une voiture que l'on a créé a partir de ma boite d'objets "class".
+//new est un mot-clé permettant d'instancier la classe et d'en faire un objet. C'est ce qui nous permet de le déployer afin que l'on puisse s'en servir. On se sert de ce qui est dans la classe, via l'objet.
+
+// en tapant la ligne suivante:
+echo '<pre>'; var_dump($objet); echo '</pre>';
+
+// j'obtiens l'affichage d'un objet:
+
+/*
+object(Etudiant)#1 (2) {
+    ["prenom"]=>
+    string(8) "Grégory"
+    ["age"]=>
+    int(25)
+  }
+*/
+
+//Pour piocher dans un Array, on utilise les [].
+//Pour piocher dans un Objet, on utilise la ->affichageDESpays
+// la déclaration d'un array peut se faire soit avec des () soit avec des [], mais pour piocher dedans ça ne se fait qu'avec des []. 
+echo $objet->prenom .'<br>';    //prenom et non $prenom   car ca devient une propriété. Ce n'est plus une variable!
+echo $objet->age .'<br>';
+echo $objet->pays() .'<br>';
