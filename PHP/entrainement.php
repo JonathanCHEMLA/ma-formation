@@ -679,7 +679,7 @@ echo "<br>";
 echo '<pre>'; var_dump($liste); echo '</pre>';
 echo "<br>";
 echo "<br>";
-echo '<pre>'; print_r($liste); echo '</pre>';	// Print_r, comme implode, et comme foreach servent à afficher des tableaux. Pas echo !!!
+echo '<pre>'; print_r($liste); echo '</pre>';	// Print_r, comme implode, et comme foreach et comme join() servent à afficher des tableaux. Pas echo !!!
 
 
 //var_dump et print_r sont des instructions d'affichage amélioré. <pre> est une balise HTML

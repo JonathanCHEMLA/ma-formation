@@ -1,4 +1,6 @@
 <?php
+
+global $resultat;
 function calcul($fruit, $poids)
 {
     switch($fruit)
