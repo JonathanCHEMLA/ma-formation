@@ -142,3 +142,14 @@ echo '<pre>'; print_r($donnees); echo '</pre>';
 
 //Exo: Afficher successivement les donées de tous les employés à l'aide de boucle et avec un affichage conventionnel
 echo '<pre>'; print_r(get_class_methods($resultat)); echo '</pre>';
+
+$nb_employes=$resultat->rowcount();
+
+for($i=0; $i<$nb_employes; $i++)		// ATTENTION a ne pas oublier le $ devant la variable i du for !!!
+{
+	foreach($donnees[$i] as $indice => $valeur)
+	{
+		echo "$indice => $valeur <br>";
+	}
+		echo '<hr>';
+}
