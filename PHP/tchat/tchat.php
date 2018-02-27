@@ -106,7 +106,7 @@ while ($commentaire = $resultat->fetch(PDO::FETCH_ASSOC))
 //alert("bonjour");
 //</script>
 
-// on peut aussi inserer dans le champ message:
+// on pourrait aussi insérer, mal-intentionnellement, dans le champ message:
 
 //ok'); DELETE FROM commentaire; (
 // INSERT INTO commentaire(pseudo, date_Enregistrement, message)VALUES( '' , NOW() , 'ok' ); DELETE FROM commentaire; (')		
