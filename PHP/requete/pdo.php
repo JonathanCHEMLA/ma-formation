@@ -153,3 +153,92 @@ for($i=0; $i<$nb_employes; $i++)		// ATTENTION a ne pas oublier le $ devant la v
 	}
 		echo '<hr>';
 }
+
+
+echo '<H2> 06. PDO: QUERY - WHILE + FETCH + BDD </h2>';
+// Exercice : Afficher la liste des bases de données. Puis la mettre dans la liste ul libxml_clear_errors
+$resultat = $pdo->query("SHOW databases");	// le resultat est un objet issu de la classe PDOstatement
+
+echo '<pre>'; var_dump($resultat); echo '</pre>';
+
+echo "<ul>";
+while ($bdd = $resultat->fetch(PDO::FETCH_ASSOC))
+{
+	//echo '<pre>'; print_r($bdd); echo '</pre>';	// IMPORTANT ! C'EST ce qui nous permet de savoir ce qui ressort; a savoir l'indice [Database]
+	echo '<li>' . $bdd['Database'] . '</li>';
+}	
+echo "</ul>";
+
+
+echo '<H2> 07. PDO: QUERY - TABLE </h2>';
+
+$resultat = $pdo->query("select * from employes");	
+
+echo '<table border=1><tr>';
+for($i=0; $i<$resultat->columnCount(); $i++)	//	$resultat->columnCount() est une methode issue de la classe PDOstatement. Elle retourne le nbre de champs/colonnes dans ma table employes, en sql. Tant qu'il y a des colonnes, on boucle.
+{
+	$colonne= $resultat->getColumnMeta($i);		// getColumnMeta() est une methode, issue de la classe PDOstatement qui recolte les informations des champs/colonnes de la table.
+	//pour chaque tour de boucle, $colonne contient un tableau ARRAY avec les infos d'une colonne	
+	
+	//pour chaque tour de boucle, il me retourne un tableau ARRAY, par colonne de ma table(bref:un tableau ARRAY pour le nom, un pour le prenom, un pour le salaire, un pour le sexe...) 
+
+
+	//echo '<pre>'; print_r($colonne); echo '<pre>';	//   <-------CETTE LIGNE LA EST TRES IMPORTANTE CAR ELLE NOUS PERMET DOBTENIR LE NOM DE CE QUE L ON SOUHAITE EXTRAIRE; A SAVOIR 'name', ICI.
+	echo '<td>' . $colonne['name'] . '</td>';	// on va crocheter à l'indice 'name' pour afficher le nom des colonnes
+}
+echo '</tr>';
+
+/*--------------------------------------------------------Une premiere methode ----------------------------------------------------------------*/
+//for($i=0; $i<$resultat->rowCount(); $i++)	//	$resultat->columnCount() = nbre de colonnes dans ma table employes, en sql
+//{
+//	echo '<tr>';
+	
+//	$ligne = $resultat->fetch(PDO::FETCH_ASSOC);	// Lors du 1er tour de boucle i, ligne va contenir:			 388	Clement	Gallet	m	commercial	2000-01-15	2300  puis la ligne suivante au 2nd tour,...
+	//echo '<pre>'; print_r($ligne); echo '<pre>';
+	
+//	foreach($ligne as $indice => $valeur)
+//	{
+//		echo '<td>' . $valeur . '</td>';			
+//	}
+//	echo '</tr>';
+//}
+/*--------------------------------------------------------Une seconde methode ------------------------------------------------------------------*/
+while($ligne = $resultat->fetch(PDO::FETCH_ASSOC)) // on associe la méthode fecth() au résultat, $ligne contient un tableau ARRAY avec les informations d'un employé à chaque tour de boucle
+{
+	echo  '<tr>';// on crée une nouvelle du tabeau pour chaque employé
+	foreach($ligne as $informations)// passe en revue le tableau ARRAY d'un employé
+	{
+		echo '<td>' . $informations . '<td>'; // on affiche successivement les valeurs dans des cellules
+	}
+	echo  '</tr>';
+}
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+echo '</table>';
+
+// on ne peut associer 2 fois la même methode sur le meme resultat. on ne peut pas associer 2 fetch(PDO::FETCH_ASSOC) sur le même résultat
+
+echo '<H2> 08. PDO: PREPARE + BINDVALUE + EXECUTE </h2>';
+
+$nom = "CHEMLA";
+$resultat = $pdo->prepare('SELECT * FROM employes WHERE nom = :nom');
+//préparation de la requête : 
+//soulage le serveur et la BDD à l'execution.
+//prévient pour les injections SQL et pour les failles XSS
+// ':nom' est un marqueur nominatif. On prépare la requête mais à aucun moment on ne l'execute.
+
+echo '<pre>'; print_r ($resultat); echo '</pre>';
+echo '<pre>'; print_r (get_class_methods($resultat)); echo '</pre>';
+
+$resultat->bindValue(':nom', $nom, PDO::PARAM_STR);//bindValue() est une méthode permettant d'ASSOCIER une valeur au marqueur ':nom'. nom du marqueur/valeur du marqueur/type de données.
+$resultat->execute();	//execution de la requête 
+//on formule la requête 1 seule fois. Et à tout moment dans le script, nous pouvons l'executer.
+$donnees = $resultat ->fetch(PDO::FETCH_ASSOC); // une fois executé, on associe une méthode pour rendre le résulltat exploitable.
+echo '<pre>'; print_r ($donnees); echo '</pre>';
+//-------------------------------------------------------------------------
+$resultat->bindValue(':nom','CLERE',PDO::PARAM_STR); // on associe une nouvelle valeur au marqueur
+$resultat->execute(); //execution de la requête 
+$donnees= $resultat->fetch(PDO::FETCH_ASSOC);
+echo '<pre>'; print_r ($donnees); echo '</pre>';
+//-------------------------------------------------------------------------
+

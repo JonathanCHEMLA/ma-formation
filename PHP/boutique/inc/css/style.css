@@ -1,0 +1,16 @@
+footer{
+	height: 50px;
+	background:#050505;
+	text-align:center;
+	padding-top: 10px;
+	color:#fff;
+	margin-top:30px;
+}
+
+.mon-conteneur{
+	min-height: 820px;   /* c'est l'espace blanc, entre la nav et le footer. cela permet de faire descendre mon footer au bas de ma page */
+}
+
+.ma-nav{
+	border-radius: 0;	/* supprime les arrondis qui sont systematiquement appliques en boutstrap */
+}
