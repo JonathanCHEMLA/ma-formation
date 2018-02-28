@@ -111,7 +111,7 @@ foreach($employe as $indice => $valeur)     // FOREACH fonctionne aussi bien pou
 //echo implode("-",$employe); // ATTENTION !  lorsqu'on utilise implode(), ne pas oublier de mettre le ECHO devant implode
 
 
-echo '<H2> 04. PDO: QUERY - WHILE + FETCH_ASSOC(plusieurs résultats) </h2>';
+echo '<H2> 04. PDO: QUERY - WHILE + FETCH_ASSOC(PLUSIEURS RESULTATS) </h2>';
 
 
 $resultat = $pdo->query("SELECT * FROM employes");

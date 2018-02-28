@@ -12,8 +12,8 @@
     <title>Ma boutique</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="inc/css/bootstrap.min.css" rel="stylesheet">
-   <link href="inc/css/style.css" rel="stylesheet">
+    <link href="<?= URL ?>inc/css/bootstrap.min.css" rel="stylesheet">	<!-- on est obligé de passer par le chemin absolu, et non plus par le chemin relatif, pour prendre les css et js car nos fichier gestion_boutique... ne sont pas dans les memes dossiers que nos pages inscription,connexion... -->
+   <link href="<?= URL ?>inc/css/style.css" rel="stylesheet">
    
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
@@ -35,7 +35,7 @@
   <body>
 
     <nav class="navbar navbar-inverse ma-nav"> <!--navbar-fixed-top  fait que notre navbar reste fixée en haut de notre page--> 
-      <div class="container">
+      <div class="container-fluid">	<!--remplacer cette class:   container   à remplacer par    container-fluid     --> 
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -47,9 +47,34 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="inscription.php">Inscription</a></li>
-            <li><a href="connexion.php">Connection</a></li>
-            <li><a href="boutique.php">Accès à la Boutique</a></li>
+        <!--<li><a href="inscription.php">Inscription</a></li>
+            <li class="active"><a href="connexion.php">Connection</a></li>
+            <li><a href="boutique.php">Accès à la Boutique</a></li>-->
+			
+			<?php
+			if(internanuteEstConnecteEtEstAdmin())
+			{//accès administrateur
+				echo '<li><a href="'	. URL .			'admin/gestion_membre.php			">	Gestion des membres   	</a></li>'		;
+				echo '<li><a href="'	. URL .			'admin/gestion_commande.php			">	Gestion des commandes 	</a></li>'		;
+				echo '<li><a href="'	. URL .			'admin/gestion_boutique.php			">	Gestion de la boutique	</a></li>'		;
+			}
+			if(internauteEstConnecte())
+			{// accès membre
+				echo '<li><a href="'	. URL .			'profil.php							"> 	Profil 					</a></li>'		;
+				echo '<li><a href="'	. URL .			'boutique.php						"> 	Boutique 				</a></li>'		;
+				echo '<li><a href="'	. URL .			'panier.php							"> 	Panier 					</a></li>'		;		
+				echo '<li><a href="'	. URL .			'connexion.php?action=deconnexion	">	Dé-connection			</a></li>'		;
+			}
+			else
+			{//accès visiteur
+				echo '<li><a href="'	. URL .			'inscription.php					"> 	Inscription				</a></li>'		;
+				echo '<li><a href="'	. URL .			'connexion.php						"> 	Connection 				</a></li>'		;
+				echo '<li><a href="'	. URL .			'boutique.php						"> 	Boutique 				</a></li>'		;		
+				echo '<li><a href="'	. URL .			'panier.php							">	Panier					</a></li>'		;
+			}
+			
+			?>
+			
           </ul>
         </div><!--/.nav-collapse -->
       </div>
