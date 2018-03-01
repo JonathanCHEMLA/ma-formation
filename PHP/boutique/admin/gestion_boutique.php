@@ -8,6 +8,14 @@ if(!internanuteEstConnecteEtEstAdmin())	// si l'internaute n'est pas admin, il n
 	header("location:" . URL . "connexion.php");
 }
 
+// --------LIEN PRODUITS	//CECI EST NOTRE MENU BLEU ET BLANC, EN HAUT DE LA PAGE
+$content .= '<div class="list-group col-md-6 col-md-offset-3">';
+$content .= '<h3 class="list-group-item active text-center">BACK OFFICE</h3>';
+$content .= '<a href="?action=affichage" class="list-group-item text-center">Affichage produits</a>';
+$content .= '<a href="?action=ajout" class="list-group-item text-center">Ajout produit</a>';
+$content .= '<hr></div>';
+
+
 //-----------SUPPRESSION PRODUIT
 if(isset($_GET['action']) && $_GET['action']=='suppression')	// on rentre dans la condition seulement dans le cas ou l'on clique sur le lien suppression de l'affichage des produits
 {
@@ -17,67 +25,90 @@ if(isset($_GET['action']) && $_GET['action']=='suppression')	// on rentre dans l
 	
 	$_GET['action']="affichage";	//on affecte une nouvelle valeur à l'indice 'action' afin d'être redirigé sur l'affichage des produits après la suppression.	//Attention à la casse!!!: j'avais mis par erreur: Affichage. 
 	$content .= '<div class="alert alert-success col-md-8 col-md-offset-2 text-center"> Le produit n° <span class="text-success">' . $_GET['id_produit'] . '<span> a bien été supprimé</div>';
-	
 }
 
 
-//----------ENREGISTREMENT PRODUIT
+
+
+
+//---------------------LORS DE LA VALIDATION DU FORMULAIRE: 
+
 if(!empty($_POST))		// (if post)= s'il a envoyé le formulaire.   (if !empty post)=si le form a été rempli et a été renvoyé.
 {
-	//debug($_FILES);	//CETTE LIGNE DE DEBUGAGE EST TRES IMPORTANTE   on fait le debug , juste de la photo; pas du reste du formulaire.
 
-	//Exercice : réaliser le script permettant de contrôler la disponibilité de la référence.
-	$erreur="";
-	$verif_ref= $pdo->prepare("SELECT * FROM produit WHERE reference= :reference");
-	$verif_ref->bindValue(':reference',$_POST['reference'],PDO::PARAM_STR);
-	$verif_ref->execute();
-	if($verif_ref->rowCount()>0)
+//CAS N° 1 : ON SOUHAITE FAIRE UN AJOUT:--------------------------------------------------------------------------------------------------------------------------------------
+	if(isset($_GET['action']) && $_GET['action']=='ajout')
 	{
-		$erreur .= '<div class="alert alert-danger col-md-8 col-md-offset-2 text-center">La référence est déjà existante. Merci de remplir une référence valide !!</div>';	
-	}
-	$content .=$erreur;
-	
-	if(empty($erreur))
+		
+		//debug($_FILES);	//CETTE LIGNE DE DEBUGAGE EST TRES IMPORTANTE   on fait le debug , juste de la photo; pas du reste du formulaire.
 
-	{	
-		if(!empty($_FILES['photo']['name']))		//si il a select une photo
+		//Exercice : réaliser le script permettant de contrôler la disponibilité de la référence.
+		$erreur="";
+		$verif_ref= $pdo->prepare("SELECT * FROM produit WHERE reference= :reference");
+		$verif_ref->bindValue(':reference',$_POST['reference'],PDO::PARAM_STR);
+		$verif_ref->execute();
+		if($verif_ref->rowCount()>0)
 		{
-			$nom_photo = $_POST['reference'] . '-' . $_FILES["photo"]["name"];			//concatener la reference saisie dans le formulaire avec le nom de la photo via la superglobale $_FILES
-			//echo $nom_photo; 		//pour le tester: remplir une ref, selectionner une photo, valider le formulaire et le echo apparait.
-			$photo_bdd= URL . "photo/$nom_photo";		//on définit l'URL de la photo pour l'enreg dans la BDD
-			//echo $photo_bdd;		//idem pour tester ce echo: remplir une ref, selectionner une photo, valider le formulaire et le echo apparait.
-			$photo_dossier = RACINE_SITE . "photo/$nom_photo"; 	//	RACINE_SITE a été déclaré dans le fichier init.inc	RACINE_SITE c'est le CHEMIN PHYSIQUE DU DOSSIER (c'est c:// ... )	//on definit le chemin physique complet du dossier photo sur le serveur.
-			//echo $photo_dossier;
-			copy($_FILES['photo']['tmp_name'],$photo_dossier);   //IMPORTANT permet de copier la photo directement dans notre dossier photo		// copy(nom_temporaire_de_ma_photo,chemin_du_dossier_photo)
+			$erreur .= '<div class="alert alert-danger col-md-8 col-md-offset-2 text-center">La référence est déjà existante. Merci de remplir une référence valide !!</div>';	
 		}
+		$content .=$erreur;
+		
+		if(empty($erreur))	// si $erreur n'est pas vide c'est qu'il y a une erreur !   donc si la référence saisie par l'user n'est pas déja existante alors on execute:
+		{	
+		//----------ENREGISTREMENT PRODUIT	
+			$resultat_insert_modif = $pdo->prepare('INSERT INTO produit (reference, categorie, titre, description, couleur, taille, public, photo, prix, stock) VALUES(:reference,:categorie,:titre,:description,:couleur,:taille,:public,:photo,:prix, :stock)');	
+			// ATTENTION: dans Insert into, ne PAS OUBLIER de fermer les ''  !!!
+
+			$content .= '<div class="alert alert-success col-md-8 col-md-offset-2 text-center"> Le produit n° <span class="text-success">' . $_POST['reference'] . '<span> a bien été ajouté</div>';
+		}		
+
+	}
+// CAS N°2 : ON SOUHAITE FAIRE UNE MODIFICATION----------------------------------------------------------------------------------------------------------------------------------
+
+	$photo_bdd='';
+	if(isset($_GET['action']) && $_GET['action'] == 'modification')
+	{
+		$photo_bdd=$_POST['photo_actuelle']; // si on souhaite conserver la meme photo en cas de modifiication, on affecte le champs photo 'hidden' c'est à dire l'URL de la photo selectionné en BDD . Ici on affecte a $photo_bdd  l'image selectionnée par l'user lorsqu'il valide le formulaire.
+		
+		$resultat_insert_modif = $pdo->prepare("UPDATE produit SET reference=:reference, categorie=:categorie, titre=:titre, description=:description, couleur=:couleur, taille=:taille, public=:public, photo=:photo, prix=:prix, stock=:stock WHERE id_produit= '$_POST[id_produit]'");
+		$content .= '<div class="alert alert-success col-md-8 col-md-offset-2 text-center"> Le produit n° <span class="text-success">' . $_POST['reference'] . '<span> a bien été modifié</div>';			
+	}
+		
+
+		
+	if(!empty($_FILES['photo']['name']))		//si, a la validation du formulair, on constate que l'user a uploade une photo, ET que la photo porte bien un nom (>En effet, il existe de sphotos n'ayant pas de nom) alros je concatene laref au nom de ma photo (ref-nom_photo) et j'insere l'url de ma photo dans la bdd et une copie dans le dossier 'photo'
+	{
+		$nom_photo = $_POST['reference'] . '-' . $_FILES["photo"]["name"];			//on concatène la reference saisie dans le formulaire avec le nom de la photo via la superglobale $_FILES
+		//echo $nom_photo; 		//pour le tester: remplir une ref, selectionner une photo, valider le formulaire et le echo apparait.
+		$photo_bdd= URL . "photo/$nom_photo";		//on définit l'URL de la photo pour l'enreg dans la BDD
+		//echo $photo_bdd;		//idem pour tester ce echo: remplir une ref, selectionner une photo, valider le formulaire et le echo apparait.
+		$photo_dossier = RACINE_SITE . "photo/$nom_photo"; 	//	RACINE_SITE a été déclaré dans le fichier init.inc	RACINE_SITE c'est le CHEMIN PHYSIQUE DU DOSSIER (c'est c:// ... )	//on definit le chemin physique complet du dossier photo sur le serveur.
+		//echo $photo_dossier;
+		copy($_FILES['photo']['tmp_name'],$photo_dossier);   //IMPORTANT permet de copier la photo directement dans notre dossier photo		// copy(nom_temporaire_de_ma_photo,chemin_du_dossier_photo)
+	}
+		
+		
+
 /*******************************************************************************************************************************************************************************************************/
-		// Réaliser le script permettant d'insérer un produit dans la table 'produit' à l'aide d'une requête préparée
-		
-		$insert_membre = $pdo->prepare('INSERT INTO produit (reference, categorie, titre, description, couleur, taille, public, photo, prix, stock) VALUES(:reference,:categorie,:titre,:description,:couleur,:taille,:public,:photo,:prix, :stock)');	
-		// ATTENTION: dans Insert into, ne PAS OUBLIER de fermer les ''  !!!
-		$insert_membre->bindValue(':reference', 	$_POST["reference"], PDO::PARAM_STR);
-		$insert_membre->bindValue(':categorie', 	$_POST["categorie"], PDO::PARAM_STR);
-		$insert_membre->bindValue(':titre', 		$_POST["titre"], PDO::PARAM_STR);
-		$insert_membre->bindValue(':description', 	$_POST["description"], PDO::PARAM_STR);
-		$insert_membre->bindValue(':couleur', 		$_POST["couleur"], PDO::PARAM_STR);
-		$insert_membre->bindValue(':taille', 		$_POST["taille"], PDO::PARAM_STR);
-		$insert_membre->bindValue(':public', 		$_POST["public"], PDO::PARAM_STR);
-		$insert_membre->bindValue(':photo', 		$photo_bdd, PDO::PARAM_STR);	// IMPORTANT c'est $photo_bdd et non $_POST["photo"] car on veut récupérer tout l'URL
-		$insert_membre->bindValue(':prix', 			$_POST["prix"], PDO::PARAM_INT);	//IMPORTANT : mettre PARAM_INT et non PARAM_STR sinon ca risque de faire un conflit avec la bdd, dans laquelle on a déclaré un integer.
-		$insert_membre->bindValue(':stock', 		$_POST["stock"], PDO::PARAM_INT);
-		$insert_membre->execute();
-		
-		$content .= '<div class="alert alert-succes col-md-8 col-md-offset-2 text-center">Le produit référence: <strong class="text-success">'. $_POST["reference"] . '</strong> a bien été enregistré dans la boutique </div>'; 
+	// Exercice : Réaliser le script permettant d'insérer un produit dans la table 'produit' à l'aide d'une requête préparée
+	
+	$resultat_insert_modif->bindValue(':reference', 	$_POST["reference"], PDO::PARAM_STR);
+	$resultat_insert_modif->bindValue(':categorie', 	$_POST["categorie"], PDO::PARAM_STR);
+	$resultat_insert_modif->bindValue(':titre', 		$_POST["titre"], PDO::PARAM_STR);
+	$resultat_insert_modif->bindValue(':description', 	$_POST["description"], PDO::PARAM_STR);
+	$resultat_insert_modif->bindValue(':couleur', 		$_POST["couleur"], PDO::PARAM_STR);
+	$resultat_insert_modif->bindValue(':taille', 		$_POST["taille"], PDO::PARAM_STR);
+	$resultat_insert_modif->bindValue(':public', 		$_POST["public"], PDO::PARAM_STR);
+	$resultat_insert_modif->bindValue(':photo', 		$photo_bdd, PDO::PARAM_STR);	// IMPORTANT c'est $photo_bdd et non $_POST["photo"] car on veut récupérer tout l'URL
+	$resultat_insert_modif->bindValue(':prix', 			$_POST["prix"], PDO::PARAM_INT);	//IMPORTANT : mettre PARAM_INT et non PARAM_STR sinon ca risque de faire un conflit avec la bdd, dans laquelle on a déclaré un integer.
+	$resultat_insert_modif->bindValue(':stock', 		$_POST["stock"], PDO::PARAM_INT);
+	$resultat_insert_modif->execute();
+	
+	$content .= '<div class="alert alert-succes col-md-8 col-md-offset-2 text-center">Le produit référence: <strong class="text-success">'. $_POST["reference"] . '</strong> a bien été enregistré dans la boutique </div>'; 
 	
 /*********************************************************************************************************************************************************************************************************/	
-	}
+	
 }
-// --------LIEN PRODUITS
-$content .= '<div class="list-group col-md-6 col-md-offset-3">';
-$content .= '<h3 class="list-group-item active text-center">BACK OFFICE</h3>';
-$content .= '<a href="?action=affichage" class="list-group-item text-center">Affichage produits</a>';
-$content .= '<a href="?action=ajout" class="list-group-item text-center">Ajout produit</a>';
-$content .= '<hr></div>';
 
 /*********************************************************************************************************************************************************************************************************/
 
@@ -194,7 +225,7 @@ if(isset($_GET['action']) && ($_GET['action']=='ajout' || $_GET['action']=='modi
 		
 	  <div class="form-group">
 		<label for="reference">Référence</label>
-		<input type="text" class="form-control" id="reference" placeholder="reference" name="reference" value="'. $reference .'">
+		<input type="text" class="form-control" id="reference" placeholder="reference" name="reference" value="'. $reference .'" >
 	  </div>
 	  <div class="form-group">
 		<label for="categorie">Catégorie</label>
@@ -235,10 +266,10 @@ if(isset($_GET['action']) && ($_GET['action']=='ajout' || $_GET['action']=='modi
 		<input type="file" id="photo" name="photo" value="'. $photo .'"><br>'; // on ferme notre echo et on le reouvre  4 ligne en dessous, afin de pouvoir mettre une condition php sur plusieurs lignes.
 		if(!empty($photo))
 		{
-			echo '<em>Vous pouvez uploder une nouvelle photo si vous souhaitez la changer</em><br>';
+			echo '<em>Voici la photo que vous aviez choisi: Vous pouvez uploder une nouvelle photo si vous souhaitez la changer</em><br>';
 			echo '<img src="'.$photo.'" width="90" value="' .$photo. '"><br>';
 		}
-		
+		echo '<input type="hidden" name="photo_actuelle" value="' . $photo . '">';
 	  echo'</div>
 	  <div class="form-group">
 		<label for="prix">Prix</label>
