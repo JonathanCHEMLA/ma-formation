@@ -14,3 +14,11 @@ footer{
 .ma-nav{
 	border-radius: 0;	/* supprime les arrondis qui sont systematiquement appliques en boutstrap */
 }
+
+.border{
+	 border: 2px solid black;
+}
+
+.img_pdt{
+	background-size:cover;
+}

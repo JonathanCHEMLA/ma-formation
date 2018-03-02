@@ -94,7 +94,8 @@ if(!empty($_POST))		// (if post)= s'il a envoyé le formulaire.   (if !empty pos
 		
 /*******************************************************************************************************************************************************************************************************/
 //	BINDVALUE ET EXECUTE
-
+	if(empty($erreur))
+	{
 	// Exercice : Réaliser le script permettant d'insérer un produit dans la table 'produit' à l'aide d'une requête préparée
 	$resultat_insert_modif->bindValue(':reference', 	$_POST["reference"], PDO::PARAM_STR);
 	$resultat_insert_modif->bindValue(':categorie', 	$_POST["categorie"], PDO::PARAM_STR);
@@ -109,7 +110,7 @@ if(!empty($_POST))		// (if post)= s'il a envoyé le formulaire.   (if !empty pos
 	$resultat_insert_modif->execute();
 	
 	$content .= '<div class="alert alert-succes col-md-8 col-md-offset-2 text-center">Le produit référence: <strong class="text-success">'. $_POST["reference"] . '</strong> a bien été enregistré dans la boutique </div>'; 
-	
+	}
 /*********************************************************************************************************************************************************************************************************/	
 	
 }
@@ -237,7 +238,7 @@ if(isset($_GET['action']) && ($_GET['action']=='ajout' || $_GET['action']=='modi
 	echo '<form method="post" action="" enctype="multipart/form-data" class="col-md-8 col-md-offset-2">		<!---ATTENTION, TRES IMPORTANT: je suis obligé de rajouter l\'attribut enctype="multipart/form-data"   lorsqu on veut imploder une photo.-->
 		<h1 class="alert alert-info text-center">'.ucfirst($_GET["action"]) .' produit</h1>		<!-- ucfirst est une fct qui met la premiere lettre en Majuscule. -->
 		
-		<input type="text" id="id_produit" name="id_produit" value="'. $id_produit .'">
+		<input type="hidden" id="id_produit" name="id_produit" value="'. $id_produit .'">
 		
 	  <div class="form-group">
 		<label for="reference">Référence</label>
@@ -307,5 +308,12 @@ require_once("../inc/footer.inc.php");
 
 
 //Questions: cmt distinguer un tableau d un objet? a quoi correspond la -> deja? et quel est l'autre symbole?
+//	si on a "$mavariable->" c'est que ma $mavariable est un objet.    						->id_produit
+//	si on a "$mavariable['']" c'est que ma $mavariable est un tableau						['id_produit']
+
+//	lorsqu'on utilise la methode fetch:
+//	fetch_Assoc ou fetch_both retourne toujours un tableau array
+//	fetchobj retourne un objet
+
 
 ?>
