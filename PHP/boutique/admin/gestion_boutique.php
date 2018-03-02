@@ -2,11 +2,12 @@
 
 require_once("../inc/init.inc.php");
 
-//---------- VERIFICATION ADMIN
+//---------- VERIFICATION ADMIN	//redirection de l'user égaré
 if(!internanuteEstConnecteEtEstAdmin())	// si l'internaute n'est pas admin, il n' a rien à faire sur cette page. On le re-dirige vers la page connexion 
 {
 	header("location:" . URL . "connexion.php");
 }
+
 
 // --------LIEN PRODUITS	//CECI EST NOTRE MENU BLEU ET BLANC, EN HAUT DE LA PAGE
 $content .= '<div class="list-group col-md-6 col-md-offset-3">';
@@ -17,7 +18,7 @@ $content .= '<hr></div>';
 
 
 //-----------SUPPRESSION PRODUIT
-if(isset($_GET['action']) && $_GET['action']=='suppression')	// on rentre dans la condition seulement dans le cas ou l'on clique sur le lien suppression de l'affichage des produits
+if(isset($_GET['action']) && $_GET['action']=='suppression')	// si j'ai cliqué sur 'Suppression' dans 'Affichage produit':
 {
 	$resultat=$pdo->prepare("DELETE FROM produit WHERE id_produit= :id_produit");	// ici on a fait un prepare a cause du risque que l'user malveillant modifie dans l'url l'id_produit.  on s'en fout s'il modifie l'action car alors il ne rentrerrait pas dans le if de suppression
 	$resultat->bindValue(':id_produit',$_GET['id_produit'],PDO::PARAM_STR);
@@ -29,19 +30,17 @@ if(isset($_GET['action']) && $_GET['action']=='suppression')	// on rentre dans l
 
 
 
-
-
 //---------------------LORS DE LA VALIDATION DU FORMULAIRE: 
 
 if(!empty($_POST))		// (if post)= s'il a envoyé le formulaire.   (if !empty post)=si le form a été rempli et a été renvoyé.
 {
 
-//CAS N° 1 : ON SOUHAITE FAIRE UN AJOUT:--------------------------------------------------------------------------------------------------------------------------------------
-	if(isset($_GET['action']) && $_GET['action']=='ajout')
+//CAS N° 1 : ON SOUHAITE FAIRE UN AJOUT:-------------------------------------------------------------------------------------------------------------------------
+	if(isset($_GET['action']) && $_GET['action']=='ajout')	// si j'ai cliqué sur 'Ajout produit' dans le menu Bleu/Blanc:
 	{
-		
 		//debug($_FILES);	//CETTE LIGNE DE DEBUGAGE EST TRES IMPORTANTE   on fait le debug , juste de la photo; pas du reste du formulaire.
 
+		//	1-S'ASSURER QUE LA REFERENCE CHOISIE N'EST PAS DEJA ATTRIBUEE
 		//Exercice : réaliser le script permettant de contrôler la disponibilité de la référence.
 		$erreur="";
 		$verif_ref= $pdo->prepare("SELECT * FROM produit WHERE reference= :reference");
@@ -53,6 +52,7 @@ if(!empty($_POST))		// (if post)= s'il a envoyé le formulaire.   (if !empty pos
 		}
 		$content .=$erreur;
 		
+		//	2-ENREGISTRER LE PRODUIT
 		if(empty($erreur))	// si $erreur n'est pas vide c'est qu'il y a une erreur !   donc si la référence saisie par l'user n'est pas déja existante alors on execute:
 		{	
 		//----------ENREGISTREMENT PRODUIT	
@@ -61,22 +61,26 @@ if(!empty($_POST))		// (if post)= s'il a envoyé le formulaire.   (if !empty pos
 
 			$content .= '<div class="alert alert-success col-md-8 col-md-offset-2 text-center"> Le produit n° <span class="text-success">' . $_POST['reference'] . '<span> a bien été ajouté</div>';
 		}		
-
 	}
-// CAS N°2 : ON SOUHAITE FAIRE UNE MODIFICATION----------------------------------------------------------------------------------------------------------------------------------
+//	ON TERMINERA L'AJOUT AVEC BINDVALUE ET EXECUTE, SITUES PLUS BAS
+	
+// FIN DU CAS N°1.	
+// CAS N°2 : ON SOUHAITE FAIRE UNE MODIFICATION-------------------------------------------------------------------------------------------------------------------
 
 	$photo_bdd='';
-	if(isset($_GET['action']) && $_GET['action'] == 'modification')
+	if(isset($_GET['action']) && $_GET['action'] == 'modification')	// j'ai cliqué sur 'modification' dans 'Affichage produit':
 	{
 		$photo_bdd=$_POST['photo_actuelle']; // si on souhaite conserver la meme photo en cas de modifiication, on affecte le champs photo 'hidden' c'est à dire l'URL de la photo selectionné en BDD . Ici on affecte a $photo_bdd  l'image selectionnée par l'user lorsqu'il valide le formulaire.
 		
 		$resultat_insert_modif = $pdo->prepare("UPDATE produit SET reference=:reference, categorie=:categorie, titre=:titre, description=:description, couleur=:couleur, taille=:taille, public=:public, photo=:photo, prix=:prix, stock=:stock WHERE id_produit= '$_POST[id_produit]'");
 		$content .= '<div class="alert alert-success col-md-8 col-md-offset-2 text-center"> Le produit n° <span class="text-success">' . $_POST['reference'] . '<span> a bien été modifié</div>';			
 	}
-		
+//	ON TERMINERA LA MODIFICATION AVEC BINDVALUE ET EXECUTE, SITUES PLUS BAS
+	
+// FIN DU CAS N°2.
 
-		
-	if(!empty($_FILES['photo']['name']))		//si, a la validation du formulair, on constate que l'user a uploade une photo, ET que la photo porte bien un nom (>En effet, il existe de sphotos n'ayant pas de nom) alros je concatene laref au nom de ma photo (ref-nom_photo) et j'insere l'url de ma photo dans la bdd et une copie dans le dossier 'photo'
+//TRAITEMENT DE LA PHOTO LORS DE LA VALIDATION DU FORMULAIRE---------------------------------------------------------------------------------------------------------------------			
+	if(!empty($_FILES['photo']['name']))		//si, à la validation du formulaire, on constate que l'user a uploadé une photo, ET que la photo porte bien un nom (En effet, il existe de photos n'ayant pas de nom) alors je concatene la ref au nom de ma photo (ref-nom_photo) et j'insere l'url de ma photo dans la bdd et une copie dans le dossier 'photo'
 	{
 		$nom_photo = $_POST['reference'] . '-' . $_FILES["photo"]["name"];			//on concatène la reference saisie dans le formulaire avec le nom de la photo via la superglobale $_FILES
 		//echo $nom_photo; 		//pour le tester: remplir une ref, selectionner une photo, valider le formulaire et le echo apparait.
@@ -84,14 +88,14 @@ if(!empty($_POST))		// (if post)= s'il a envoyé le formulaire.   (if !empty pos
 		//echo $photo_bdd;		//idem pour tester ce echo: remplir une ref, selectionner une photo, valider le formulaire et le echo apparait.
 		$photo_dossier = RACINE_SITE . "photo/$nom_photo"; 	//	RACINE_SITE a été déclaré dans le fichier init.inc	RACINE_SITE c'est le CHEMIN PHYSIQUE DU DOSSIER (c'est c:// ... )	//on definit le chemin physique complet du dossier photo sur le serveur.
 		//echo $photo_dossier;
-		copy($_FILES['photo']['tmp_name'],$photo_dossier);   //IMPORTANT permet de copier la photo directement dans notre dossier photo		// copy(nom_temporaire_de_ma_photo,chemin_du_dossier_photo)
+		copy($_FILES['photo']['tmp_name'],$photo_dossier);   //IMPORTANT permet de copier(CREER VISUELLEMENT) la photo dans notre dossier photo		// copy(nom_temporaire_de_ma_photo,chemin_du_dossier_photo)
 	}
 		
 		
-
 /*******************************************************************************************************************************************************************************************************/
+//	BINDVALUE ET EXECUTE
+
 	// Exercice : Réaliser le script permettant d'insérer un produit dans la table 'produit' à l'aide d'une requête préparée
-	
 	$resultat_insert_modif->bindValue(':reference', 	$_POST["reference"], PDO::PARAM_STR);
 	$resultat_insert_modif->bindValue(':categorie', 	$_POST["categorie"], PDO::PARAM_STR);
 	$resultat_insert_modif->bindValue(':titre', 		$_POST["titre"], PDO::PARAM_STR);
@@ -109,13 +113,17 @@ if(!empty($_POST))		// (if post)= s'il a envoyé le formulaire.   (if !empty pos
 /*********************************************************************************************************************************************************************************************************/	
 	
 }
+//	FIN VALIDATION FORMULAIRE
 
 /*********************************************************************************************************************************************************************************************************/
 
-//-- AFFICHAGE PRODUITS
-if(isset($_GET['action']) && $_GET['action']=='affichage')	// signifie : si j'ai bien cliqué sur le lien Affichage produit, et si l'action souhaitée est "affichage" alors execute le script suivant:
+//-- AFFICHAGE PRODUITS: CREATION DU TABLEAU, VISUEL AU CLIC SUR 'Affichage produit' 
+
+if(isset($_GET['action']) && $_GET['action']=='affichage')	// si j'ai cliqué sur 'Affichage produit' dans le menu Bleu/Blanc:
 {
 	// Afficher l'ensemble de la table produit sous la forme d'un tableau HTML, et prévoir un lien de modification et de suppression pour chaque produit
+
+//	1-L'ENTETE DU TABLEAU
 	$resultat=$pdo->query("SELECT * FROM produit");
 	$content .= '<div class="col-md-10 col-md-offset-1 text-center"><h3 class="alert-success">Affichage produits</h3>';
 
@@ -131,6 +139,7 @@ if(isset($_GET['action']) && $_GET['action']=='affichage')	// signifie : si j'ai
 		$content .='<th>' . 'Supprimer' . '</th>';
 	$content .='</tr>';
 
+//	2-LE CONTENU DU TABLEAU
 	/*************************************************************************************************/
 	//Ce que j'ai fait et qui fonctionne:
 	/*
@@ -177,16 +186,23 @@ if(isset($_GET['action']) && $_GET['action']=='affichage')	// signifie : si j'ai
 	}
 	$content .= '</table>';
 }	
+
+//	FIN DU CONTENU DE TABLEAU
+
 /**********************************************************************************************************************************************************************************************************/
 	
 require_once("../inc/header.inc.php");
-echo $content;	//ATTENTION : Ne pas oublier de faire le ECHO de CONTENT
+echo $content;	//ATTENTION : Ne pas oublier de faire le ECHO de CONTENT pour afficher les msg d'erreur et autres textes
 
 
+//-- FIN DE 'AFFICHAGE PRODUIT DANS TABLEAU' 
 
+
+//-- FORMULAIRE D'ENREGISTREMENT PRODUIT: CREATION DU FORMULAIRE, VISUEL AU CLIC SUR 'Ajout produit' 
 
 if(isset($_GET['action']) && ($_GET['action']=='ajout' || $_GET['action']=='modification') )
 {
+
 	if(isset($_GET['id_produit']))
 	{
 		//je recupere l'id de l'url et fais une requete pour recuperer toute la ligne correspondant à l'id que j'ai recu dans l'url
@@ -285,7 +301,11 @@ if(isset($_GET['action']) && ($_GET['action']=='ajout' || $_GET['action']=='modi
 	</form>';
 }
 
-
+//-- FIN DE 'FORMULAIRE D'ENREGISTREMENT PRODUIT'
 
 require_once("../inc/footer.inc.php");
+
+
+//Questions: cmt distinguer un tableau d un objet? a quoi correspond la -> deja? et quel est l'autre symbole?
+
 ?>
