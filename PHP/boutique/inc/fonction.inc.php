@@ -164,3 +164,21 @@ function montantTotal()
 	}	
 	return round($total,2);// on retourne le resultat arrondi à 2 chiffres après la virgule.
 } 
+
+
+//------------------------------------------------------en rapport avec panier.php
+function retirerProduitDuPanier($id_produit_a_supprimer)
+{	// cette function permet de reorganiser mes produits restant en supprimant les espaces vides et en faisant REMONTER les articles du panier.
+	$position_produit=array_search($id_produit_a_supprimer, $_SESSION['panier']['id_produit']);
+	//grace a la fonction definie Array_search, on va chercher a quel indice se trouve le produit à supprimer dans la SESSION 'panier'
+	
+	if($position_produit !==false)	// position_produit retourne soit false, soit 0,1,2,.. bref, l'indice du produit à retirer de la SESSION 'panier'
+	{//si la variable position_produit retourne une valeur differente de false, cela veut dire qu'un indice a bien été trouvé dans la session 'panier'.
+		array_splice($_SESSION['panier']['id_produit'], $position_produit,1);
+		array_splice($_SESSION['panier']['titre'], $position_produit,1);
+		array_splice($_SESSION['panier']['quantite'], $position_produit,1);
+		array_splice($_SESSION['panier']['prix'], $position_produit,1);
+		//aray_splice permet de supprimer une ligne dans le tableau session et elle remonte les indices inferieurs du tableau aux indices superieurs du tableau. Bref, si je supprime un produit à l'indice 4, les produits apres l'indice 4 remonteront tous d'un indice. Cela permet de reorganiser le tableau panier dans la session et de ne pas avoir de trou, d'indices vides dans le tableau.
+	}
+	
+}
