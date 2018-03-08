@@ -1,5 +1,5 @@
 <?php
-//------------- FOCNTION DEBUG
+//------------- FONCTION DEBUG
 function debug($var, $mode = 1)
 {
 	echo '<div style="background: orange; padding: 5px;">';
@@ -91,7 +91,21 @@ function montantTotal()
 	return round($total,2); // on retourne le resultat arrondi à 2 chiffres aprés la virgule
 }
 
+//----------------------------------------
+function retirerProduitDuPanier($id_produit_a_supprimer)
+{
+	$position_produit = array_search($id_produit_a_supprimer, $_SESSION['panier']['id_produit']); // grace à la fonction prédéfinie array_search(), on va chercher à quel indice se trouve le produit à supprimer dans la session 'panier'
 
+	if($position_produit !== false) // si la variable $position_produit retourne une valeur différente de false, cela veut dire qu'un indice a bien été trouvé dans la session  'panier' 
+	{
+		// la fonction array_splice() permet de supprimer une ligne dans le tableau session, et elle remonte les indices inférieur du tableau aux indices supérieur du tableau, si je supprime un produit à l'inidice 4, tout les produit aprés l'indice 4 remontrons tous d'un indice
+		// cela permet de réorganiser le tableau panier dans la session et de ne pas avoir d'indice vide 
+		array_splice($_SESSION['panier']['titre'], $position_produit,1);
+		array_splice($_SESSION['panier']['id_produit'], $position_produit,1);
+		array_splice($_SESSION['panier']['quantite'], $position_produit,1);
+		array_splice($_SESSION['panier']['prix'], $position_produit,1);
+	}		
+}
 
 
 
