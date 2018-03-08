@@ -219,8 +219,8 @@ require_once("inc/init.php");
           <h3 class="text-warning mb-0">Réalisations</h3>
           <h2 class="mb-5 text-white">Projets récents</h2>
         </div>
-        <div class="row"><!-- no-gutters supprime l'espace entre les vues -->
-          <div class="col-lg-6 mb-5">
+        <div class="row"><!-- la classe "no-gutters" supprime la séparation horizontale entre les photos des projets réalisés -->
+          <div class="col-lg-6 mb-4"><!-- la classe "mb-4" crée une séparation verticale entre les photos des projets réalisés -->
             <a class="portfolio-item" href="#">
               <span class="caption">
                 <span class="caption-content">

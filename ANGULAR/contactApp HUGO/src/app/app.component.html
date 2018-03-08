@@ -1,0 +1,51 @@
+<!--header>nav.navbar.navbar-inverse>div.navbar-header>a[href=/].navbar-brand{Mes Contacts}-->
+<header>
+  <nav class="navbar navbar-inverse">
+    <div class="navbar-header">
+      <a href="/" class="navbar-brand">
+        Mes Contacts
+      </a>
+    </div>
+  </nav>
+</header>
+
+<div class="row">
+  <div class="col-sm-4">
+    <!-- *ngIf : Permet de faire le rendu HTML de la liste
+    que si le tableau "contacts" contient des objets -->
+    <div *ngIf="contacts.length">
+      <ul class="list-group">
+        <li class="list-group-item"
+            *ngFor="let contact of contacts"
+            (click)="choisirUnContact(contact)"
+            [class.active]="contact === contactActif">
+          {{ getNomComplet(contact) }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-sm-8">
+    <div class="jumbotron" *ngIf="contactActif">
+      <h2>
+        {{ contactActif.prenom }} {{ contactActif.nom }}
+        <small>{{ contactActif.email }}</small>
+      </h2>
+
+      <input class="form-control" type="text"
+             placeholder="Saisissez votre Prénom"
+             [(ngModel)]="contactActif.prenom">
+      <br>
+      <input class="form-control" type="text"
+             placeholder="Saisissez votre Nom"
+             [(ngModel)]="contactActif.nom">
+      <br>
+      <input class="form-control" type="text"
+             placeholder="Saisissez votre Nom"
+             [(ngModel)]="contactActif.email">
+
+    </div>
+  </div>
+</div>
+
+<pre>{{ contactActif | json }}</pre>
+<pre>{{ contacts | json }}</pre>

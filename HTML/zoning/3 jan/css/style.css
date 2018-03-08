@@ -1,0 +1,88 @@
+h1{
+	text-align:center;
+	font-family: 'Kaushan Script', cursive;
+	background:red;
+	font-style: italic;
+	
+}
+header{ /**/
+	background:#2c3e50;/*couleur de fond*/
+	height:250px;/*hauteur*/	/**/
+}
+nav{
+	background:#2980b9;
+	height:100px;
+}
+
+main{
+	background:#ecf0f1;/*blue*/
+}
+aside{
+	background:gray;
+	height:100px;
+}
+section{
+	min-height:200px; /*permet d avoir une hauteur minimum */
+}
+footer{
+	height:80px;
+	color:white;	
+	background:#0e3047;
+
+}
+
+blockquote{
+color:red;	
+font-size:22px;   /* la valeur de base est 16px */
+}
+blockquote i{
+color:blue;	
+}
+section p{
+	font-family: 'Kaushan Script', cursive;
+}
+
+/*******PAGE SELECTEURS ************/
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------*/
+#select p{
+	color:red;
+}
+/***ci-dessous, on est sur de l'information contradictoire. ***/
+/*** a n utiliser qu avec des elements figés; pas dinamiques (ex: psg que l on veut garder en rouge) ***/
+#select p:nth-child(even){  /*** pour les elements paires    nth signifie le n-ieme ***/
+	color:blue;
+}
+#select p:nth-child(odd){  /*** pour les elements impaires  ***/
+	color:brown;
+}
+#select p:first-of-type{  /*** last of type est aussi un pseudo element  ***/
+	color:green;
+}
+#select p:last-of-type{  /*** last of type est aussi un pseudo element  ***/
+	color:green;
+}
+#select p:nth-child(5), #select p:nth-child(6){  /*** pour les elements impaires  ***/
+	color:orange;
+} 
+/********************************************************************************************************************/
+
+
+#select .ZoneA{
+	color:#f56f56;
+}
+#select .ZoneB{
+	color:#996633;
+}
+.couleurBleu{
+	color:#336699;
+}
+span.couleurBleu{
+	text-decoration:underline;
+}	
+#select .ZoneC{
+	color:#996633;
+}

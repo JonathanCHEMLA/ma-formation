@@ -1,0 +1,211 @@
+*{
+	/*suppression des marges et des rembourrages par défaut*/
+	margin:0;
+	padding:0;
+}
+
+body{
+	background:#333;
+}
+
+
+/********************FOND AVEC MOTIF****************/
+#container{
+	width:960px;
+	margin:0 auto;
+	font-family: Arial, sans-serif;
+	background: #333 url(../img/background.png);
+	background-size:cover;
+}
+
+
+/********************HEADER**************************/
+header{
+	background:#E577B5;
+	color:#FFF;
+	width:100%;
+	height:5vh;
+}
+
+.entete{
+	float:left;
+	width:20%;
+}
+
+nav{
+	float:left;
+	text-align:right;
+	width:80%;
+}
+
+ul{
+	list-style:none;
+	padding:20px;
+
+}
+a{
+	text-decoration:none;
+	color:#FFF;
+	
+}
+li{
+	display:inline-block;
+	box-sizing:border-box;
+}
+li:hover{
+	background:#EB43A3;
+}
+
+
+
+
+/********************MAIN**************************/
+
+
+main{
+	text-align:center;
+	height:92vh;
+}
+
+
+#contenu{
+	width:80%;
+	margin:0 auto;
+	background: #FFF;
+	box-shadow:0 0 2px 2px #999;
+}
+
+#ma_div_h1{
+	padding:50px;
+	background-size:50%;
+	background:transparent;
+	background: url(../img/rainbow.png) no-repeat;
+	background-position:center;	
+}
+
+
+/****************LES TITRES*****************/
+h1{
+	
+	text-align:center;
+	font-family: 'Courgette', cursive;
+	color:#C55394;
+}
+h2{
+	margin-top:10px;
+	text-align:left;
+	font-family: 'Courgette', cursive;
+	color:#EB43A3;
+	font-weight:normal;
+
+}
+
+
+h3{
+	text-align:left;
+	font-family: 'Courgette', cursive;
+	color:#EB43A3;
+	font-size:80%;
+}
+.contact p{
+	font-size:80%;	
+}
+
+.italic{
+	font-style:italic;
+}
+
+
+
+
+
+
+
+/******************TEXTE*****************************/
+#le_principe {
+	height:20vh;
+}
+
+#le_principe p{
+	font-size:10px;
+	text-align:left;
+	padding:20px;
+}
+
+
+/******************PHOTOS****************************/
+#nos_licornes{
+	height:20vh;
+
+}
+
+#div_licornes{
+
+	display:flex;
+}
+figure{
+	text-align:center;
+	width:200px;
+	position:relative;
+	overflow:hidden;
+	margin:10px auto;
+}
+
+figcaption{
+	position:absolute;
+	background:#333;
+	opacity:0.6;
+	width:200px;
+	transition:0.6s;
+	left:0;
+	bottom:-30%;
+	color:#FFF;
+	text-align:center;	
+}
+figure .image_licorne{
+	width:180px;
+	height:180px;
+	display:block;
+}
+
+/* Zoom de l'image survolée */
+figure .image_licorne:hover{
+	transform:scale(1.5);
+}
+
+figure:hover figcaption{
+	bottom:0;
+}
+
+/******************ADRESSE***************************/
+#nous_trouver{
+	display:flex;
+	flex-direction:row;
+	margin-top:25px;
+
+
+
+}
+
+.contact{
+	padding:5px;
+	text-align:left;
+	width:auto;
+}
+
+.contact [type="submit"]{
+	background:#EB43A3;
+}
+
+
+/********************FOOTER**************************/
+footer{
+	padding:5px;
+	height:3vh;
+	background:#E577B5;
+	color:#FFF;
+	text-align:right;
+}
+
+
+

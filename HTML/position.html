@@ -1,0 +1,120 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>Les positions</title><!-- Titre de la page -->
+		<link rel="stylesheet" href="css/style.css"><!-- Lien vers mon fichier CSS -->
+		<meta name="description" content="Les positions en HTML/CSS"><!-- Description de la page -->
+		<meta charset="UTF-8"><!-- Encodage -->
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+	</head>
+	
+	<body>
+		
+		<header>
+			<!-- Zone du haut. Ex : bannière, logo, slogan, mon panier, mon compte etc... -->
+			<div id="logo">
+				<a href="index.html"><img src="img/logo.png" alt="Logo"></a>
+			</div>
+			<div id="slogan">
+				<h1>Mon premier site en HTML / CSS</h1>
+			</div>
+			<div id="reseauxSociaux">
+				<i class="fa fa-facebook-official" aria-hidden="true"></i>
+				<i class="fa fa-instagram" aria-hidden="true"></i>
+			</div>
+		</header>
+		
+
+			<!-- Zone du menu. Ex : lien pour naviguer sur le site -->
+		<nav class="navMenu">
+			<ul>
+				<li><a href="#">Structure</a></li>
+				<li><a href="texte.html">Texte</a></li>		
+				<li><a href="selecteurs.html">Selecteurs</a></li>			
+				<li><a href="image.html">Image</a></li>
+				<li class="active"><a href="position.html">Position</a></li>
+				<li><a href="zoning/zoning3.html">Zoning</a></li>
+				<li><a href="tableau.html">Tableau</a></li>
+				<li><a href="#">Liste</a></li>
+				<li><a href="lien_menu.html">Lien & Menu</a></li>
+				<li><a href="formulaire.html">Formulaire</a></li>		
+				<li><a href="#">Multimédia</a></li>
+				<li><a href="#">Animations</a></li>
+			</ul>
+		
+		
+		</nav>
+		
+		
+		<main>
+			<h2>Les positions</h2>
+			<section>
+				<h3>Centrer un élément de type bloc</h3>
+				<div class="centre"></div>
+			</section>
+			
+			<section>
+				<h3>Position absolute</h3>
+				<div class="absolute"></div>
+			</section>
+			<section>
+				<h3>Position relative</h3>
+				<div class="relative"></div>
+			</section>
+			<section>
+				<h3>Position fixed</h3>
+				<p>Bouton retour vers le haut</p>
+				<a href="#logo"><button><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></button></a> 
+			</section>
+			<section>
+				<h3>Le pourcentage</h3>
+				<div class="trente">30%</div>
+				<div class="cinquante">50%</div>
+				<div class="cent">100%</div>
+			</section>
+			<section>
+				<h3>L'attribut float</h3>
+				<div class="float">1</div>
+				<div class="float">2</div>
+				<div class="float">3</div>
+				<div class="float">4</div>
+				
+				<div class="float clear">5</div>
+				<div class="float">6</div>
+				<div class="float">7</div>
+				
+				<div class="float clear">8</div>
+				<div class="float">9</div>
+				
+				<div class="dernier clear">10</div>
+			</section>
+			<section>
+				<h3>Exercice sur le float</h3>
+				<div class="zone1"></div>
+				<div class="zone2"></div>
+				<div class="zone3"></div>
+				<div class="zone4"></div>
+				<div class="zone5"></div>
+				<div class="zone1 clear"></div>
+			</section>
+			<section>
+				<h3>Flexbox</h3>
+				<article class="flex">
+					<div>1</div>
+					<div>2</div>
+					<div>3</div>
+					<div>4</div>
+				</article>
+			</section>
+			
+		</main>
+		<footer>
+			<!-- Zone du bas. Ex : liens administratifs, mentions légales, plan du site, CGU, CGV, contact, Copyright -->
+			<p>Réalisation d'un site en HTML/CSS</p>
+		</footer>
+		
+	
+	</body>
+
+</html>

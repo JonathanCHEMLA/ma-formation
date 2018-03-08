@@ -1,0 +1,91 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>Lien & menu</title><!-- Titre de la page -->
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css"><!-- Lien vers mon fichier CSS -->
+		<meta name="description" content="Les liens & menus en HTML/CSS"><!-- Description de la page -->
+		<meta charset="UTF-8"><!-- Encodage -->
+
+	</head>
+	
+	<body>
+		<header>
+			<!-- Zone du haut. Ex : bannière, logo, slogan, mon panier, mon compte etc... -->
+			<div id="logo">
+				<img src="img/logo.png" alt="Logo">
+			</div>
+			<div id="slogan">
+				<h1>Mon premier site en HTML / CSS</h1>
+			</div>
+			<div id="reseauxSociaux">
+				<i class="fa fa-facebook-official" aria-hidden="true"></i>
+				<i class="fa fa-instagram" aria-hidden="true"></i>
+			</div>
+		</header>
+	
+	
+	
+	
+			<!-- Zone du menu. Ex : lien pour naviguer sur le site -->
+		<nav class="navMenu">
+			<ul>
+				<li><a href="#">Structure</a></li>
+				<li><a href="texte.html">Texte</a></li>		
+				<li><a href="selecteurs.html">Selecteurs</a></li>			
+				<li><a href="image.html">Image</a></li>
+				<li><a href="position.html">Position</a></li>
+				<li><a href="zoning/zoning3.html">Zoning</a></li>
+				<li><a href="tableau.html">Tableau</a></li>
+				<li><a href="#">Liste</a></li>
+				<li class="active"><a href="lien_menu.html">Lien & Menu</a></li>
+				<li><a href="formulaire.html">Formulaire</a></li>		
+				<li><a href="#">Multimédia</a></li>
+				<li><a href="#">Animations</a></li>
+			</ul>
+		
+		
+		</nav>
+		
+		
+		
+		
+		
+		
+		<main>
+			<h2>Liens & menus</h2>
+			<div class="ancre">
+				<a href="#lien">Les liens</a>
+				<a href="#menu">Menu</a>
+			</div>
+			<section id="lien">
+				<h3>Les liens</h3>
+				<a href="https://codepen.io" title="Se rendre sur le site de CodePen" target="_blank">CodePen</a> is a social development environment for front-end designers and developers.<br>
+				<a href="doc/cv.doc">Télécharger mon CV</a><br>
+				<a href="doc/cv.pdf" target="_blank">Voir mon CV</a><br>
+				<a href="https://www.facebook.com" target="_blank"><img src="img/facebook.jpg" alt="Logo Facebook"></a><br>
+				Cliquez <a href="index.html">ici</a> pour vous rendre sur la page index<br> 
+				<a href="" onclick="window.print()">Imprimer</a> la page<br>
+			</section>
+			<section id="menu">
+				<h3>Menu</h3>
+				<nav>
+					<ul>
+						<li><a href="">Accueil</a></li>
+						<li><a href="">Parcours</a></li>
+						<li><a href="">Réalisations</a></li>
+						<li><a href="">Contact</a></li>
+					</ul>
+				</nav>
+			</section>
+		</main>
+		<a href="#logo"><button><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></button></a>
+		<footer>
+			<!-- Zone du bas. Ex : liens administratifs, mentions légales, plan du site, CGU, CGV, contact, Copyright -->
+			<p>Réalisation d'un site en HTML/CSS</p>
+		</footer>
+		
+	
+	</body>
+
+</html>

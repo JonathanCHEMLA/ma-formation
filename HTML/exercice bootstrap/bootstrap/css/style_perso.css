@@ -1,0 +1,56 @@
+body{
+	padding-top:70px;
+}
+H2{
+	background:4a515b;
+	color:#fff;
+	padding:10px;
+	margin:0 0 30px 0;
+	font-size:17px;
+}
+.border{
+	border:1px solid #dedede;
+}
+
+.row{
+	margin-left:0;
+	margin-right:0;
+}
+
+
+
+/****exercice d entrainement   ****/
+
+
+div{
+	height:20px; /***donne une hauteur à mes bordures de différentes couleurs **/
+	/* solution autre que le height: je leur met du padding:10px;   */
+	
+}
+
+.bordureRouge{
+	border:3px solid red;
+
+}
+.bordureVerte{
+	border:3px solid green;
+
+}
+.bordureJaune{
+	border:3px solid yellow;
+
+}
+.bordureBleue{
+	border:3px solid blue;
+
+}
+.bordureOrange{
+	border:3px solid orange;
+
+}
+.container{
+	border:1px solid #dedede;	
+	Height:122px; 
+	padding-left:0;
+	padding-right:0;	
+}

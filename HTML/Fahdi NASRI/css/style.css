@@ -1,0 +1,1046 @@
+*{
+	box-sizing:border-box;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+body{
+	margin:0;
+	scroll-behavior: smooth;
+}
+h2{
+	font-size:35px;	
+	color:#2C3E50;
+	font-weight:bold;
+	padding:20px;
+}
+h3{
+	font-size:22px;	
+	color:#2C3E50;
+	padding:15px;
+}
+h4{
+	text-align:center;
+	margin-top:30px;
+}
+p{
+	margin: 15px 0;
+}
+blockquote{
+	font-style:italic;
+	font-size:120%;
+}
+strong{
+	font-weight:bold;
+}
+section{
+	margin-top:50px;
+	padding:20px;
+}
+main{
+	width:1000px;
+	background:#ECF0F1;
+	margin: 0 auto;
+}
+aside{
+	background:gray;
+	height:100px;
+}
+
+.clear{
+	clear:both;
+}
+.active{
+	background:#2C3E50;
+	color:#ECF0F1;
+}
+/*******************************DEBUT HEADER*********************************/
+header{
+	background:#2C3E50;
+}
+#logo{
+	width:25%;
+	float:left;
+	text-align:center;
+	padding:15px;
+}
+
+#slogan{
+	width:50%;
+	float:left;
+	text-align:center;
+}
+#slogan h1{
+	font-family: 'Indie Flower', cursive;
+	font-size:45px;
+	color:#2980B9;
+	margin-top:50px;
+
+}
+#reseauxSociaux{
+	width:25%;
+	float:left;
+}
+#reseauxSociaux a{
+	text-decoration:none;
+}
+#reseauxSociaux i{
+	font-size:30px;
+	color:#2980B9;
+	display:block;
+	text-align:right;
+	padding:15px 30px 0 0;
+}
+
+/*******************************FIN HEADER*********************************/
+/*******************************DEBUT NAV*********************************/
+nav{
+	background:#2980B9;
+	text-align:center;
+	padding: 25px 0;
+	border-bottom: 8px solid #33CCCC;
+}
+nav a{
+	text-decoration:none;
+	padding:5px;
+	margin:5px;
+	background:#33CCCC;
+	color:#2C3E50;
+	transition: .5s;
+	border-radius:5px;
+	font-size:19px;
+	font-weight:bold;
+	font-family: 'Arvo', serif;
+}
+nav a:hover{
+	background:#ECF0F1;
+	color: #33CCCC;
+}
+/*******************************FIN NAV*********************************/
+
+/*******************************DEBUT PAGE ACCUEIL********************************************/
+.accueil{
+	height:500px;
+}
+/*******************************FIN PAGE ACCUEIL********************************************/
+
+/*******************************DEBUT PAGE TEXTE********************************************/
+.pacifico p{
+	font-family: 'Pacifico', cursive;
+}
+/*******************************FIN PAGE TEXTE********************************************/
+
+/*******************************DEBUT PAGE SELECTEURS********************************************/
+.select{
+	font-size:22px;
+
+}
+.select p{ color: red; } /* tous les éléments p*/
+.select p:first-of-type { color: green ; } /* 1er élément p de la page général ou 1er élément p d'un parent - css3 */
+.select p:last-of-type { color: green; } /* dernier élément p - css3 */
+.select p:nth-child(even){ color: blue; } /* éléments pair - css3 */
+.select p:nth-child(odd){ color: brown; } /* éléments impair - css3 */
+.select p:nth-child(5), .select p:nth-child(6) { color: orange; } /* éléments précis n°5 et n°6 - css3 */
+/* p:last-child { color: black ; }  dernier élément p - css3 */
+.select div:not(.zoneB){ font-weight: bold; } /* toutes les div sauf la zone B - not() - css3 */
+
+.select .zoneA{
+color: #f56f56;
+}
+.select .zoneB{
+color: #996633;
+}
+.select .couleurBleu{
+color: #336699;
+}
+.select #zoneC{
+color: #98f32f;
+}
+.select #zoneC:after {
+    content: "×"; /* possibilité de mettre du contenu dans le html via la feuille css, cela est généralement utilisé pour des codes d'icone. */.
+}
+.select #zoneD  span{
+color: #32ff32;
+}
+
+/*******************************FIN PAGE SELECTEURS********************************************/
+
+
+/*******************************DEBUT PAGE IMAGE********************************************/
+.imageFond{
+	background: #000000 url(../img/fond.jpg) no-repeat;
+	background-size: ; /* cover en CSS 3 permet de couvrir tout l'écran, il s'agit d'un fond extensible, peut importe la taille et la résolution. */
+}
+.imageFond p{
+	width:75%;
+	margin:100px auto 200px auto;
+	background:rgba(255,255,255,0.60);
+	padding:20px;
+	font-size:120%;
+	border-radius:10px;
+}
+img[src="img/toureiffel.jpg"]{
+	margin: auto;
+	width:250px;
+	display:block;
+}
+.rotationImg{
+	text-align:center;
+}
+.image {
+	margin: 20px; /* marges */
+	border: 5px solid #eee; /* bordure */
+	box-shadow: 4px 4px 4px rgba(0,0,0,0.2); /* ombre */
+	transition: 1s; /* transition all : sur toutes les propriétés */
+	
+}
+.image:hover {
+	transform: rotate(-7deg); /* rotation 7 degrés */
+}
+.rotation360:hover {
+	transform: rotate(-360deg); /* rotation 360 degrés */
+	
+}
+/*******************************FIN PAGE IMAGE********************************************/
+
+/*******************************DEBUT PAGE POSITION********************************************/
+.centre{
+	width: 500px;
+	height:200px;
+	background: #33CCCC;
+	margin: 0 auto;
+}
+.absolute{ 
+	position: absolute; 
+	top: 10%; 
+	left: 10%;
+	background: orange; 
+	width:100px;
+	height:100px;
+}
+.relative{ 
+	background: red; 
+	position: relative; 
+	bottom: 10px; 
+	left: 50px;
+	width:100px;
+	height:100px;
+}
+button a{
+	position:fixed;
+	bottom:40px;
+	right:20px;
+	transition:1s;
+	font-size:350%;
+	color:#2C3E50;
+}
+button a:hover{
+	color:#33CCCC;
+}
+.trente{
+	width:30%;
+	padding:20px;
+	font-size:22px;
+	background:#F1684E;
+	color:#EFE94B;
+	font-weight:bold;
+}
+.cinquante{
+	width:50%;
+	padding:20px;
+	font-size:22px;
+	background:#383746;
+	margin-top:10px;
+	color:#F1684E;
+	font-weight:bold;
+}
+.cent{
+	width:100%;
+	padding:20px;
+	font-size:22px;
+	background:#EFE94B;
+	margin-top:10px;
+	color:#383746;
+	font-weight:bold;
+}
+.float {
+  float: left;
+  width: 170px;
+  height: 170px;
+  text-align: center;
+  border: 3px solid #CF4647;
+  margin:20px;
+  background:#F5D061;
+}
+.dernier{
+  width: 170px;
+  height: 170px;
+  text-align: center;
+  border: 3px solid #CF4647;
+  margin:20px;
+  background:#F5D061;
+}
+.clear{
+  clear: both;
+}
+.zone1 {
+	height: 70px;
+	background:#3A4750;
+}
+.zone2, .zone3, .zone4, .zone5{
+	float: left;
+	width: 25%;
+	height: 250px;
+}
+.zone2{
+	background:#626FE6;
+}
+.zone3{
+	background:#E85B48;
+}
+.zone4{
+	background:#EA9215;
+}
+.zone5{
+	background:#45171D;
+}
+.flex{
+ 	display:flex;
+	justify-content:space-around; /*Les éléments s'affichent avec un espacement égal à l'entour d'eux.*/
+	/*justify-content:space-between;*/ /* Les éléments s'affichent avec un espace égal entre eux.*/
+	/*flex-direction:row-reverse; */ /*Les éléments sont disposés dans la direction opposée au texte.*/
+	/*flex-direction:column;*/ /* Les éléments sont disposés de haut en bas./
+	flex-direction:column-reverse; */  /*Les éléments sont disposés de bas en haut.*/
+}
+.flex div{
+
+	width:150px;
+	height:150px;
+	background:#E85B48;
+	text-align:center;
+	font-size:50px;
+	color:white;
+	
+}
+/*******************************FIN PAGE POSITION********************************************/
+
+/*******************************DEBUT PAGE ZONING********************************************/
+
+#zoning1{
+	background: #FFD6D6;
+	width: 800px;
+}
+#zoning1 header{
+	background: #FCA7A7;
+	height: 70px;
+}
+#zoning1 aside{
+	background: #18587A;
+	width: 150px;
+	height: 530px;
+	float: left;
+}
+#zoning1 section{
+	background: #FC624D;
+	width: 650px; 
+	height: 530px; 
+	float: left;
+	margin:0;
+	padding:0;
+}
+
+#zoning2{
+	background: #336699;
+	width: 800px;
+	margin: auto;
+}
+#zoning2 header{
+	background: #6C5B7B;
+	width: 800px;
+	height: 70px;
+}
+#zoning2 .gauche{
+	background: #C06C84;
+	width: 150px;
+	height: 530px;
+	float: left;
+}
+#zoning2 section{
+	background: #355C7D;
+	width: 500px;
+	height: 530px;
+	float: left;
+	margin:0;
+	padding:0;
+}
+#zoning2 .droite{
+	background: #F67280 ;
+	width: 150px;
+	height: 530px;
+	float: left;
+}
+
+#zoning3{
+	width: 800px;
+	margin: 0 auto;
+}
+#zoning3 .gauche{
+	background: #F97300;
+	height: 400px;
+	width: 400px;
+	float: left;
+	margin:0;
+	padding:0;
+}
+#zoning3 .droite{
+	background: #10828C;
+	height: 400px;
+	width: 400px;
+	float: left;
+	margin:0;
+	padding:0;
+}
+#zoning3 footer{ 
+	background: #0E3047;
+	height: 80px; 
+	width: 800px; 
+}
+
+#zoning4{ 
+	width: 900px;
+	margin: 0 auto;
+	border: 2px solid;
+}
+#zoning4 header{ 
+	background: #2C3E50;
+	height: 80px;
+}
+#zoning4 nav{ 
+	background: #2980B9;
+	height: 30px;
+}
+#zoning4 section{ 
+	background:  #33CCCC;
+	height: 500px;
+	margin: 20px;
+}
+#zoning4 footer{ 
+	background: #2980B9;
+	height: 60px;  
+}
+
+#zoning5{ 
+	width: 850px;
+	margin: 0 auto;
+	border: 2px solid;
+}
+#zoning5 header{ 
+	background: #2C3E50;
+	height: 80px;
+}
+#zoning5 nav{ 
+	background: #2980B9;
+	height: 30px;  
+}
+#zoning5 section{ 
+	background: #F0C000; 
+	height: 500px; 
+	margin: 20px; 
+	padding:0;
+}
+#zoning5 section div:not(.clear){
+	 height: 250px;
+	 width: 50%;
+	 float: left;
+}
+.a{ 
+	background: #F1E58A;
+}
+.b{ 
+	background: #4C5374;
+}
+.c{ 
+	background: #71647C;
+}
+.d{ 
+	background: #D0F0F7;
+}
+#zoning5 footer{ 
+	background: #2980B9; 
+	height: 60px;  
+}
+
+#zoning6{ 
+	width: 800px; 
+	margin: 0 auto; 
+	
+}
+#zoning6 header{ 
+	background: #40A497;
+	height: 180px;
+}
+.haut1{
+	float:left;
+	width:25%;
+	height:100%;
+	background:darkblue;
+}
+.haut2{
+	float:left;
+	width:50%;
+	height:100%;
+	background:pink;
+}
+.haut3{
+	float:left;
+	width:25%;
+	height:100%;
+	background:blue;
+}
+#zoning6 nav{ 
+	background: #9A40A4; 
+	height: 30px; 
+	border:none;	
+}
+#zoning6 aside{ 
+	background: blue; 
+	height: 650px; 
+	width:20%; 
+	float: left;  
+}
+#zoning6 section{ 
+	background: #F0C000;  
+	width:80%;
+	float: left; 
+	margin:0;
+	padding:0;
+}
+.slideshow{ 
+	background: pink; 
+	height:250px;
+}
+#zoning6 .a{ 
+	background: #32a7a0; 
+	height: 250px; 
+	width: 50%;
+	float: left; 
+}
+#zoning6 .b{ 
+	background: #d69f1b;
+	height: 250px;
+	width: 50%;
+	float: left;
+}
+#zoning6 .c{ 
+	background: #b1b2d8; 
+	height: 150px; 
+	width: 25%; 
+	float: left;
+}
+#zoning6 .d{ 
+	background: #1217f2; 
+	height: 150px; 
+	width: 25%;
+	float: left; 
+}
+.e{ 
+	background: #b1b2d8;
+	height: 150px;
+	width: 25%;
+	float: left; 
+}
+.f{ 
+	background: #1217f2;
+	height: 150px;
+	width: 25%;
+	float: left; 
+}
+#zoning6 footer{ 
+	background: #40A497;
+	height: 60px;  
+}
+/*******************************FIN PAGE ZONING********************************************/
+
+/*******************************DEBUT PAGE TABLEAU********************************************/
+.tableau table {
+	border:3px solid #6495ed;
+	border-collapse:collapse; /* permet de rendre les lignes applatie */
+	width:90%; /* % se regle en fonction de la taille de la fenetre */
+	margin:auto; /* centre la table */
+}
+.tableau  thead, .tableau  tfoot {
+	background-color:#D0E3FA;
+	border:1px solid #6495ed;
+}
+.tableau  tbody {
+	border:1px solid #6495ed;
+}
+.tableau th {
+	border:1px solid #6495ed;
+	padding:5px;
+	background-color:#EFF6FF;
+	width:25%;
+}
+.tableau td {
+	font-family:sans-serif;
+	font-size:80%;
+	border:1px solid #6495ed;
+	padding:5px;
+	text-align:center;
+}
+/*******************************FIN PAGE TABLEAU********************************************/
+
+/*******************************DEBUT PAGE LISTE********************************************/
+ul.fruit{
+/*list-style: none; /* none, circle, square, disc (par défaut) */
+text-align:center;
+}
+ul.fruit  li{
+display:inline;
+margin: 15px;
+/* list-style-image: url(fleche.gif); */
+padding: 0 0 0 17px;
+
+}
+.imbriquee, .imbriquee ul {
+	padding-left:15px;
+}
+/*******************************FIN PAGE LISTE********************************************/
+
+/*******************************DEBUT PAGE LIEN & MENU********************************************/
+.ancre{
+	text-align:center;
+}
+.ancre a{
+	text-decoration:none;
+	margin:5px;
+	padding:5px 10px;
+	background:#2C3E50;
+	color:#ECF0F1;
+	border-radius:5px;
+	box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
+	transition:0.5s;
+}
+.ancre a:hover{
+	box-shadow: none;
+}
+#lien a{
+	text-decoration:none;
+	color:#2980B9;
+	display:inline-block;
+	margin-bottom:15px;
+}
+#lien a:hover{
+	color:#f16529;
+}
+		/******************MENU************/
+#menu nav{
+	background:transparent;
+	border:none;
+	
+}	
+#menu ul{
+	list-style:none;
+	text-align:center;
+}	
+#menu ul li{
+	display:inline-block;
+}
+#menu nav  li a{
+    padding:10px;
+    color:#666;
+    text-decoration:none;
+    background:#ddd;
+    transition: all .6s ease-in;
+/*     -webkit-transition: all .6s ease-in;
+    -moz-transition: all .6s ease-in;
+    -o-transition: all .6s ease-in; */
+}
+#menu nav  li  a:hover{
+    color:#fff;
+    background:#006699;
+}
+		/*************MENU DEROULANT*******************/
+#menuDeroulant{
+	height:650px;
+	
+}
+#menuDeroulant nav{
+	background:transparent;
+	border:none;
+	width:90%;
+	margin:0 auto;
+}
+#menuDeroulant nav  ul li { float:left; list-style: none;width:20%;}
+#menuDeroulant nav  ul ul {display:none; }
+#menuDeroulant nav ul li ul  li {border-top:1px solid #464646; width:100%;} 
+#menuDeroulant nav  li {background:#CCCCCC;} /* facultatif */
+#menuDeroulant nav  li a {text-decoration: none; color: #000; padding: 4px 0 4px; display:block; }
+#menuDeroulant nav  ul {padding: 0; margin:0px; text-align:center;}
+#menuDeroulant nav  ul.niveau1 li.sousmenu:hover ul.niveau2{display:block;
+}
+
+#menuDeroulant nav  li:hover {background: #EDD;} /* facultatif */
+#menuDeroulant nav  li.sousmenu:hover {background: #EBB;}  /* facultatif */
+
+
+/*******************************FIN PAGE LIEN & MENU********************************************/
+
+/*******************************DEBUT PAGE FORMULAIRE********************************************/
+form{
+	width:60%;
+	background:#2C3E50;
+	margin:0 auto;
+	padding:20px;
+	color:#ECF0F1;
+	border-radius:15px;
+}
+label{
+	margin: 10px 0;
+	width:50%;
+	display:inline-block;
+}
+
+textarea{
+	resize:none;
+} 
+
+
+/*******************************FIN PAGE FORMULAIRE********************************************/
+
+/*******************************DEBUT PAGE MULTIMEDIA********************************************/
+.videoFond{
+	padding-left: 0;
+	padding-right: 0;
+}
+.videoFond video{
+	position:absolute;
+	z-index: 1;
+	width:100%;
+}
+.videoTexte{
+	position:relative;
+	width:100%;
+	height:500px;
+
+}
+.videoFond p{
+	position:absolute;
+	z-index: 2;
+	width:500px;
+	margin:auto;
+	background:rgba(255,255,255,0.60);
+	left:250px;
+	top:100px;
+	padding:20px;
+	font-size:120%;
+	border-radius:10px;
+}
+.videoFond h3{
+	padding-left:35px;
+}
+
+video[poster="img/cic.gif"]{
+	width:425px;
+	margin:auto;
+	display:block;
+}
+iframe[src="https://www.youtube.com/embed/8FqZZrbnwkM"]{
+	width:425px;
+	margin:auto;
+	display:block;
+	
+}
+
+iframe[allowfullscreen]{
+	width:100%;
+}
+/*******************************FIN PAGE MULTIMEDIA********************************************/
+
+/*******************************DEBUT PAGE ANIMATIONS********************************************/
+		/***INFO BULLE****/
+.infoBulle{
+height:250px;
+width:500px;
+margin: auto;
+padding-top:15px;
+background:#444;
+font-family:'Trebuchet MS',sans-serif;
+box-shadow:0 0 50px #222 inset/*effet à l'interieur de l'élément */;
+}
+.infoBulle p{
+text-align:center;
+padding-top:30px;
+}
+.infoBulle a{
+color:#ccc;
+text-shadow:0 -2px 0 black;
+text-decoration:none;
+border-radius:3px;
+padding:5px 15px;
+}
+.infoBulle a:hover/* ,#section a:focus */{
+text-shadow:0 1px 2px black;
+background:rgba(0,0,0,.4);
+box-shadow:0 1px 0 rgba(255,255,255,.4);
+color:#fff;
+}
+.infoBulle a span{
+position:absolute;
+padding:15px;
+margin-top:23px;
+margin-left:-35px;
+background:rgba(0,0,0,.9);
+opacity: 0;
+color:#09C;
+transform:scale(0) rotateZ(-12deg);
+transition:all .25s;
+border-radius:3px;
+box-shadow:0 0 2px rgba(0,0,0,.5);
+}
+.infoBulle a:hover span{
+opacity:1;
+transform:scale(1) rotateZ(0);
+}
+.infoBulle a span:before{
+content:'';
+position:absolute;
+top:-6px;
+left:10px;
+border-bottom:6px solid rgba(0,0,0,.9);
+border-left:6px solid transparent;
+border-right:6px solid transparent; 
+}
+		/**********IMAGE GRAYSCALE & BLUR ************/
+.imgEffets{
+	width:302px;
+	height:320px;
+	margin:70px auto;
+}
+.imgEffets li{
+	list-style:none;
+	float:left;
+	width:141px;
+	height:150px;
+	margin:5px;
+}
+.imgEffets li:nth-child(3){
+	clear:left;
+}
+.imgEffets img{
+	position:absolute;
+	z-index:1;
+	height:150px;
+	box-shadow:0 0 3px black;
+	transition:all .5s cubic-bezier(0,3,.4,1);
+}
+/* CUBIC-BEZIER Le type de donnée <timing-function> représente une fonction mathématique qui décrit la vitesse à laquelle évolue une valeur unidimensionnelle lors d'une transition ou d'une animation. Cela permet de définir une courbe d'accélération afin que la vitesse de l'animation puisse changer lors de son exécution. Ces fonctions sont souvent appelées « fonction de temporisation » ou « easing functions » (en anglais).
+
+Cette fonction prend comme entrée un ratio de temps (0 : l'état initial, 1 : l'état final) et produit un ratio d'évolution (sous la forme d'une valeur <number>) allant également de 0.0 à 1.0.*/
+.imgEffets li:hover img{
+	z-index:2;
+	transform: scale(1.5);
+	box-shadow:0 0 10px black;
+}
+.imgEffets:hover li:not(:hover) img{
+    filter: grayscale(1)/*convertie votre image en nuances de gris*/ blur(10px)/* applique un flou*/;
+}
+
+		/**********MENU ROTATE***********/
+#menuRotate{
+	height:360px;
+	width:576px;
+	margin:100px auto;
+	font-family:"TeXGyreReg",sans-serif;
+	background:#627878;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid white;
+}
+#menuRotate .masque{
+	position:absolute;
+	z-index:50;
+	width:585px;
+	height:135px;
+	top:0;left:0;
+	background:linear-gradient(#324040,#627878);
+}
+
+#menuRotate .ombre{
+	position:absolute;
+	z-index:40;
+	width:300px;
+	height:6px;
+	top:133px;
+	margin-top:-103px;
+	left:142px;
+	box-shadow:0px 100px 3px black;
+	border-radius:75px / 3px ;/*rayons horizontaux / rayons verticaux  */
+}
+#menuRotate dl{
+	position:relative;
+	top:0;
+	left:50%;
+	margin-left:-75px;
+	width:150px;
+	height:155px;
+	color:#324040;
+	text-align:center;
+	background:#04b3d2;
+	border-radius:4px;
+	box-shadow:0px 0px 6px rgba(0,0,0,0.7);
+	transform-origin:50% 120px; /*La propriété transform-origin permet de modifier l'origine du repère pour les opérations de transformation d'un élément. Par exemple, l'origine par défaut pour la fonction rotate() est le centre de la rotation.*/
+	animation:bounceOut 0.7s ease-in-out;
+}
+
+#menuRotate dt{
+	position:absolute;
+	bottom:0px;
+	width:100%;
+	height:30px;
+	padding-top:5px;
+}
+
+#menuRotate dd{
+	transform:rotate(180deg);/*transform permet de modifier l'espace de coordonnées utilisé pour la mise en forme visuelle*/
+}
+
+#menuRotate dd a{
+	display:block;
+	height:24px;
+	padding:3px 0px;
+	color:#324040;
+	text-decoration:none;
+}
+
+#menuRotate dd a:hover{
+	background:rgba(255,255,255,0.1);
+}
+#menuRotate dl:hover{
+	transform:rotate(-180deg);
+	animation:bounceIn 0.7s ease-in-out;
+}
+@keyframes bounceIn {
+     from {transform: rotate(0deg);}
+     75%  {transform: rotate(-200deg);}
+     90%  {transform: rotate(-175deg);}
+     to   {transform: rotate(-180deg);}
+}
+
+@keyframes bounceOut {
+     from {transform: rotate(-360deg);}
+     0%   {transform: rotate(-180deg);}
+     10%  {transform: rotate(-160deg);}
+     to   {transform: rotate(-360deg);}
+}
+/*
+ease : Rapide sur le début et ralenti sur la fin.
+linear : La vitesse est constante sur toute la durée de l'animation.
+ease-in : Lent sur le début et accélère de plus en plus vers la fin.
+ease-out : Rapide sur le début et décèlere sur la fin.
+ease-in-out : Le départ et la fin sont lents.
+*/
+		/*******Effet coverflow*******/
+.coverflow{
+    width: 535px; 
+	perspective: 500px;/*par rapport au centre de l'élément*/
+    padding: 0;
+	margin: 100px auto;
+}
+.coverflow li{
+    display: inline-block;
+    width: 112px;
+    height: 165px;
+    background: #2B2B2B;
+	transform: rotateY(45deg);
+	margin-right: -15px;
+	transition: all .45s;
+	position: relative;
+    z-index: 50;
+	padding:5px;
+	box-sizing:border-box;
+	border:2px solid #2344EC;
+}
+
+.coverflow li:nth-child(3){
+    z-index: 55;
+    transform: rotateY(0deg) scale(1.2);
+}
+.coverflow li:first-child,
+.coverflow li:last-child{
+    z-index: 45;
+}
+/* les elements qui suivent l'element central */
+.coverflow li:nth-child(3) ~ li{
+    
+    transform: rotateY(-45deg);
+}
+.coverflow li:hover ~ li{
+    transform: rotateY(-45deg);
+} 
+.coverflow li:hover, .coverflow li:nth-child(3) ~ li:hover{
+    
+    transform: rotateY(0deg) scale(1.2);
+}
+.coverflow:hover li:not(:hover){
+    transform: rotateY(45deg);
+}
+.coverflow:hover li:hover ~ li{
+    transform: rotateY(-45deg);
+}
+.coverflow li:hover,
+.coverflow li:first-child:hover,
+.coverflow li:nth-child(3) ~ li:hover{
+    z-index: 60;
+	background:#3f3f3f;
+}
+a.prix{
+	text-decoration:none;
+	color:#2344EC;
+	background:white;
+	border-radius:2px;
+	padding:5px 10px;
+	float:right;
+	margin-top:10px;
+	box-shadow: 0px 0px 6px #ccc;
+}		
+		
+
+/*******************************FIN PAGE ANIMATION********************************************/
+/*******************************DEBUT FOOTER***************************************************/
+footer{
+	background:#2980B9;
+	padding:15px;
+	font-size:80%;
+	text-align:center;
+	color:#ccc;
+}
+/*******************************FIN FOOTER***************************************************/
+
+
+
+
+
+
+
+
+
+
+

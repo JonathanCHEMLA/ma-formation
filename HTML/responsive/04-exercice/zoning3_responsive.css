@@ -1,0 +1,187 @@
+
+
+*{
+	margin:0;
+	padding:0;
+}
+
+
+
+#container{
+	background:red;
+	margin: 20px auto;
+	width:960px;
+
+}
+header{
+	display:flex;
+}
+
+header div{
+	background:purple;
+	width:25%;
+
+	height:200px;	
+}
+
+.longdiv{
+	width:50%;
+	background:pink;
+	
+}
+header .Bleu{
+	background:blue;
+	
+}
+nav{
+
+	background:teal;
+	text-align:center;
+	text-bottom;
+	height:50px;
+}
+
+aside{
+	background:blue;
+	float:left;
+	width:20%;
+	height:750px;
+}
+
+.ab{
+	display:flex;
+}
+
+.a{
+	background:green;
+	width:50%;
+	height:300px;
+}
+.b{
+	background:orange;
+	width:50%;
+	height:300px;
+}
+.slide{
+	float:left;
+	background:yellow;
+	width:80%;
+	height:300px;
+}
+
+.section3{
+	float:left;
+	display:flex;
+	width:80%
+}
+
+.section3 article{
+	height:150px;
+	width:25%;
+}
+
+
+footer{
+	clear:both;
+	text-align:center;
+	padding:20px;
+	background:silver;
+}
+.c{
+	background:white;
+}
+.d{
+	background:green;
+}
+.e{
+	background:white;
+}
+.f{
+	background:blue;
+}
+aside p.zoneG{
+	padding:20px;
+	display:block;
+}
+aside p.zoneB{
+	padding:20px;
+	display:none;
+}
+/*********************RESPONSIVE*********************/
+
+@media (max-width:580px){/*jusqu a 780px*/
+	body{
+		margin:0;
+	}
+	
+	#container{
+		width: 480px;	/**** ! il faut le mettre a 100%  **/
+		margin:0;
+	}
+	header{
+		display:flex;
+	}
+
+	header div{
+		width:50%;
+		height:100px;	
+	}
+	.longdiv{
+		display:none;
+	}
+	header .Bleu{
+		background:blue;
+	}
+
+	nav{
+		height:50px;
+	}
+
+	main{
+		display:flex;
+		flex-wrap:wrap;		/*tres important */
+	}
+	
+	aside{
+		background:pink;
+		order:1;			/*va placer cet element en dernier */
+		width:100%;
+		height:200px;
+	}
+	section{
+		width:100%;
+		flex-wrap:wrap;
+	}
+	.a, .b{
+		width:100%;
+	}
+	.c, .d, .e, .f{
+		width:50%;
+		height:75px;
+	}
+	.slide{
+		width:100%;
+		height:125px;
+	}
+	.section3{
+		display:flex;
+		flex-wrap:wrap;
+		width:100%;		
+	}	
+	
+	footer{
+		clear:both;
+		text-align:center;
+		padding:20px;
+
+	}
+	
+	aside p.zoneG{
+		display:none;
+	}
+	aside p.zoneB{
+		display:block;
+	}
+
+	
+}

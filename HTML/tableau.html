@@ -1,0 +1,110 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>Les tableaux</title><!-- Titre de la page -->
+		<link rel="stylesheet" href="css/style.css"><!-- Lien vers mon fichier CSS -->
+		<meta name="description" content="Les tableaux en HTML/CSS"><!-- Description de la page -->
+		<meta charset="UTF-8"><!-- Encodage -->
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+	</head>
+	
+	<body>
+		<header>
+			<!-- Zone du haut. Ex : bannière, logo, slogan, mon panier, mon compte etc... -->
+			<div id="logo">
+				<a href="index.html"><img src="img/logo.png" alt="Logo"></a>
+			</div>
+			<div id="slogan">
+				<h1>Mon premier site en HTML / CSS</h1>
+			</div>
+			<div id="reseauxSociaux">
+				<i class="fa fa-facebook-official" aria-hidden="true"></i>
+				<i class="fa fa-instagram" aria-hidden="true"></i>
+			</div>
+		</header>
+		
+
+			<!-- Zone du menu. Ex : lien pour naviguer sur le site -->
+		<nav class="navMenu">
+			<ul>
+				<li><a href="#">Structure</a></li>
+				<li><a href="texte.html">Texte</a></li>		
+				<li><a href="selecteurs.html">Selecteurs</a></li>			
+				<li><a href="image.html">Image</a></li>
+				<li><a href="position.html">Position</a></li>
+				<li><a href="zoning/zoning3.html">Zoning</a></li>
+				<li class="active"><a href="#">Tableau</a></li>
+				<li><a href="#">Liste</a></li>
+				<li><a href="lien_menu.html">Lien & Menu</a></li>
+				<li><a href="formulaire.html">Formulaire</a></li>		
+				<li><a href="#">Multimédia</a></li>
+				<li><a href="#">Animations</a></li>
+			</ul>
+		
+		
+		</nav>
+		
+		
+		
+		<main>
+			<h2>Les tableaux</h2>
+			<section table="tableau">
+				<table>
+					<caption><i class="fa fa-plane" aria-hidden="true"></i> Vols Paris Rome </caption>
+					<Thead>
+						<tr>
+							<th></th>
+							<th>02/02/2018</th>
+							<th>03/02/2018</th>
+							<th>05/02/2018</th>
+						</tr>
+					</Thead>
+					<Tfoot>
+						<tr>
+							<th></th>
+							<th>02/02/2018</th>
+							<th>03/02/2018</th>
+							<th>05/02/2018</th>
+						</tr>
+					</Tfoot>
+					<Tbody>
+						<tr>
+							<th rowspan="2">Air France</th>
+							<td>Départ 10h - Arrivée 12h</td>
+							<td>Départ 9h - Arrivée 11h</td>
+							<td>Départ 12h - Arrivée 14h</td>
+						</tr>
+						<tr>
+							<td>200€</td>
+							<td>180€</td>
+							<td>170€</td>
+						</tr>	
+						
+						
+						<tr>
+							<th rowspan="2">Alitalia</th>
+							<td>Départ 6h - Arrivée 8h</td>
+							<td>Départ 19h - Arrivée 21h</td>
+							<td>Départ 22h - Arrivée 00h</td>
+						</tr>
+						<tr>
+							<td>150€</td>
+							<td>190€</td>
+							<td>185€</td>
+						</tr>						
+					</tBody>	
+				</table>
+			</section>
+
+			
+		</main>
+		<footer>
+			<!-- Zone du bas. Ex : liens administratifs, mentions légales, plan du site, CGU, CGV, contact, Copyright -->
+			<p>Réalisation d'un site en HTML/CSS</p>
+		</footer>
+		
+	
+	</body>
+
+</html>

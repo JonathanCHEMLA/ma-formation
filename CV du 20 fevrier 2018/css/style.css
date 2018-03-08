@@ -1,0 +1,109 @@
+body{
+	padding:0;
+	font-family:arial;
+	box-sizing:border-box;
+	font-size:12px;
+}
+
+/***************************************HEADER***********************************/
+
+#coordonnees img{
+	width:60px;/**/
+	margin-bottom:-5px;/**/
+}
+
+#coordonnees [href="https://www.linkedin.com/in/jonathan-chemla"],
+#coordonnees [href="mailto:jonathanchemla55@gmail.com"],
+#coordonnees [href="#"]{
+	color:#318CE7;/*Bleu*/
+}
+#les_langages{
+	position: absolute;/*On sort cet élément du flux de notre page*/
+	margin: 0 auto;
+	left:35%;/*Marge à gauche de 60px*/
+	top:0px;/*Positionné à 60px du haut*/
+	text-align:center;	/*Centrer le contenu de la DIV en position Absolute*/
+	z-index:-1;	/*les languages apparaissent en second plan*/
+}
+h1{
+	font-size:18px;/*Taille de police*/
+}
+#les_langages img{
+width:220px;/*IMAGE DES DIFFERENTS LANGAGES*/
+}
+
+
+/************************************MAIN****************************************/
+main{
+	margin-top:18px;
+}
+h2{
+	font-size:14px;
+	margin:5px;
+}
+h3{
+	font-size:14px;
+	display:inline-block;
+	margin:5px;
+}
+p{
+	font-size:12px;
+	margin:2px;
+}
+header .grand{
+	font-size:22px;
+}
+.left{
+	float:left;
+	width:70%;
+}
+.right{
+	float:right;
+	width:30%;	
+	text-align:center;
+}
+.clear{
+	clear:both;
+}
+.centrage{
+	margin-left:40px;
+	margin-top:5px;
+}
+.bleu{
+	color:#318CE7;
+}
+.gras{
+	font-weight:bold;
+}
+
+/**********EXPERIENCE PROFESSIONNELLE***********/
+.nom_societe{	
+	text-align:right;
+}
+
+/****TABLEAUX DES PROJETS REALISES: MY UNICORN...****/
+table{
+	border:3px solid #6495ed;
+	width:90%;
+	margin:20px auto;
+}
+thead{
+	background:#d0e3fa;
+	border:1px solid #6495ed;
+}
+tbody{
+	border:1px solid #6495ed;
+}
+th{
+	border:1px solid #6495ed;
+	padding:5px;
+	background:#eff6ff;
+	width:25%;		/**le width du th va donner auto une taille aux TD donc pas besoin de donner une width a TD**/
+}
+td{
+	font-size:80%;
+	border:1px solid #6495ed;
+	padding:5px;
+	text-align:center;
+}
+

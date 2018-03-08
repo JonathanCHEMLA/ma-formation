@@ -1,0 +1,545 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+*{
+	box-sizing:border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/***************HEADER******************/
+header{
+	background:#2c3e50;/* bleu marine */
+	display:flex;
+}
+#logo{
+	width:25%;	/*lorsque le parent est en flex, il faut indiquer la width de l'enfant, en % */
+	text-align:center;/*A savoir: le flex ne centre pas le contenu des enfants */
+	padding:15px;
+}
+#slogan{
+	/*text-align:center;*/
+	width:50%;
+	display:flex;	/*on se met en flex pour centrer l'enfant FACILEMENT*/
+	align-items:center; /*centre verticalement l'enfant*/
+	justify-content:center; /*centre horizontalement l'enfant*/
+}
+#slogan h1{
+	font-size:45px;
+	color:#2980b9;	/*bleu*/
+	
+}
+/*
+#slogan h1:before{
+	content:"<>";
+}
+#slogan h1:after{
+	content:"</>";
+}
+*/
+#reseauxSociaux{
+	width:25%;
+}
+#reseauxSociaux i{
+	font-size:30px;	/*car les font-awesome sont consideres comme des caracteres */
+	color:#2980b9; /*bleu*/
+	display:block;	/*pour que les i apparaissent l un en desous de l autre*/
+	text-align:right;
+	padding:15px 30px 0 0;
+}
+nav{
+	background:#2980b9;	/*bleu*/
+	height:50px;
+}
+
+/****Dans index, Lien_Menu:***/
+main{
+	background:#ecf0f1;	/*blanc*/
+	width:1000px;
+	margin: 0 auto;
+	padding:10px;
+	box-sizing:border-box;
+}
+/****Dans index ***/
+aside{
+	background:gray;
+	height:100px;
+}
+/****Dans index, Lien_Menu:***/		/**Dans le dossier zoning, dans le fichier Zoning3 */
+section.sectionzoning:not{
+	min-height:200px;
+}
+/*****************************FOOTER**************************************/
+footer{
+	
+	background:#0e3047;
+
+
+}
+footer p{
+	text-align:center;
+	padding:20px;
+	color:#eee;/*blanc-gris*/
+}
+blockquote{
+	color:red;
+	font-size:22px;
+}
+blockquote i{
+	color:blue;
+}
+
+/***dans la page position, au niveau du FIXED */
+section p{
+	font-family: 'Courgette', cursive;
+}
+/*****************PAGE SELECTEURS*******************************/
+/* #select p{
+	color:red;
+}
+#select p:first-of-type{
+	color:green;
+}
+#select p:last-of-type{
+	color:green;
+}
+#select p:nth-child(5), #select p:nth-child(6){
+	color:orange;
+}
+#select p:nth-child(even){
+	color:blue;
+}
+#select p:nth-child(odd){
+	color:brown;
+} */
+
+#select .zoneA{
+	color:#f56f56;/*rouge*/
+}
+#select .zoneB{
+	color:#996633;/*marron*/
+}
+.couleurBleu{
+	color:#336699;/*bleu*/
+}
+span.couleurBleu{
+	text-decoration:underline;
+}
+#select #zoneC{
+	color:red;
+}
+#select #zoneD span{
+	color:green;
+}
+/****************fin de la page SELECTEURS**************/
+
+
+
+/******************PAGE POSITION***************************/
+.centre{
+	width:500px;
+	height:200px;
+	background:#33cccc;
+	margin: 10px auto;
+}
+.absolute{
+	width:100px;
+	height:100px;
+	background:orange;
+	position:absolute;
+	top:50px;
+	right:50px;
+}
+.relative{
+	width:100px;
+	height:100px;
+	background:blue;
+	position:relative;
+	top:50px;
+	right:50px;
+}
+button{
+	position:fixed;
+	right:25px;
+	bottom:25px;
+	background:none;
+	border:none;
+	color:#2980b9;	/*Noir*/
+	font-size:350%;
+	transition:1s;
+	cursor:pointer;
+}
+button:hover{
+	color:#33cccc;   /*Turquoise*/
+}
+.trente{
+	width:30%;
+	font-size:22px;
+	background:#f1684e;
+	color:#efe94b;
+	font-weight:bold;
+	padding:20px;
+	box-sizing:border-box;
+}
+.cinquante{
+	width:50%;
+	font-size:22px;
+	background:#383746;
+	color:#f1684e;
+	font-weight:bold;
+	padding:20px;
+	margin:10px 0 10px 0;
+	box-sizing:border-box;
+}
+.cent{
+	width:100%;
+	font-size:22px;
+	background:#efe94b;
+	color:#383746;
+	padding:20px;
+	font-weight:bold;
+	box-sizing:border-box;
+}
+.float{
+	float:left;
+	width:170px;
+	height:170px;
+	text-align:center;
+	border:3px solid #cf4647;
+	margin:20px;
+	background:#f5d061;
+}
+.dernier{
+	width:170px;
+	height:170px;
+	text-align:center;
+	border:3px solid #cf4647;
+	margin:20px;
+	background:#f5d061;
+}
+.clear{
+	clear:both;
+}
+.zone1{
+	height:70px;
+	background:#3a4750;
+}
+.zone2, .zone3, .zone4, .zone5{
+	float:left;
+	width:25%;
+	height:250px;
+}
+.zone2{
+	background:blue;
+}
+.zone3{
+	background:orange;
+}
+.zone4{
+	background:pink;
+}
+.zone5{
+	background:black;
+}
+.flex{
+	display:flex;
+	justify-content:space-around;
+	flex-direction:column-reverse;
+}
+.flex div{
+	width:150px;
+	height:150px;
+	background:#e85b48;
+	text-align:center;
+	font-size:50px;
+	color:white;
+}
+/******************FIN de la page POSITION ********************/
+
+/*********************PAGE IMAGE*******************************/
+.imageFond{
+	background: #000 url(../img/fond.jpg) no-repeat;
+	background-size:cover;
+	padding: 200px 0;
+}
+.imageFond p{
+	width:75%;
+	margin:100px auto;
+	background:rgba(255,255,255,0.6);
+	padding:20px;
+	font-size:120%;
+	border-radius:10px;
+	line-height:30px;
+}
+img[title="Carte de l'image"]{
+	margin:auto;
+	display:block;
+}
+.rotationImg{
+	text-align:center;
+}
+.image{
+	margin:55px;
+	border:5px solid #eee;
+	box-shadow:4px 4px 4px rgba(0,0,0,0.2);
+	transition:1s;
+}
+.image:hover{
+	transform:rotate(-7deg);
+}
+.rotation360:hover{
+	transform:scale(1.5); /*pour qu il fasse aussi 
+	la rotation, il faut rajouter :   
+	transform:rotate(-7deg);*/
+}
+figure{
+	width:200px;
+	position:relative;	/*?*/
+	border: 3px solid #c0c0c0;	/*gris*/
+	overflow:hidden;
+	margin:15px auto;
+}
+figure img{
+	display:block;		/*?*/
+}
+figcaption{/*barre noire qui apparait au survol de la photo*/
+	position:absolute;	/*pour créer l'effet*/
+	background:rgba(0,0,0,0.75);
+	padding: 15px 0;	/*? 0*/      /*hauteur du caption: 5px */
+	text-align:center;/*centre le texte du caption*/
+	width:200px;/*width = a celle de la figure */
+	transition:0.6s;
+	left:0;/*le caption apparait avec une "marge" à gauche*/
+	bottom:-30%;/*le caption est caché en dessous de l'image, à -30%*/
+	color:#eee; /*blanc-gris*/
+}
+figure:hover figcaption{
+	bottom:0;	/*?*/
+}
+/******************PAGE LIEN MENU*****************************/
+.ancre{
+	text-align:center;
+}
+.ancre a{
+	text-decoration:none;
+	margin:5px;
+	padding:5px 10px;
+	background:#2c3e50;/*bleu marine / Noir */
+	color:#ecf0f1;	/*blanc*/
+	border-radius:5px;
+	box-shadow:0px 0px 10px 1px rgba(0,0,0,0.75);
+	transition:0.5s;
+}
+.ancre a:hover{
+	box-shadow:none;
+}
+#lien img{
+	height:50px; /*attribue une hauteur au logo FACEBOOK */
+}
+#lien a{
+	text-decoration:none;
+	color:#2980b9;	/*bleu*/
+	margin-bottom:15px;
+	display:inline-block;/*c'est nécessaire pour appliquer margin-bottom car a est de type inline*/	
+}
+#lien a:hover{
+	color:#f16529;	/*orange*/
+}
+#menu nav{
+	background:transparent;
+}
+#menu ul{
+	text-align:center;
+}
+#menu ul li{
+	display:inline-block;/*li etant de type block,
+	inline-block va mettre les elements a cote*/
+}
+#menu nav li a{
+	padding:10px;
+	color:#666;/*gris fonce*/
+	text-decoration:none;
+	background:#ddd;/*gris clair*/
+	transition:.6s ease-in;
+}
+#menu nav ul li a:hover{
+	color:#fff;	/*blanc*/
+	background:#006699;/*bleu*/
+}
+
+
+/*********    MENU de TOUTES LES PAGES  ****************/
+
+
+.navMenu{
+	box-shadow:0 10px 0 teal;
+}
+
+.navMenu ul{
+	/*ces 2 lignes ci dessous:*/
+	
+	display:flex;
+	justify-content:center;	/*centre horiz*/
+/*
+	permettent d eviter d ecrire :
+	
+	1 text-align:center;
+		Dans .navmenu UL LI{} 
+	2 le display:inline-block; 
+	3 le margin: 15px auto;
+	*/	
+	/*
+	text-align:center;
+	*/
+}
+.navMenu ul li{
+	/*
+	margin: auto;
+	display:inline-block;
+	*/
+	padding:16px;
+}
+.navMenu ul li:hover{
+	color:#33cccc;	/*Turquoise*/
+	
+
+}
+.navMenu ul li a{
+	
+	font-size: 120%;
+	color:#eee;  /***pour que meme les onglets sans lien soient en gris **/
+	text-decoration:none;
+
+}
+.navMenu ul li:hover a{
+	color:white;
+
+}
+
+.active{
+	background:#2c3e50;	/*bleu marine/Noir*/
+
+}
+
+
+H2{
+	margin:30px;
+	color:gray;
+	font-size:28px;
+}
+h3{
+	margin:40px;
+	color:orange;
+	font-size:20px;
+}
+
+main{
+	margin:10px auto;
+}
+
+/***********************page formulaire  *********************/
+form{
+	width:60%;
+	background:#2c3e50;
+	margin: 10px auto;
+	padding:20px;
+	color:#ecf0f1;
+	border-radius:15px;
+}
+
+label{
+	margin:10px 0;
+	width:50%;  /** pour pousser les input et les mettre en aligné  **/
+	display:inline-block;			/** par defaut le display du label est en inline **/
+}
+
+input[type="submit"]{
+	display:block;
+	margin:0 auto;
+	
+}
+
+/*************************PAGE TABLEAU*********************************/
+table{
+	border:3px solid #6495ed;
+	width:90%;
+	margin:20px auto;
+}
+thead, tfoot{
+	background:#d0e3fa;
+	border:1px solid #6495ed;
+}
+tbody{
+	border:1px solid #6495ed;
+}
+th{
+	border:1px solid #6495ed;
+	padding:5px;
+	background:#eff6ff;
+	width:25%;		/**le width du th va donner auto une taille 
+	aux TD donc pas besoin de donner une width a TD**/
+}
+td{
+	font-size:80%;
+	border:1px solid #6495ed;
+	padding:5px;
+	text-align:center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

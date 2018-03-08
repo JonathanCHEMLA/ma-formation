@@ -1,0 +1,101 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>Les textes</title><!-- Titre de la page -->
+		<link rel="stylesheet" href="css/style.css"><!-- Lien vers mon fichier CSS -->
+		<meta name="description" content="Les textes en HTML/CSS"><!-- Description de la page -->
+		<meta charset="UTF-8"><!-- Encodage -->
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+	</head>
+	
+	<body>
+		<header>
+			<!-- Zone du haut. Ex : bannière, logo, slogan, mon panier, mon compte etc... -->
+			<div id="logo">
+				<a href="index.html"><img src="img/logo.png" alt="Logo"></a>
+			</div>
+			<div id="slogan">
+				<h1>Mon premier site en HTML / CSS</h1>
+			</div>
+			<div id="reseauxSociaux">
+				<i class="fa fa-facebook-official" aria-hidden="true"></i>
+				<i class="fa fa-instagram" aria-hidden="true"></i>
+			</div>
+		</header>
+		
+
+			<!-- Zone du menu. Ex : lien pour naviguer sur le site -->
+		<nav class="navMenu">
+			<ul>
+				<li><a href="#">Structure</a></li>
+				<li class="active"><a href="texte.html">Texte</a></li>		
+				<li><a href="selecteurs.html">Selecteurs</a></li>			
+				<li><a href="image.html">Image</a></li>
+				<li><a href="position.html">Position</a></li>
+				<li><a href="zoning/zoning3.html">Zoning</a></li>
+				<li><a href="#">Tableau</a></li>
+				<li><a href="#">Liste</a></li>
+				<li><a href="lien_menu.html">Lien & Menu</a></li>
+				<li class="active"><a href="#">Formulaire</a></li>		
+				<li><a href="#">Multimédia</a></li>
+				<li><a href="#">Animations</a></li>
+			</ul>
+		
+		
+		</nav>
+		
+		
+		
+		<main>
+			<h2>Les formulaires</h2>
+			<section class="formulaire">
+				<form action="" >
+					<label for="pseudo">Pseudo</label>
+					<input type="text" id="pseudo" name="pseudo" required> <!-- le champ est rendu obligatoire grace à required-->
+					
+					<label for="prenom">Prénom</label>
+					<input type="text" id="prenom" name="prenom" placceholder="prénom"> <!--ca peut etre sympa de ne pas mettre les label et de mettre les placeholder a la place-->
+					
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email"> 
+					
+					<label for="mdp">Mot de passe</label>
+					<input type="password" id="mdp" name="mdp"> 
+					
+					<label for="cv">CV</label>
+					<input type="file" id="cv" name="cv" multiple>  <!-- multiple permet a l internaute d envoyer +eurs fichiers en 1 seule fois-->
+					
+					<label for="choix">Equipe de foot</label>
+					<p>
+						<input type="checkbox" id="choix" name="choix" value="PSG" checked>PSG
+						<input type="checkbox" id="choix" name="choix" value="OL">OL
+						<input type="checkbox" id="choix" name="choix" value="PFC">PFC
+					</p>
+
+					<label for="civilite">Civilité</label>
+					<p>
+						<input type="radio" id="civilite" name="civilite" value="f">Madame
+						<input type="radio" id="civilite" name="civilite" value="m" checked>Monsieur
+
+					</p>	
+
+					<label for="message">Message</label>
+					<textarea id="message" name="message" rows="5" cols="25"></textarea>  <!---il n y a pas de type car la balise est un type en soit  --> <!-- prend 25 caracteres "i" en largeur --->	
+					
+					<input type="submit" name="envoyer" value="envoyer">
+
+					
+				</form>
+			</section>
+			
+		</main>
+		<footer>
+			<!-- Zone du bas. Ex : liens administratifs, mentions légales, plan du site, CGU, CGV, contact, Copyright -->
+			<p>Réalisation d'un site en HTML/CSS</p>
+		</footer>
+		
+	
+	</body>
+
+</html>

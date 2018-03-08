@@ -1,0 +1,33 @@
+#container{
+	width:960px;
+	background:#336699;
+	margin:20px auto;
+}
+header{
+	background:#6c5b7b;
+	height:70px;
+}
+main{
+	display:flex;
+}
+aside{
+	width:20%;
+	height:530px;
+	background:#c06c84;
+}
+section{
+	width:60%;
+	height:530px;
+	background:#355c7d;
+}
+.droite{
+	background:#f67280;
+}
+
+
+
+
+
+
+
+

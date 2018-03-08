@@ -1,0 +1,64 @@
+*{
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+}
+header img{
+	width:100%;				/* L'image du header occupe 100% de la hauteur et de la largeur de l'écran */
+	height:100vh;
+	object-fit: fill; 		/*  ???????????????????????????????????????????????????????????   */
+}
+nav{ 
+	position:absolute;		/*  ???????????????????????????????????????????????????????????   */
+	background: rgba(0,0,0,0.3) !important;/*comme, dans le css bootstrap il y a un background de defini plus precisement sur notre element, afin d'imposer notre css a nous, il faut rajouter:		 "!important"		*/
+	
+}
+.navbar-default{
+	
+}
+ul{
+	width: 100%;  			/* la width à 100% empeche le retour à la ligne */
+	margin: 0 30%;			/* le premier onglet est à 30% du bord gauche. Du coup les onglets sont centrés / à la page */
+}
+ul li{
+	display:inline-block; 	/* affiche les li les uns a cote des autres */
+}
+section{
+	padding:8px 20px;		/* cadre de autour de chaque section  */
+}
+.col-md-6{
+	padding:5px;			/* espace autour de chaque vidéo  */
+}
+.col-sm-3{
+	padding:5px 8px;		/* espace autour de chaque vidéo  */
+}
+section img{
+	height:38vh;			/* la photo va occuper une hauteur = à 30% de l'écran */
+	width:100%;		
+
+}
+section article{
+	height:40vh;			/* il faut une hauteur min. de 40vh pour que le texte ne soit pas coupé */
+	display: table-cell;	/* ces 2 lignes permettent, ensemble, de CENTRER VERTICALEMENT le CONTENU */
+	vertical-align:middle;	/* ces 2 lignes permettent, ensemble, de CENTRER VERTICALEMENT le CONTENU */
+}
+iframe{
+	height:50vh;			/* la video va occuper une hauteur = à 50% de l'écran */	
+	width:100%;
+}
+.section_videos{			/* ?????????????????????????????????????????  */
+	background: #999 url(img/piano2.jfif);
+	background-size:cover;	
+	background-attachment:fixed;
+}
+article h1, article p{
+	text-align:left;
+	font-size: 100%;		/* reduction de la taille des polices dans <article> */
+	color:#ccc;
+}
+#nos_photos{
+	background:#555;
+}
+footer{
+	text-align:center;		/* centrer le texte */
+}

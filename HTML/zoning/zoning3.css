@@ -1,0 +1,80 @@
+#bodyzoning{
+
+}
+#container{
+	width:1000px;
+	margin:50px auto;
+	background:red;
+	/*height:780px;*/
+	
+}
+.headerzoning{
+	height:100px;
+	display:flex;
+}
+#hautGauche, #hautCentre, #hautDroite{
+	width:33.33%;
+}
+#hautGauche{
+	background:darkblue;
+}
+#hautCentre{
+	background:pink;
+}
+#hautDroite{
+	background:blue;
+}
+.navzoning{
+	background: #9A40A4; /*violet*/
+    height: 30px;
+}
+.asidezoning{
+	background: blue;
+    height: 650px;
+    width: 20%;
+    float: left;
+}
+.sectionzoning{
+	width:80%;
+	background:aqua;
+	display:flex;	
+}
+
+.A, .B{
+	background: #32a7a0;	/*Turquoise*/
+    height: 250px;
+    width: 50%;
+}
+.B{
+	background:green;
+}
+#slideshow{
+	float:left;
+	width:80%;
+	background:yellow;
+	height:250px;
+}
+.C, .D, .E, .F{
+	height:150px;
+	width:25%;
+}
+.C, .E{
+	background:grey;
+}
+.D,.F{
+	background:purple;
+}
+
+.footerzoning{
+	width:1000px;
+	background:pink;
+	height:40px;
+	clear:both;
+}
+
+
+
+
+
+
+

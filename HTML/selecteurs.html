@@ -1,0 +1,84 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>Les selecteurs</title><!-- Titre de la page -->
+		<link rel="stylesheet" href="css/style.css"><!-- Lien vers mon fichier CSS -->
+		<meta name="description" content="Les selecteurs en HTML/CSS"><!-- Description de la page -->
+		<meta charset="UTF-8"><!-- Encodage -->
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+	</head>
+	
+	<body>
+		<header>
+			<!-- Zone du haut. Ex : bannière, logo, slogan, mon panier, mon compte etc... -->
+			<div id="logo">
+				<a href="index.html"><img src="img/logo.png" alt="Logo"></a>
+			</div>
+			<div id="slogan">
+				<h1>Mon premier site en HTML / CSS</h1>
+			</div>
+			<div id="reseauxSociaux">
+				<i class="fa fa-facebook-official" aria-hidden="true"></i>
+				<i class="fa fa-instagram" aria-hidden="true"></i>
+			</div>
+		</header>
+		
+
+			<!-- Zone du menu. Ex : lien pour naviguer sur le site -->
+		<nav class="navMenu">
+			<ul>
+				<li><a href="#">Structure</a></li>
+				<li><a href="texte.html">Texte</a></li>		
+				<li class="active"><a href="selecteurs.html">Selecteurs</a></li>			
+				<li><a href="image.html">Image</a></li>
+				<li><a href="position.html">Position</a></li>
+				<li><a href="zoning/zoning3.html">Zoning</a></li>
+				<li><a href="tableau.html">Tableau</a></li>
+				<li><a href="#">Liste</a></li>
+				<li><a href="lien_menu.html">Lien & Menu</a></li>
+				<li><a href="formulaire.html">Formulaire</a></li>		
+				<li><a href="#">Multimédia</a></li>
+				<li><a href="#">Animations</a></li>
+			</ul>
+		
+		
+		</nav>
+		
+		
+		<main>
+			<h2>Les selecteurs & reset</h2>
+			<section>
+				<h3>Reset CSS</h3>
+				<h1> h1 </h1>
+				<p> p </p>
+				<span> span </span>
+				<div> div </div>
+			</section>
+			<section id="select">
+				<p>texte n°1</p>
+				<p>texte n°2</p>
+				<p>texte n°3</p>
+				<p>texte n°4</p>
+				<p>texte n°5</p>
+				<p>texte n°6</p>
+				<p>texte n°7</p>
+				<p>texte n°8</p>
+				<p>texte n°9</p>
+				<p class="couleurBleu">texte n°10</p>
+				
+				<div class="zoneA">Zone A</div>
+				<div class="zoneB">Lorem ipsum dolor <span class="couleurBleu">sit amet,</span> consectetur adipiscing elit.</div>
+				<div id="zoneC"> Zone C</div>
+				<div id="zoneD"> Zone <span>D</span></div>
+			</section>
+		</main>
+		<footer>
+			<!-- Zone du bas. Ex : liens administratifs, mentions légales, plan du site, CGU, CGV, contact, Copyright -->
+			<p>Réalisation d'un site en HTML/CSS</p>
+		</footer>
+		
+	
+	</body>
+
+</html>

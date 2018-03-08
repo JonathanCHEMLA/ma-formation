@@ -1,0 +1,212 @@
+
+*{
+	box-sizing:border-box;
+}
+
+h1{
+	text-align:center;
+	font-family: 'Kaushan Script', cursive;
+	background:red;
+	font-style: italic;
+	
+}
+
+
+/******************HEADER******************************************/
+header{ /**/
+	background:#2c3e50;/*couleur de fond*/
+	/*****height:250px;/*hauteur*/	   /*on n'en a plus besoin car il y a du contenu a present   */
+	display:flex;			/*** la hauteur des elements enfant se fixent a la hauteur du parent  **/
+}
+#logo{
+	/**  background:pink;  cenn'est plus utile car on a du contenu**/
+	width:25%;
+	text-align:center;  /***aligne horizontalement   il ne sert pas ici car, a cause du flex, on est oblige de centrer avec du flex pour que ca fonctionne: justify-content:**/ 
+	padding:15px;			/**aligne verticalment ***/  /**ces 2 lignes revient au meme que      **/
+}
+#logo img{
+	/**  background:pink;  cenn'est plus utile car on a du contenu**/
+	width:75%;
+}
+#slogan{
+	width:50%;
+	text-align:center;  /***aligne horizontalement **/
+	align-items:center; /** le texte contenu dans ma div se centre horizontalement et verticalement  **/
+	justify-content:center;	/**centrer le slogan H1**/
+	display:flex;  			/**va centrer mon Slogan H1 **/
+}
+#slogan H1{
+font-size:45px;
+color:#2980b9;
+}
+slogan H1:before{
+	content:"<>";
+}
+slogan H1:after{
+	content:"</>";
+}
+
+#reseauxSociaux{
+	width:25%;
+
+}
+#reseauxSociaux i{
+font-size: 30px;
+color:blue;
+display:block;  /** car a la base elle sont en display inlign  et donc elle se mettent l un a cote de l autre. je vais donc les mettre l un audessus de l autre  **/
+text-align:right;
+padding: 15px 30px 0 0;
+
+  /** on peut aussi faire un display flex   et   flex-direction:column   **/
+}
+
+nav{
+	background:#2980b9;
+	height:100px;
+}
+
+main{
+	background:#ecf0f1;/*blue*/
+	width:1000px;
+	margin: 0 auto;
+	padding:10px;
+	box-sizing:border-box;
+}
+aside{
+	background:gray;
+	height:100px;
+}
+section{
+	min-height:200px; /*permet d avoir une hauteur minimum */
+}
+footer{
+	/***height:80px; c 'est plus necessaire quand il y a du contenu  **/
+	color:white;	
+	background:#0e3047;
+
+}
+footer p{
+	text-align:center;
+	padding: 20px;   /** pour centrer mon element ***/
+	color:#eee;
+
+}
+
+blockquote{
+color:red;	
+font-size:22px;   /* la valeur de base est 16px */
+}
+blockquote i{
+color:blue;	
+}
+section p{
+	font-family: 'Kaushan Script', cursive;
+}
+
+/*******PAGE SELECTEURS ************/
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------*/
+#select p{
+	color:red;
+}
+/***ci-dessous, on est sur de l'information contradictoire. ***/
+/*** a n utiliser qu avec des elements figés; pas dinamiques (ex: psg que l on veut garder en rouge) ***/
+#select p:nth-child(even){  /*** pour les elements paires    nth signifie le n-ieme ***/
+	color:blue;
+}
+#select p:nth-child(odd){  /*** pour les elements impaires  ***/
+	color:brown;
+}
+#select p:first-of-type{  /*** last of type est aussi un pseudo element  ***/
+	color:green;
+}
+#select p:last-of-type{  /*** last of type est aussi un pseudo element  ***/
+	color:green;
+}
+#select p:nth-child(5), #select p:nth-child(6){  /*** pour les elements impaires  ***/
+	color:orange;
+} 
+/********************************************************************************************************************/
+
+
+#select .ZoneA{
+	color:#f56f56;
+}
+#select .ZoneB{
+	color:#996633;
+}
+.couleurBleu{
+	color:#336699;
+}
+span.couleurBleu{
+	text-decoration:underline;
+}	
+#select .ZoneC{
+	color:#996633;
+}
+
+.ancre{
+	text-align:center;
+}
+.ancre a{
+	color:red;		/**je suis obligé de selectionner directement les liens  **/
+	text-decoration:none; /**  **/
+	
+	margin:5px;
+	padding:5px 10px;
+	background:#2c3e50;
+	color:#ecf0f1;
+	border-radius:5px;
+	box-shadow:0 0 10px 1px rgba(0,0,0,0.75);
+	transition:0.5s;
+}
+.ancre a:hover{
+	box-shadow:none;
+}
+
+.fa-hand-o-up{
+	position:fixed;
+	font-size:80px;
+	bottom:10px;
+	right:10px;
+}
+
+#lien a{
+	text-decoration:none;
+	color: #2980b9;
+	display:inline-block;  /*** pour pouvoir mettre un margin ***/
+	margin-bottom:15px;
+}
+
+#lien a:hover{
+
+	color: #f16529;
+
+}
+
+#menu nav{
+	background:transparent;  /***ca permet l'enlever le fond bleu qu'on a demande dans nav{}***/
+}
+
+
+#menu ul{
+	text-align:center;				/*** permet de centrer les li par rapport au parent, c est a dire par rapport au menu  ***/
+}
+#menu ul li{
+	display:inline-block;			/**pour que les element viennent se mettre l un a cote de l autre et non l un au dessous de l autre  **/
+}
+
+#menu nav li a{
+	padding:10px;					/** cest le padding qui donne un encadré à mon lien  **/
+	color:#666;			
+	text-decoration:none;
+	background:#ddd;		/**gris **/
+	transition:1s ease-in;
+}
+#menu nav li a:hover{
+	color:white;
+	background:#006699;
+}

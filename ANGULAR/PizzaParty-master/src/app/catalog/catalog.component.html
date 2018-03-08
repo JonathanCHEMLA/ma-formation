@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row"> 
+        <div class="col-md-4 offset-4 mt-5 mb-5"  >
+            <app-pizza [pizza]="selectedPizza"></app-pizza>
+        </div>
+    </div>
+      <br>
+      <h5>Total : {{total}} pizzas</h5>
+      <div class="row">
+        <div class="col-md-3" *ngFor="let pizza of pizzas">
+            <div class="card">
+              <img class="card-image-top" [src]="pizza.image" alt="{{pizza.name}}">
+              <div class="card-body">
+                  <h5 class="card-title" >{{pizza.name}}</h5>
+                  <p class="card-text"> {{pizza.price}} EUR</p> <br>
+                <div class="text-center">
+                  <app-counter (augmente)="toto($event)" (diminue)="toto($event)"></app-counter>
+                  <button (click)="onSelect(pizza)" class="btn btn-dark text-light">Voir la pizza</button>
+                </div>    
+              </div>
+            </div>
+        </div>
+      </div>
+</div>

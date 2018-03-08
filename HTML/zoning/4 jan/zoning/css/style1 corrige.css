@@ -1,0 +1,33 @@
+#container{
+	width:960px;   /**** la valeur 960 etait souvent utilisée avant car elles est divisible par 2, 3, 5... **/
+	background:red;
+	margin:20px auto;		/*c est le blanc qui va s trouver autour de ma page*/ 
+}
+header{
+	background:#6c5b7b;
+	height:70px;
+}
+
+aside{
+	width:20%;				
+	height:530px;
+	float:left;
+	background:c06c84;
+}
+
+main{
+	width:60%;
+	height:530px;
+	float:left;
+	background:#355c7d;
+}
+
+.droite{
+	background:#f67280;
+}
+
+.clear{
+	clear: both;
+}
+	
+	

@@ -1,0 +1,142 @@
+<!-- Parler des commentaires, du respect de l'indentation -->
+<!-- Relancer un clic droit > code source de la page -->
+<!-- Ctrl+S permet d'enregistrer le fichier -->
+<!DOCTYPE html>
+<html>
+	<head> <!-- entetes du document -->
+		<title>Ma page d'accueil</title>
+		<link rel="stylesheet" href="css/style.css" >
+		<meta name="description" content="Ma première page en HTML/CSS" ><!-- Google s'en sert -->
+		<meta name="author" content="Nom Prenom" >
+		<meta charset="utf-8" > 
+		<link href="https://fonts.googleapis.com/css?family=Arvo|Indie+Flower|Pacifico" rel="stylesheet">
+		<link rel="icon" type="image/png" href="img/favicon.png">
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	</head>
+	<body> <!-- corps du document -->
+	
+		<header>
+			<!-- zone du haut, ex: bannière, logo, slogan. -->
+			<div id="logo">
+				<a href="index.html"><img src="img/logo.png" alt="Logo"></a>
+			</div>
+			<div id ="slogan">
+				<h1>Mon premier site en HTML / CSS</h1>
+			</div>
+			<div id="reseauxSociaux">
+				<a href=""><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+				<a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a><!--aria-hidden="true" lu par les lecteur d'écran-->
+			</div>
+			<div class="clear"></div>
+		</header>
+		
+		<nav>
+			<!-- zone du menu, ex: lien pour naviguer sur le site -->
+			<a href="index.html">Structure</a>
+			<a href="texte.html">Texte</a>
+			<a href="selecteurs.html">Selecteurs</a>
+			<a href="image.html">Image</a>
+			<a href="position.html">Position</a>
+			<a href="zoning.html">Zoning</a>
+			<a href="tableau.html">Tableau</a>
+			<a href="liste.html">Liste</a>
+			<a href="lien_menu.html">Lien & menu</a>
+			<a href="formulaire.html" class="active">Fomulaire</a>
+			<a href="multimedia.html">Multimédia</a>
+			<a href="animation.html">Animations</a>
+			
+			
+		</nav>
+		<main><!--Bien que le standard HTML du WHATWG permette d'utiliser plusieurs éléments <main> dans une même page, ceci n'est pas autorisé par la spécification du W3C. De plus, la spécification du W3C ne permet pas que <main> soit un élément descendant de <article>, <aside>, <footer>, <header> ou <nav>.-->
+			<h2>Formulaire</h2>
+				<section class="formulaire">
+					<form method="post" action="url de destination" enctype="multipart/form-data"><!--method = comment vont circuler les données ? post, get. enctype est pour les envoie du fichier-->
+					<label for="pseudo">Pseudo *</label><!--Son utilisation permet aux navigateurs d’associer cet intitulé au champ de formulaire-->
+					<input type="text" id="pseudo" name="pseudo" required />
+					
+					<!-- <label for="mdp">Mot de passe</label>
+					<input type="password" id="mdp" name="mdp" /> -->
+						
+					<label for="prenom">Prénom</label>
+					<input type="text" id="prenom" name="prenom" placeholder="Votre pénom" />
+					
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" />
+
+					<label for="avatar">Avatar</label>
+					<input type="file" id="avatar" name="avatar" />
+						
+					<label for="Pays">Pays</label>
+						<select id="Pays" name="pays"> <!-- on peux ajouter dans le "select" la balise: multiple pour permettre plusieurs choix -->
+							<optgroup label="Europe">
+								<option value="fr">France</option>
+								<option value="it">Italie</option>
+								<option value="es" selected>Espagne</option> <!-- option séléctionnée par défaut -->
+							</optgroup>
+						</select>
+								
+					<label for="choix">Quels sont vos fruits préférés ?</label>
+					<p><input type="checkbox" name="choix" checked> Orange  <!-- option cochée par défaut -->
+					<input type="checkbox" name="choix"> Fraise
+					<input type="checkbox" name="choix"> Poire</p>
+					
+					<label for="civilite">Civilite</label>
+					<p><input type="radio" name="civilite" value="m" />Homme
+					<input type="radio" name="civilite" value="f" />Femme</p>
+
+					<label for="ville">Ville</label>
+					<input type="text" id="ville" name="ville" list="france" />
+					<datalist id="france">
+						<option>Paris</option>
+						<option>Marseille</option>
+						<option>Lyon</option>
+					</datalist>
+						
+					<label for="cp">Code Postal</label>
+					<input type="text" id="cp" name="cp" maxlength="5" pattern="[0-9]{5}" title="5 chiffres requis entre 0 et 9" />
+					
+					<label for="adresse">Adresse</label>
+					<textarea id="adresse" name="adresse" rows="5" cols="25"></textarea>
+					
+					<!---- DIVERS (Google Chrome) --->
+					<label for="datedenaissance">Date de Naissance</label>
+					<input type="date" name="datedenaissance" id="datedenaissance" /> <!-- Valide sous Chrome & Opéra à ce jour -->
+					
+					<label for="jauge">Jauge</label>
+					<input type="range" min="25" max="50" value="26" id="jauge" />
+					
+					<label for="telephone">Telephone</label>
+					<input type="tel" pattern="^[0-9]{10}$" maxlength="10"/> <!-- permet de faire apparaitre le clavier chiffré pour les smartphones -->
+					
+					<label for="recherche">Recherche</label>
+					<input type="text" pattern="[a-zA-Z0-9.-_]+" title="caractère autorisés : a-zA-Z0-9.-_" /> <!-- pattern permet de définir les caractère autorisés, title permet de personnaliser le message d'erreur dans l'infobulle. -->
+					
+					<label for="couleur">Couleur</label>
+					<input type="color" /> <!-- pattern permet de définir les caractère autorisés, title permet de personnaliser le message d'erreur dans l'infobulle. -->
+					
+					<label for="avatar">Avatar</label>
+					<input type="file" id="avatar" name="avatar" multiple />
+					
+					
+					<input type="submit" name="inscription" value="s'inscrire" />	
+					<input type="reset" name="efface" value="recommencer" />
+				</form>
+			</section>		
+		</main>
+		<footer>
+			Réalisation d'un site en HTML/CSS
+			<!-- zone du bas, ex: liens administratif, mentions légales, plan du site, CGU, CGV contact, Copyright -->
+		</footer>
+		
+	</body>
+</html><!-- Quand on clic sur une balise via notepad++, elle passe en surbrillance, ce qui prouve qu'elle est bien ouverte et bien fermée, je vous laisse vérifier pour toutes les autres -->
+
+<!-- Faire exprès d'oublier le guillemet sur le href de la feuille de style et allez dans le code source pour montrer que le code passe en rouge et qu'on nous indique l'erreur rencontrée à corriger. Faire des erreurs exprès et demander aux étudiants s'ils trouvent l'erreur. -->
+<!-- Un autre indicateur d'erreur : sous notepad les balises apparaissent en bleu, les attributs en rouge, les valeurs en violet. Si les couleurs ne sont pas bonne, cela peut montrer une erreur dans le code-->
+
+<!-- [ * Dessiner le schema n°2_zoning * ] sur l'utisation des balises au vue des zones d'un site. -->
+
+
+
+
+

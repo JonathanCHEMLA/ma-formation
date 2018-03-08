@@ -1,0 +1,102 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>Les positions</title><!-- titre de la page-->
+
+		<link rel="stylesheet" href="css/style.css"><!-- Lien vers mon fichier css-->
+		<meta name="description" content="Les positions en HTML/CSS"><!--description de la page-->
+		<meta charset="UTF-8"><!--Encodage-->		
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">  
+	</head>
+
+	<body>mon body
+		<header> mon header
+			<!--zone du haut. Ex: banniere, un logo qu on trouve tout le temps, slogan, mon panier, les mots clés, mon compte etc...-->
+			<!-- Cest dan sle header qu on trouve le H1 -->
+			<h1>Mon premier site en HTML / CSS </H1>
+		</header>
+		
+		<nav>ma nav
+			<!--zone du menu. Ex:lien pour naviguer sur le site, icones vers les reseaux sociaux, etc...-->
+		
+		</nav>
+		
+		<main>mon main
+		<H2>Les positions</h2>
+			<!--zone principale-->
+			<section>
+				<H3> Centrer un élément de type bloc </H3>
+				<div class="centre"></div>
+			</section>
+			
+			<section>
+				<H3> position absolute </H3>
+				<div class="absolute"></div>
+			</section>
+			
+			<section>
+				<H3> position relative </H3>
+				<div class="relative"></div>
+			</section>
+			
+			<section>
+				<H3> position fixed </H3>
+				<p>bouton retour vers le haut</p>
+				<button><i class="fa fa-thermometer-empty" aria-hidden="true"></i></button>
+			</section>
+					
+			<section>
+				<H3> le pourcentage </H3>
+				<div class="trente">30%</div>
+				<div class="cinquante">50%</div>
+				<div class="cent">100%</div>
+			</section>
+			
+			<section>
+				<H3> l'attribut float </H3>
+				<div class="float"> 1 </div>
+				<div class="float"> 2 </div>
+				<div class="float"> 3 </div>
+				<div class="float"> 4 </div>
+				
+				<div class="float clear"> 5 </div>
+				<div class="float"> 6 </div>
+				<div class="float"> 7 </div>
+				
+				<div class="float clear"> 8 </div>
+				<div class="float"> 9 </div>
+				
+				<div class="dernier clear"> 10 </div>  <!-- la class de ce dernier porte un nom different des class precedentes: dernier au lieu de float.  Je l'ai realise ainsi car je ne souhaite pas que le 10eme element porte un float, car alors on devrait casser l'effet du float avec un clear -->
+			</section>
+			
+			<section>
+				<H3> Exercice sur le float </H3>
+				<div class="gris"></div>
+					<div class="monfloat bleu"></div>
+					<div class="monfloat rouge"></div>
+					<div class="monfloat orange"></div>
+					<div class="monfloat marron"></div>
+				<div class="gris clear"></div>
+				
+			</section>
+			
+			<section>
+				<H3> Flexbox </H3>
+				<article class="flex">
+					<div class="">1</div>
+					<div class="">2</div>
+					<div class="">3</div>
+					<div class="">4</div>
+				</article>
+				
+			</section>
+			
+		</main>
+		
+		<footer>mon footer
+			<!--zone du bas. Ex: lien administratifs, mentions légales, plan du site, CGU, CGV, contact, copyright-->
+		</footer>
+	</body>
+</html>

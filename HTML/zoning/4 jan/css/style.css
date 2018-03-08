@@ -1,0 +1,233 @@
+h1{
+	text-align:center;
+	font-family: 'Kaushan Script', cursive;
+	background:red;
+	font-style: italic;
+	
+}
+header{ /**/
+	background:#2c3e50;/*couleur de fond*/
+	height:250px;/*hauteur*/	/**/
+}
+nav{
+	background:#2980b9;
+	height:100px;
+}
+
+main{
+	background:#ecf0f1;/*blue*/
+
+	box-sizing:border-box;	/***ces 2 informations auraient tres bien pu aussi se trouver dans <section>   ***/
+	padding:20px;			/***ces 2 informations auraient tres bien pu aussi se trouver dans <section>   ***/
+}
+aside{
+	background:gray;
+	height:100px;
+}
+section{
+	min-height:200px; /*permet d avoir une hauteur minimum */
+
+}
+footer{
+	height:80px;
+	color:white;	
+	background:#0e3047;
+
+}
+
+blockquote{
+color:red;	
+font-size:22px;   /* la valeur de base est 16px */
+}
+blockquote i{
+color:blue;	
+}
+section p{
+	font-family: 'Kaushan Script', cursive;
+}
+
+/*******PAGE SELECTEURS ************/
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------*/
+#select p{
+	color:red;
+}
+/***ci-dessous, on est sur de l'information contradictoire. ***/
+/*** a n utiliser qu avec des elements figés; pas dinamiques (ex: psg que l on veut garder en rouge) ***/
+#select p:nth-child(even){  /*** pour les elements paires    nth signifie le n-ieme ***/
+	color:blue;
+}
+#select p:nth-child(odd){  /*** pour les elements impaires  ***/
+	color:brown;
+}
+#select p:first-of-type{  /*** last of type est aussi un pseudo element  ***/
+	color:green;
+}
+#select p:last-of-type{  /*** last of type est aussi un pseudo element  ***/
+	color:green;
+}
+#select p:nth-child(5), #select p:nth-child(6){  /*** pour les elements impaires  ***/
+	color:orange;
+} 
+/****************************************FIN DU COURS DU 3 JAN**************************************************************/
+
+
+#select .ZoneA{
+	color:#f56f56;
+}
+#select .ZoneB{
+	color:#996633;
+}
+.couleurBleu{
+	color:#336699;
+}
+span.couleurBleu{
+	text-decoration:underline;
+}	
+#select #ZoneC{
+	color:red;
+}
+#select #ZoneD span{
+	color:red;
+}
+/**********************PAGE POSITION*******************************/
+.centre{
+	width:500px;
+	height:200px;
+	background:#33cccc;
+	margin: 10px auto;
+}
+
+.absolute{
+	width:50px;
+	height:50px;
+	background:#FF00cc;
+	position:absolute;
+	top:50px;
+	right:50px;
+}
+
+.relative{
+	width:50px;
+	height:50px;
+	background:orange;
+	position:relative;
+	top:50px;
+	right:50px;
+}
+
+button{
+	width:100px;
+	position:fixed;
+	bottom:50px;
+	right:50px;
+	
+	
+	border:none;
+	background:none; /***car les icones ont une couleur par defaut***/	
+	
+	
+	color:#2c3e50;	/***car les icones sont des polices***/
+	font-size:350%;	/***car les icones sont des polices***/
+	
+	
+	transition:1s; /*** changement d'état (par ex, changment de couleur) qui se fera en 1 seconde ***/
+	
+	
+	cursor:pointer; /** change la forme du curseur quand on est dessus.   on peut meme mettre une image a la place **/
+}
+
+button:hover{
+		color:#33cccc;	/***car les icones sont des polices***/
+}
+
+.trente{
+	width:30%;
+	font-size:22px;
+	background:#f1684e;
+	color:#efe94b;
+	font-weight:bold;
+	padding:20px 0;
+}
+.cinquante{
+	width:50%;
+	font-size:22px;
+	background:#383746;
+	color:#f1684e;
+	font-weight:bold;
+	margin:10px 0;
+	padding:20px 0;
+}
+.cent{
+	width:100%;
+	font-size:22px;
+	background:#efe94b;
+	color:#383749;
+	font-weight:bold;
+	padding:20px;
+	box-sizing:border-box; /****permet d'eviter que le padding pousse le width à droite et à gauche. Bref, on garde officieusement et officiellement la meme width **/
+}
+
+.float{
+	float:left;
+	width:150px;
+	height:150px;
+	text-align:center;  /**** sert simplement a centrer le texte a l interieur des elements***/
+	border:3px solid #cf4647;
+	margin:20px;
+	background:#f5d061;
+}
+.dernier{
+	width:150px;
+	height:150px;
+	text-align:center;
+	border:3px solid #cf4647;
+	margin:20px;
+	background:#f5d061;
+}
+.clear{
+	clear:both;
+}
+
+
+.monfloat{     /*** dans le cas ou on aurait appelé les div: zone1, zone2, zone3, zone4, Zone5,  dans ce cas, on aurait pu ecrire aussi:   .zone2, .zone3, -zone4, -zone5{       ***/
+	float:left;
+	width:25%;
+	height:250px;
+}
+
+.gris{
+	background:gray;
+	/***width:100%; n 'est pas necessaire car par defaut le width d un bloc fait ***/
+	height:50px;	/*si on me precise pas cet attribut, la div sera invisible car cette div n'a pas de contenu*/	
+}
+.bleu{
+	background:blue;	
+}
+.rouge{
+	background:red;	
+}
+.orange{
+	background:orange;	
+}
+.marron{
+	background:maroon;	
+}
+
+
+.flex{
+	display:flex;
+	justify-content:space-between;  /*** permet d'espacer les elements "fils" entre-eux ***/
+	flex-direction:row reverse;    /*** row met les elements en ligne    reverse met les element par ordre 4,3,2,1 ***/
+}
+.flex div{
+	width:150px;
+	height:150px;
+	background:#e85b48;
+	text-align:center;
+	font-size:50px;
+	color: white;
+	

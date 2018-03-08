@@ -91,7 +91,7 @@ echo $content;	//au premier chargement de la page, on ne rentre pas dans le if d
 	  </div>
 	</div>
 	<div class="col-md-12">
-	  <button type="submit" class="btn btn-primary col-md-12">Inscription</button>
+	  <button type="submit" class="btn btn-primary col-md-12">Validation</button>
 	</div>  
 </div>
 </form>

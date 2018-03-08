@@ -1,0 +1,329 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+h1{
+	text-align:center;
+}
+header{
+	background:#2c3e50;/* Couleur de fond */
+	height:250px;/* Hauteur */
+	text-align:right;
+}
+nav{
+	background:#2980b9;
+	height:100px;
+}
+main{
+	background:#ecf0f1;
+	width:1000px;
+	margin: 0 auto;
+	padding:10px;
+	box-sizing:border-box;
+}
+aside{
+	background:gray;
+	height:100px;
+}
+section{
+	min-height:200px;
+}
+footer{
+	height:80px;
+	background:#0e3047;
+}
+blockquote{
+	color:red;
+	font-size:22px;
+}
+blockquote i{
+	color:blue;
+}
+section p{
+	font-family: 'Courgette', cursive;
+}
+/*****************PAGE SELECTEURS*******************************/
+/* #select p{
+	color:red;
+}
+#select p:first-of-type{
+	color:green;
+}
+#select p:last-of-type{
+	color:green;
+}
+#select p:nth-child(5), #select p:nth-child(6){
+	color:orange;
+}
+#select p:nth-child(even){
+	color:blue;
+}
+#select p:nth-child(odd){
+	color:brown;
+} */
+
+#select .zoneA{
+	color:#f56f56;
+}
+#select .zoneB{
+	color:#996633;
+}
+.couleurBleu{
+	color:#336699;
+}
+span.couleurBleu{
+	text-decoration:underline;
+}
+#select #zoneC{
+	color:red;
+}
+#select #zoneD span{
+	color:green;
+}
+/******************PAGE POSITION***************************/
+.centre{
+	width:500px;
+	height:200px;
+	background:#33cccc;
+	margin: 10px auto;
+}
+.absolute{
+	width:100px;
+	height:100px;
+	background:orange;
+	position:absolute;
+	top:50px;
+	right:50px;
+}
+.relative{
+	width:100px;
+	height:100px;
+	background:blue;
+	position:relative;
+	top:50px;
+	right:50px;
+}
+button{
+	position:fixed;
+	right:25px;
+	bottom:25px;
+	background:none;
+	border:none;
+	color:#2c3e50;
+	font-size:350%;
+	transition:1s;
+	cursor:pointer;
+}
+button:hover{
+	color:#33cccc;
+}
+.trente{
+	width:30%;
+	font-size:22px;
+	background:#f1684e;
+	color:#efe94b;
+	font-weight:bold;
+	padding:20px;
+	box-sizing:border-box;
+}
+.cinquante{
+	width:50%;
+	font-size:22px;
+	background:#383746;
+	color:#f1684e;
+	font-weight:bold;
+	padding:20px;
+	margin:10px 0 10px 0;
+	box-sizing:border-box;
+}
+.cent{
+	width:100%;
+	font-size:22px;
+	background:#efe94b;
+	color:#383746;
+	padding:20px;
+	font-weight:bold;
+	box-sizing:border-box;
+}
+.float{
+	float:left;
+	width:170px;
+	height:170px;
+	text-align:center;
+	border:3px solid #cf4647;
+	margin:20px;
+	background:#f5d061;
+}
+.dernier{
+	width:170px;
+	height:170px;
+	text-align:center;
+	border:3px solid #cf4647;
+	margin:20px;
+	background:#f5d061;
+}
+.clear{
+	clear:both;
+}
+.zone1{
+	height:70px;
+	background:#3a4750;
+}
+.zone2, .zone3, .zone4, .zone5{
+	float:left;
+	width:25%;
+	height:250px;
+}
+.zone2{
+	background:blue;
+}
+.zone3{
+	background:orange;
+}
+.zone4{
+	background:pink;
+}
+.zone5{
+	background:black;
+}
+.flex{
+	display:flex;
+	justify-content:space-around;
+	flex-direction:column-reverse;
+}
+.flex div{
+	width:150px;
+	height:150px;
+	background:#e85b48;
+	text-align:center;
+	font-size:50px;
+	color:white;
+}
+/*********************PAGE IMAGE*******************************/
+.imageFond{
+	background: #000 url(../img/fond.jpg) no-repeat;
+	background-size:cover;
+	padding: 200px 0;
+}
+.imageFond p{
+	width:75%;
+	margin:100px auto;
+	background:rgba(255,255,255,0.6);
+	padding:20px;
+	font-size:120%;
+	border-radius:10px;
+	line-height:30px;
+}
+img[title="Carte de l'image"]{
+	margin:auto;
+	display:block;
+}
+.rotationImg{
+	text-align:center;
+}
+.image{
+	margin:55px;
+	border:5px solid #eee;
+	box-shadow:4px 4px 4px rgba(0,0,0,0.2);
+	transition:1s;
+}
+.image:hover{
+	transform:rotate(-7deg);
+}
+.rotation360:hover{
+	transform:scale(1.5);
+}
+figure{
+	width:200px;
+	position:relative;
+	overflow:hidden;
+	border: 3px solid #c0c0c0;
+	margin:15px auto;
+}
+figure img{
+	display:block;
+}
+figcaption{
+	position:absolute;
+	background:rgba(0,0,0,0.75);
+	padding: 5px 0;
+	text-align:center;
+	width:200px;
+	transition:0.6s;
+	left:0;
+	bottom:-30%;
+	color:#eee;
+}
+figure:hover figcaption{
+	bottom:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

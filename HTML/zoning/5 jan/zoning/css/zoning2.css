@@ -1,0 +1,55 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+#container{
+	background:red;
+	margin: 20px auto;
+	width:960px;
+	border:2px solid; /****comme je n ai pas precisé la couleur de la bordure, par defaut ce sera du noir ****/
+}
+
+header{
+	background:gray;
+	height:90px;
+}
+
+.bleu{
+
+	background:blue;
+	height:50px;
+	text-align:center;
+}
+
+section{
+
+	background:white;	
+
+	box-sizing:border-box;
+	padding:20px;
+	
+	min-height:200px;
+	width:100%;	
+	
+	display:flex;
+	flex-wrap:wrap;
+}
+
+article{
+	width:50%;
+	height:200px;
+	
+}
+.rose{
+	background:pink;	
+}
+.orange{
+	background:orange;	
+}
+.vert{
+	background:green;	
+}
+.jaune{
+	background:yellow;	
+}

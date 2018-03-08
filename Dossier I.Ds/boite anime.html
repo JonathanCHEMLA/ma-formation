@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - JavaScript animation with requestAnimationFrame</title>
+    <style>
+        #box {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000;
+            background-color: darkorange;
+        }
+    </style>
+</head>
+
+<body translate="no">
+    <h1>JavaScript animation with requestAnimationFrame()</h1>
+    <p>
+        <label>Choose the distance covered in every frame:</label>
+        <select id="distance">
+            <option value="1">1px</option>
+            <option value="5" selected>5px</option>
+            <option value="10">10px</option>
+            <option value="25">25px</option>
+            <option value="50">50px</option>
+        </select>
+    </p>
+    <div id="box"></div>
+    <script>
+        var box = document.querySelector("#box");
+        var distance = document.querySelector("#distance");
+        var margin = 0;
+
+        function animate() {
+            margin = (margin > window.innerWidth ? 0 : margin + Number(distance.value));
+            box.style.marginLeft = margin + "px";
+            requestAnimationFrame(animate);
+        }
+
+        requestAnimationFrame(animate);
+
+		
+    </script>
+	
+	
+	
+</body>
+
+</html>

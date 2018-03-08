@@ -1,0 +1,72 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>Liens  menus</title><!-- titre de la page-->
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">    <!----IL Y A 3 CHOSES A GERER AVEC FONT-AWESOME:  METTRE LE LINK, METTRE L ICONE <i class=""   ></i>   ET INTEGRER LE DOSSIER FONT AWESOME  --->
+		<link rel="stylesheet" href="css/style.css"><!-- Lien vers mon fichier css-->
+
+		<meta name="description" content="Les liens et menu html css"><!--description de la page-->
+		<meta charset="UTF-8"><!--Encodage-->
+	</head>
+
+	<body>
+		
+		<button><a href="#logo"><i class="fa fa-hand-o-up " aria-hidden="true"></i></a></button>
+			<header> 
+			<!--zone du haut. Ex: banniere, logo, slogan, mon panier, mon compte etc...-->
+			<div id="logo">
+				<img src="img/logo1.png" alt="Logo">
+			</div>
+			
+			<div id="slogan"><h1>Mon premier site en HTML/CSS</h1></div>
+			<div id="reseauxSociaux">
+				<i class="fa fa-facebook-official" aria-hidden="true"></i>
+				<i class="fa fa-instagram" aria-hidden="true"></i>
+			
+			</div>
+			
+			
+		</header>
+		
+		<nav>ma nav
+			<!--zone du menu. Ex:lien pour naviguer sur le site, icones vers les reseaux sociaux, etc...-->
+		
+		</nav>
+		<main>
+		
+
+			<h2>Liens & Menus</h2>
+			<div class="ancre">  <!---je les ai range dans un div pour pouvoir les stylyser, centrer...-->
+				<a href="#lien">les liens</A><!-- le id "menu" ci dessous pointe sur l ancre # lien-->
+				<a href="#menu">Menu</A>
+			</div>
+			<section id="lien">
+				<h3>Les liens</H3>
+				<a href="https://codepen.io" title="Se rendre sur le site de CodePen" target="_blank">CodePen</a> is a social development environment for front-end designer and developers.<br>
+				<a href="doc/cv.doc">Télécharger mon CV</a><br>
+				<a href="doc/cv.pdf" target="_blank">Voir mon CV</a><br>  <!--- en ajoutant, juste apres le target="_blank"  , un  download  , on telecharge le pdf sans voir le contenu avant   -->
+				<a href="https://www.facebook.com" target="_blank"><img src="img/facebook.png" alt="Logo Facebook"></a><br>
+				Cliquez <a href="index.html">ici</a> pour retourner à l'accueil <br>
+				<a href="" onclick="window.print()">Imprimer</a> la page<br>
+			</section>
+			<section id="menu">  <!-- id: 1 fois par page car on les utilise pour appeler mes ancres-->
+				<h3>Menu</H3>
+				<nav>
+					<ul>
+						<li><a href="">Accueil</a></li>
+						<li><a href="">Parcours</a></li>
+						<li><a href="">Réalisations</a></li>
+						<li><a href="">Contact</a></li>
+					</ul>
+					
+				</nav>
+			</section>
+		</main>
+		
+		<footer>
+			<!--zone du bas. Ex: lien administratifs, mentions légales, plan du site, CGU, CGV, contact, copyright-->
+			<p>Realisation d un site en HTML et CSS</p>
+		</footer>
+	</body>
+</html>

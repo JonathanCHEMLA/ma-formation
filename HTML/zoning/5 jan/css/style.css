@@ -1,0 +1,51 @@
+/******************************************PAGE IMAGE********************************************************/
+*{
+	margin:0;
+	padding:0;
+	
+}
+main{
+	width:960px;
+	margin: 40px auto;
+}
+
+.imageFond{
+	margin: 200px auto;				/***pour centrer mon image de fond ***/
+	width:800px;					/***c est pas obligatoire ****/
+	background:#000 url(../img/fond.jpg);  /***Attention a ne pas mettre d espace entre url et les ().   no-repeat pour ne pas que l image se repete.      ****/
+	background-size:cover;  /****pour couvrir l integralite da ma div****/
+	min-height:500px;		/***pour etre sûr qu on voit toujours la totalite de la photo ***/
+	
+}
+.imageFond p{
+	width:75%;					
+	margin:100px auto;			/*** mon texte, dans son encadre blanc, ne touche pas les bords de l'image   ***/
+	background:rgba(255,255,255,0.8);	/***fond blanc ***/
+	padding:20px;			/*** pour ne pas que le texte touche les bords du cadre ***/
+	font-size:120%;			/**agrandis la taille prevue, de 20%  ****/
+	border-radius:200px;		/*** met des bords arrondis     200px sur un carré, cà le transforme en rond   ***/
+	line-height:30px;			/**interlignage: il est a 16px ,a la base ***/
+	overflow:hidden; 			/***permet de cacher tout ce qui va sortir de la bordure arrondie ***/
+}
+
+
+img[title="Carte de l'image"]{
+	margin:auto;
+	display:block;
+}
+
+.rotationImg{
+		text-align:center;
+}
+.image{
+	margin:55px;
+	border:5px solid #eee;
+	box-shadow: 4px 4px 4px rgba(0,0,0,0.2);   /***4px c'est x,y,z c'est a dire horizontal, vertical et en profondeur. **/
+	transition:1s;							/**** il y a un temps de rotation de 1 sec  ***/
+}
+.image:hover{
+	transform:rotate(-7deg);			/* au passage de la souris sur l evenement ca fait une rotation de 7 degres sur la gauche  */
+}
+.rotation360:hover{
+	transform:scale(1.5);  /*** ca fait un zoom sur mon image  **/
+}

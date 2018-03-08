@@ -1,0 +1,1 @@
+taper dans la console: npm install angular-async-local-storage

@@ -1,0 +1,49 @@
+*{
+margin:0;
+padding:0;
+
+}
+
+
+
+body{
+	/*** position : absolute;	pourquoi j'arrive au resultat souhaité si je supprime cette ligne?  ***/
+	
+	box-sizing:border-box;
+	padding:150px;
+}
+h1{
+	Position: relative;
+	left:-100px;
+	top:-40px;
+}
+
+
+header{
+	background:purple;
+	height:100px;
+}
+main{
+	width:100%	
+}
+.gauche{
+	background:pink;	
+	width:20%;
+}
+.milieu{
+	background:blue;
+	width:60%;
+}
+.droite{
+	background:orange;	
+	width:20%;
+}
+.gauche, .milieu, .droite{
+	position:relative;
+	padding-top:20px;
+	float:left;
+	height:700px;
+}
+.clear{
+	clear: both;
+}

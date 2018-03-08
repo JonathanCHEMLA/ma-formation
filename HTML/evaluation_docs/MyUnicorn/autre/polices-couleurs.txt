@@ -1,0 +1,17 @@
+﻿Polices par défaut : 
+	font-family: Arial, sans-serif;
+
+Police des titres :
+	font-family: 'Courgette', cursive;
+	
+Etoiles dans les titres : 
+    FontAwesome 4.6 => fa-star-o
+
+Couleurs : 
+	barre de menus : #C55394		rose fonce
+	hover menu : #EB43A3  			rose clair
+    titre h1 : #C55394				rose fonce
+    autres titres : #EB43A3			rose clair
+	footer : #E577B5			rose clair
+	noir : #333
+	blanc : #FFF

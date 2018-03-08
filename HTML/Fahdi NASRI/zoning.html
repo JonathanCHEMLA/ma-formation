@@ -1,0 +1,173 @@
+<!-- Parler des commentaires, du respect de l'indentation -->
+<!-- Relancer un clic droit > code source de la page -->
+<!-- Ctrl+S permet d'enregistrer le fichier -->
+<!DOCTYPE html>
+<html>
+	<head> <!-- entetes du document -->
+		<title>Le zoning</title>
+		<link rel="stylesheet" href="css/style.css" >
+		<meta name="description" content="Construire un site web à partir du zoning" ><!-- Google s'en sert -->
+		<meta name="author" content="Nom Prenom" >
+		<meta charset="utf-8" > 
+		<link href="https://fonts.googleapis.com/css?family=Arvo|Indie+Flower|Pacifico" rel="stylesheet">
+		<link rel="icon" type="image/png" href="img/favicon.png">
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	</head>
+	<body> <!-- corps du document -->
+	
+		<header>
+			<!-- zone du haut, ex: bannière, logo, slogan. -->
+			<div id="logo">
+				<a href="index.html"><img src="img/logo.png" alt="Logo"></a>
+			</div>
+			<div id ="slogan">
+				<h1>Mon premier site en HTML / CSS</h1>
+			</div>
+			<div id="reseauxSociaux">
+				<a href=""><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+				<a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a><!--aria-hidden="true" lu par les lecteur d'écran-->
+			</div>
+			<div class="clear"></div>
+		</header>
+		
+		<nav>
+			<!-- zone du menu, ex: lien pour naviguer sur le site -->
+			<a href="index.html">Structure</a>
+			<a href="texte.html">Texte</a>
+			<a href="selecteurs.html">Selecteurs</a>
+			<a href="image.html">Image</a>
+			<a href="position.html">Position</a>
+			<a href="zoning.html" class="active">Zoning</a>
+			<a href="tableau.html">Tableau</a>
+			<a href="liste.html">Liste</a>
+			<a href="lien_menu.html">Lien & menu</a>
+			<a href="formulaire.html">Fomulaire</a>
+			<a href="multimedia.html">Multimédia</a>
+			<a href="animation.html">Animations</a>
+
+			
+		</nav>
+		<main><!--Bien que le standard HTML du WHATWG permette d'utiliser plusieurs éléments <main> dans une même page, ceci n'est pas autorisé par la spécification du W3C. De plus, la spécification du W3C ne permet pas que <main> soit un élément descendant de <article>, <aside>, <footer>, <header> ou <nav>.-->
+			<h2>Le Zoning</h2>
+			<section>
+				<h3>Zoning 1</h3>
+				<div id="zoning1">
+					<header>
+						<p> Zone du Haut</p>
+					</header>
+					<aside>
+						<p> Zone de Gauche</p>
+					</aside>
+					<section>
+						<p> Zone du Milieu</p>
+					</section>
+					<div class="clear"></div> <!-- on arrete l'effet flottant -->
+				</div>
+			</section>
+			
+			<section>
+				<h3>Zoning 2</h3> <!-- SousTitre -->
+				<div id="zoning2">
+					<header>
+						<p> Zone du Haut</p>
+					</header>
+					<aside class="gauche">
+						<p> Zone de Gauche</p>
+					</aside>
+					<section>
+						<p> Zone du Milieu</p>
+					</section>
+					<aside class="droite">
+						<p> Zone de Droite</p>
+					</aside>
+					<div class="clear"></div>
+				</div>
+			</section>
+			
+			<section>
+				<h3>Zoning 3</h3>
+				<div id="zoning3">
+					<section class="gauche">gauche</section>
+					<section class="droite">droite</section>
+					<footer class="clear">Bas</footer>
+				</div>
+			</section>
+			
+			<section>
+				<h3>Zoning 4</h3>
+				<div id="zoning4">
+					<header>Haut</header>
+					<nav>Menu</nav>
+					<section>Milieu</section>
+					<footer>Bas</footer>
+				</div>
+			</section>
+			
+			<section>
+				<h3>Zoning 5</h3>
+				<div id="zoning5">
+					<header>Haut</header>
+					<nav>Menu</nav>
+					<section>
+						<div class="a">A</div>
+						<div class="b">B</div>
+						<div class="c">C</div>
+						<div class="d">D</div>
+						<div class="clear"></div>
+					</section>
+					<footer>Bas</footer>
+				</div>
+			</section>
+			
+			<section>
+				<h3>Zoning 6</h3>
+				<div id="zoning6">
+					<header>
+						<div class="haut1">Haut 1</div>
+						<div class="haut2">Haut 2</div>
+						<div class="haut3">Haut 3</div>
+						<div class="clear"></div>
+					</header>
+					<nav>Menu</nav>
+					<aside>Zone gauche</aside>
+					<section>
+					
+						<div class="a">A</div>
+						<div class="b">B</div>
+						<div class="clear"></div>
+					</section>
+					<section class="slideshow">
+						Slideshow
+						
+					</section>
+					<section>
+						<div class="c">C</div>
+						<div class="d">D</div>
+						<div class="e">E</div>
+						<div class="f">F</div>
+						<div class="clear"></div>
+					</section>
+					<div class="clear"></div>
+					<footer>Bas</footer>
+				</div>
+			</section>
+			
+		
+		</main>
+		<footer>
+			Réalisation d'un site en HTML/CSS
+			<!-- zone du bas, ex: liens administratif, mentions légales, plan du site, CGU, CGV contact, Copyright -->
+		</footer>
+		
+	</body>
+</html><!-- Quand on clic sur une balise via notepad++, elle passe en surbrillance, ce qui prouve qu'elle est bien ouverte et bien fermée, je vous laisse vérifier pour toutes les autres -->
+
+<!-- Faire exprès d'oublier le guillemet sur le href de la feuille de style et allez dans le code source pour montrer que le code passe en rouge et qu'on nous indique l'erreur rencontrée à corriger. Faire des erreurs exprès et demander aux étudiants s'ils trouvent l'erreur. -->
+<!-- Un autre indicateur d'erreur : sous notepad les balises apparaissent en bleu, les attributs en rouge, les valeurs en violet. Si les couleurs ne sont pas bonne, cela peut montrer une erreur dans le code-->
+
+<!-- [ * Dessiner le schema n°2_zoning * ] sur l'utisation des balises au vue des zones d'un site. -->
+
+
+
+
+

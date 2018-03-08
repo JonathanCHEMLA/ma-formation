@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Encodage de la page pour les accents -->
+    <meta charset="UTF-8">
+    
+    <!-- Titre de la page -->
+    <title>Apple Addict !</title>
+    
+    <!-- Pour Internet Explorer : S'assurer qu'il utilise la dernière version du moteur de rendu -->
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    
+    <!-- Affichage sans zoom sur les mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <!-- FontAwesome CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
+    <!-- Styles CSS -->
+    <link href="assets/css/styles.css" rel="stylesheet">
+    
+    <!-- HTML 5 Shiv -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    
+    <!-- Menu du Haut : Navigation Bootstrap -->
+    <nav class="navbar navbar-inverse navbar-apple">
+      <div class="container">
+        <div class="navbar-header">
+        
+         <!-- Gestion du Menu Burger : Version Mobile -->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+          <!-- Le Logo Appel -->
+          <a class="navbar-brand"  href="#">
+              <i class="fa fa-apple" aria-hidden="true"></i>
+          </a>
+        </div>
+        
+        <!-- Le Menu -->
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Mac</a></li>
+            <li><a href="#">iPad</a></li>
+            <li class="active"><a href="#">iPhone</a></li>
+            <li><a href="#">Watch</a></li>
+            <li><a href="#">TV</a></li>
+            <li><a href="#">Music</a></li>
+            <li><a href="#">Assistance</a></li>
+            <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <main>
+       
+        <!-- Les Produits -->
+        <section id="mobile">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ul class="list-inline">
+                            <li><a href="#"><img src="assets/img/menu/iPhone7.png" alt="iPhone7"></a></li>
+                            <li><a href="#"><img src="assets/img/menu/iPhone6s.png" alt="iPhone6s"></a></li>
+                            <li><a href="#"><img src="assets/img/menu/iPhoneSE.png" alt="iPhoneSE"></a></li>
+                            <li><a href="#"><img src="assets/img/menu/iOs10.png" alt="iOS10"></a></li>
+                            <li><a href="#"><img src="assets/img/menu/Accessoires.png" alt="Accessoires"></a></li>
+                            <li><a href="#"><img src="assets/img/menu/Comparer.png" alt="Comparer"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Le Projecteur -->
+        <section id="projecteur">            
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>iPhone</h2>
+                        <h3>Numéro 7</h3>
+                        <p><a href="#">En savoir plus >></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Acheter ></a></p>
+                        <p>Ou rendez‑vous dès aujourd’hui dans un Apple Store.</p>
+                        
+                        <img src="assets/img/hero_large.jpg" alt="iPhone">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- iPhone7 -->
+        <section id="iPhone7">            
+            <div class="container">
+                <div class="row">
+                    <aside class="col-sm-6">
+                        <img class="img-responsive" src="assets/img/iPhone.png" alt="iPhone">
+                    </aside>
+                    <article class="col-sm-6">
+                        <h3>Passez à l’iPhone 7.</h3>
+                        <p>Échangez votre smartphone contre un iPhone <br>
+                        neuf dans un Apple Store et bénéficiez de <br> mensualités réduites.</p>
+                   <a class="btn btn-primary" href="#">Comment ça marche ? ></a>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact -->
+         <section id="contact">            
+            <div class="container">
+                <div class="row">
+                   
+                   <h3>Contact</h3>
+                   
+                   <div class="col-sm-8 col-sm-push-2 col-xs-10 col-xs-push-1">
+                        <form id="inscription" class="form-horizontal" data-toggle="validator">
+
+                            <!-- Nom -->
+                            <div class="form-group">
+                              <div class="col-xs-12">
+                                  <input id="nom" name="nom" type="text" placeholder="Nom" class="form-control input-md">
+                              </div>
+                            </div>
+
+                            <!-- Prénom -->
+                            <div class="form-group">
+                              <div class="col-xs-12">
+                                  <input id="prenom" name="prenom" type="text" placeholder="Prénom" class="form-control input-md">                    
+                              </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-group"> 
+                              <div class="col-sm-6">
+                              <input id="email" name="email" type="email" placeholder="Adresse Email" class="form-control input-md">
+                              </div>
+
+                            <!-- Téléphone -->
+                              <div class="col-sm-6">
+                              <input id="tel" name="tel" type="tel" placeholder="Téléphone" class="form-control input-md">
+                              </div>
+                            </div>
+
+                            <!-- Sujet -->
+                            <div class="form-group">
+                              <div class="col-xs-12">
+                                  <input id="sujet" name="sujet" type="text" placeholder="Sujet" class="form-control input-md">                    
+                              </div>
+                            </div>
+                            
+                            <!-- Message -->
+                            <div class="form-group">
+                              <div class="col-xs-12">
+                                  <textarea id="message" name="message" rows="5" placeholder="Message" class="form-control"></textarea>           
+                              </div>
+                            </div>
+
+                            <!-- Bouton d'Envoi -->
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <button type="submit" class="btn btn-primary" name="inscription" value="Je m'inscris">Envoyer ma Demande</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Pied de Page -->
+        <footer>
+            <p>Une Réalisation WF3 - Paris XIV</p>
+        </footer>
+        
+    </main>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <!-- Mon Fichier JS -->
+    <script src="assets/js/apple.js"></script>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

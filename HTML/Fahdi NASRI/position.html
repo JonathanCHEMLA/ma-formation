@@ -1,0 +1,134 @@
+<!-- Parler des commentaires, du respect de l'indentation -->
+<!-- Relancer un clic droit > code source de la page -->
+<!-- Ctrl+S permet d'enregistrer le fichier -->
+<!DOCTYPE html>
+<html>
+	<head> <!-- entetes du document -->
+		<title>Ma page d'accueil</title>
+		<link rel="stylesheet" href="css/style.css" >
+		<meta name="description" content="Ma première page en HTML/CSS" ><!-- Google s'en sert -->
+		<meta name="author" content="Nom Prenom" >
+		<meta charset="utf-8" > 
+		<link href="https://fonts.googleapis.com/css?family=Arvo|Indie+Flower|Pacifico" rel="stylesheet">
+		<link rel="icon" type="image/png" href="img/favicon.png">
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	</head>
+	<body> <!-- corps du document -->
+	
+		<header>
+			<!-- zone du haut, ex: bannière, logo, slogan. -->
+			<div id="logo">
+				<a href="index.html"><img src="img/logo.png" alt="Logo"></a>
+			</div>
+			<div id ="slogan">
+				<h1>Mon premier site en HTML / CSS</h1>
+			</div>
+			<div id="reseauxSociaux">
+				<a href=""><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+				<a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a><!--aria-hidden="true" lu par les lecteur d'écran-->
+			</div>
+			<div class="clear"></div>
+		</header>
+		
+		<nav>
+			<!-- zone du menu, ex: lien pour naviguer sur le site -->
+			<a href="index.html">Structure</a>
+			<a href="texte.html">Texte</a>
+			<a href="selecteurs.html">Selecteurs</a>
+			<a href="image.html">Image</a>
+			<a href="position.html"  class="active">Position</a>
+			<a href="zoning.html">Zoning</a>
+			<a href="tableau.html">Tableau</a>
+			<a href="liste.html">Liste</a>
+			<a href="lien_menu.html">Lien & menu</a>
+			<a href="formulaire.html">Fomulaire</a>
+			<a href="animation.html">Animations</a>
+			<a href="multimedia.html">Multimédia</a>
+			
+		</nav>
+		<main><!--Bien que le standard HTML du WHATWG permette d'utiliser plusieurs éléments <main> dans une même page, ceci n'est pas autorisé par la spécification du W3C. De plus, la spécification du W3C ne permet pas que <main> soit un élément descendant de <article>, <aside>, <footer>, <header> ou <nav>.-->
+			<h2>Position</h2>
+			<section>
+				<h3>Centrer un élément</h3>
+				<div class="centre"></div>
+			</section>
+			
+			<section>
+				<h3>Position absolute</h3>
+				<div class="absolute"></div>
+			</section>
+			
+			<section>
+				<h3>Position relative</div>
+				<div class="relative"></div>
+			</section>
+			
+			<section>
+				<h3>Position fixed</h3>
+				<p>Bouton retour vers le haut</p>
+				<a href="#logo"><button type="button"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></button></a>
+			</section>
+			<section>
+				<h3>Le pourcentage</h3>
+				<div class="trente">30%</div>
+				<div class="cinquante">50%</div>
+				<div class="cent">100%</div>
+			</section>
+			
+			<section>
+				<h3>L'attribut float</h3>
+				<div class="float"> 1 </div>
+				<div class="float"> 2 </div>
+				<div class="float"> 3 </div>
+				<div class="float"> 4 </div>
+				
+				<div class="float clear"> 5 </div>
+				<div class="float"> 6 </div>
+				<div class="float"> 7 </div>
+				
+				<div class="float clear"> 8 </div>
+				<div class="float"> 9 </div>
+				
+				<div class="dernier clear"> 10 </div>
+			</section>
+			
+			<section>
+				<h3>Exercice sur le float</h3>
+				<div class="zone1">  </div>
+				<div class="zone2">  </div>
+				<div class="zone3">  </div>
+				<div class="zone4">  </div>
+				<div class="zone5">  </div>
+				<div class="clear"></div>
+				<div class="zone1">  </div>
+			</section>
+			
+			<section>
+				<h3>Flexbox </h3>
+				<article class="flex">  
+					<div>1</div>
+					<div>2</div>
+					<div>3</div>
+					<div>4</div>
+				</article>
+
+			</section>
+			
+		</main>
+		<footer>
+			Réalisation d'un site en HTML/CSS
+			<!-- zone du bas, ex: liens administratif, mentions légales, plan du site, CGU, CGV contact, Copyright -->
+		</footer>
+		
+	</body>
+</html><!-- Quand on clic sur une balise via notepad++, elle passe en surbrillance, ce qui prouve qu'elle est bien ouverte et bien fermée, je vous laisse vérifier pour toutes les autres -->
+
+<!-- Faire exprès d'oublier le guillemet sur le href de la feuille de style et allez dans le code source pour montrer que le code passe en rouge et qu'on nous indique l'erreur rencontrée à corriger. Faire des erreurs exprès et demander aux étudiants s'ils trouvent l'erreur. -->
+<!-- Un autre indicateur d'erreur : sous notepad les balises apparaissent en bleu, les attributs en rouge, les valeurs en violet. Si les couleurs ne sont pas bonne, cela peut montrer une erreur dans le code-->
+
+<!-- [ * Dessiner le schema n°2_zoning * ] sur l'utisation des balises au vue des zones d'un site. -->
+
+
+
+
+

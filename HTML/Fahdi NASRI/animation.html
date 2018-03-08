@@ -1,0 +1,139 @@
+<!-- Parler des commentaires, du respect de l'indentation -->
+<!-- Relancer un clic droit > code source de la page -->
+<!-- Ctrl+S permet d'enregistrer le fichier -->
+<!DOCTYPE html>
+<html>
+	<head> <!-- entetes du document -->
+		<title>Ma page d'accueil</title>
+		<link rel="stylesheet" href="css/style.css" >
+		<meta name="description" content="Ma première page en HTML/CSS" ><!-- Google s'en sert -->
+		<meta name="author" content="Nom Prenom" >
+		<meta charset="utf-8" > 
+		<link href="https://fonts.googleapis.com/css?family=Arvo|Indie+Flower|Pacifico" rel="stylesheet">
+		<link rel="icon" type="image/png" href="img/favicon.png">
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	</head>
+	<body> <!-- corps du document -->
+	
+		<header>
+			<!-- zone du haut, ex: bannière, logo, slogan. -->
+			<div id="logo">
+				<a href="index.html"><img src="img/logo.png" alt="Logo"></a>
+			</div>
+			<div id ="slogan">
+				<h1>Mon premier site en HTML / CSS</h1>
+			</div>
+			<div id="reseauxSociaux">
+				<a href=""><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+				<a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a><!--aria-hidden="true" lu par les lecteur d'écran-->
+			</div>
+			<div class="clear"></div>
+		</header>
+		
+		<nav>
+			<!-- zone du menu, ex: lien pour naviguer sur le site -->
+			<a href="index.html">Structure</a>
+			<a href="texte.html">Texte</a>
+			<a href="selecteurs.html">Selecteurs</a>
+			<a href="image.html">Image</a>
+			<a href="position.html">Position</a>
+			<a href="zoning.html">Zoning</a>
+			<a href="tableau.html">Tableau</a>
+			<a href="liste.html">Liste</a>
+			<a href="lien_menu.html">Lien & menu</a>
+			<a href="formulaire.html">Fomulaire</a>
+			<a href="multimedia.html">Multimédia</a>
+			<a href="animation.html" class="active">Animations</a>
+			
+		</nav>
+		<main><!--Bien que le standard HTML du WHATWG permette d'utiliser plusieurs éléments <main> dans une même page, ceci n'est pas autorisé par la spécification du W3C. De plus, la spécification du W3C ne permet pas que <main> soit un élément descendant de <article>, <aside>, <footer>, <header> ou <nav>.-->
+			<h2>Animations</h2>
+			<section>
+				<h3>Effet Infobulle</h3>
+				<div class="infoBulle">
+					<p>
+						<a href="#">Passer la souris!<span>Salut. je suis un popup...</span></a>
+					</p>
+
+					<p class="click">
+						<a href="#">Ici aussi<span>Salut. un autre popup</span></a>
+					</p>
+
+					<p class="click">
+						<a href="#">Une fois encore<span>Salut! encore un popup!</span></a>
+					</p>
+				</div>
+			</section>
+			
+			<section  class="pacifico">
+				<h3>Effets de survol avec transitions et filtres CSS</h3> <!-- SousTitre -->
+				<ul class="imgEffets">
+				  <li><img src="img/survol_img1.jpg" alt="" ></li>
+				  <li><img src="img/survol_img2.jpg" alt="" ></li>
+				  <li><img src="img/survol_img3.jpg" alt="" ></li>
+				  <li><img src="img/survol_img4.jpg" alt="" ></li>
+				</ul>
+			</section>
+			
+			<section>
+				<h3>Rotation d’un menu en CSS3</h3>
+				<article id="menuRotate">
+					<dl class="menu">
+					  <dt class="btnRot">Partagez</dt>
+						<dd><a href="">...</a></dd>
+						<dd><a href="">Delicious</a></dd>
+						<dd><a href="">Facebook</a></dd>
+						<dd><a href="">Twitter</a></dd>
+					</dl>
+
+					<div class="masque"></div>
+					<div class="ombre"></div>
+				</article>
+			</section>
+			
+			<section>
+				<h3>Effet coverflow en full CSS</h3>
+				<ul class="coverflow">
+					<li>
+						<a href=""><img src="img/img-coverflow1.png"></a>
+						<a href="" class="prix">25,95€</a>
+					</li>
+					<li>
+						<a href=""><img src="img/img-coverflow1.png"></a>
+						<a href="" class="prix">25,95€</a>
+					</li>
+					<li>
+						<a href=""><img src="img/img-coverflow1.png"></a>
+						<a href="" class="prix">25,95€</a>
+					</li>
+					<li>
+						<a href=""><img src="img/img-coverflow1.png"></a>
+						<a href="" class="prix">25,95€</a>
+					</li>
+					<li>
+						<a href=""><img src="img/img-coverflow1.png"></a>
+						<a href="" class="prix">25,95€</a>
+					</li>
+				
+				</ul>
+			</section>
+			
+		
+		</main>
+		<footer>
+			Réalisation d'un site en HTML/CSS
+			<!-- zone du bas, ex: liens administratif, mentions légales, plan du site, CGU, CGV contact, Copyright -->
+		</footer>
+		
+	</body>
+</html><!-- Quand on clic sur une balise via notepad++, elle passe en surbrillance, ce qui prouve qu'elle est bien ouverte et bien fermée, je vous laisse vérifier pour toutes les autres -->
+
+<!-- Faire exprès d'oublier le guillemet sur le href de la feuille de style et allez dans le code source pour montrer que le code passe en rouge et qu'on nous indique l'erreur rencontrée à corriger. Faire des erreurs exprès et demander aux étudiants s'ils trouvent l'erreur. -->
+<!-- Un autre indicateur d'erreur : sous notepad les balises apparaissent en bleu, les attributs en rouge, les valeurs en violet. Si les couleurs ne sont pas bonne, cela peut montrer une erreur dans le code-->
+
+<!-- [ * Dessiner le schema n°2_zoning * ] sur l'utisation des balises au vue des zones d'un site. -->
+
+
+
+
+
