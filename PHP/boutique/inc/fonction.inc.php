@@ -53,6 +53,7 @@ function internanuteEstConnecteEtEstAdmin()
 	}
 }
 
+//--------------PANIER
 
 //-----------------------------------------
 //on crée cette fonction pour ajouter un produit dans le panier (page panier.php)
