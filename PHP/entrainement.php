@@ -319,7 +319,7 @@ echo date("d/m/Y"); // avec un y minuscule, ca nous retourne 18 au lieu de 2018.
 	
 //---------------------------------------------------------------------------
 $email1= "glx78@free.fr"; // email de Gregory LACROIX
-echo strpos($email1, "@"); // va retourner la position du caractere @ dans ma chaine. Dans ce cas, ca me sert egalement à controler que l'adresse mail est bien valide.
+echo strpos($email1 , "@"); // va retourner la position du caractere @ dans ma chaine. Dans ce cas, ca me sert egalement à controler que l'adresse mail est bien valide.
 /*elle recoit 2 arguments : 
 *-la chaine à analyser
 *-l'information à chercher */
@@ -802,7 +802,7 @@ echo '<h2>Classe et Objet</h2>';
 
 class Etudiant  // la class est la boite dans laquelle on a toutes les pieces necessaires pour créer ma voiture par ex
 {
-    public $prenom="Grégory";       // public permet de préciser que l'element sera visible de partour (il y a aussi protected et private)
+    public $prenom="Grégory";       // public permet de préciser que l'element sera visible de partout (il y a aussi protected et private)
     public $age=25;                 // déclaration d'une propriété public
     public function pays()          // déclaration d'une fonction public
     {
