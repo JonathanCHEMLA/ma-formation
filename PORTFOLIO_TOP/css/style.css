@@ -1,0 +1,45 @@
+body{
+	background:E8920C;
+}
+
+.centrage{
+	margin:0 auto;
+}
+
+
+/* label{ */
+	/* float:left; */
+	/* width: 200px; */
+	/* font-style:italic; */
+	/* font-family: calibri; */
+/* } */
+
+/*pour avoir ce commentaire on a fait:   ctrl + Q     */
+
+label.col-md-12{
+	padding-left: 0px;
+}
+
+textarea{
+	height: 110px;
+}
+
+article.formulaire.p-8.col-md-8{
+	    line-height: 0.5;
+}
+
+/*ce code css ci-dessous sera à retirer quand je serai à mon compte*/
+.map{ 
+	display:none;
+} 
+
+.about{
+	background-color:#1D809F;
+}
+.h3, h3{
+	font-size: 1.55rem;
+}
+
+span, p{
+	font-size: 20px;
+}

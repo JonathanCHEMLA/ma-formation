@@ -62,7 +62,7 @@
 			if(internauteEstConnecte())
 			{// accès membre
 				echo '<li><a href="'	. URL .			'profil.php							"> 	Profil 					</a></li>'		;
-				echo '<li><a href="'	. URL .			'boutique.php						"> 	Boutique 				</a></li>'		;
+				echo '<li><a href="'	. URL .			'index.php						"> 	Boutique 				</a></li>'		;
 				if(isset($_SESSION['panier']))
 				{
 				echo '<li><a href="'	. URL .			'panier.php							"> 	Panier <span class="badge" style="background:red;">'.array_sum($_SESSION['panier']['quantite']).'</span>                  </a></li>'		;							
@@ -79,7 +79,7 @@
 			{//accès visiteur
 				echo '<li><a href="'	. URL .			'inscription.php					"> 	Inscription				</a></li>'		;
 				echo '<li><a href="'	. URL .			'connexion.php						"> 	Connection 				</a></li>'		;
-				echo '<li><a href="'	. URL .			'boutique.php						"> 	Boutique 				</a></li>'		;		
+				echo '<li><a href="'	. URL .			'index.php						"> 	Boutique 				</a></li>'		;		
 				if(isset($_SESSION['panier']))
 				{
 				echo '<li><a href="'	. URL .			'panier.php							"> 	Panier <span class="badge" style="background:red;">'.array_sum($_SESSION['panier']['quantite']).'</span>                  </a></li>'		;				

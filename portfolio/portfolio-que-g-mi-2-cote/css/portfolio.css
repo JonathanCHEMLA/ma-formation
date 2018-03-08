@@ -1,0 +1,62 @@
+*{
+margin:0;
+padding:0;
+}
+
+main a{
+	text-decoration:none;
+	color:gray;	
+}
+
+container{
+	width:960px;
+}
+
+#titre{
+	text-align:center;
+}
+
+#presentation{
+
+	display:flex;
+	justify-content:center;
+}
+.ma_photo{
+	display:block;
+	width:30%;
+	border:6px solid grey;
+
+}
+#ma_presentation{
+	background:rgba(0,0,0,0.3);
+	width:40%;
+	padding-left:10px;
+	padding-top:20px;
+	line-height:36px
+}
+
+
+main{
+	margin-top:100px;
+	padding-left:60px;	
+}
+
+.menu{
+	list-style: none;
+}
+
+ul.menu a{
+	color:rgba(3,3,3,0.5);
+	line-height:26px;
+	font-size:26px;
+	line-height:50px;
+}
+
+.menu a:hover{
+	pointer:cursor;
+}
+
+.capture{
+	border:10px solid #333;
+	width:900px;
+}
