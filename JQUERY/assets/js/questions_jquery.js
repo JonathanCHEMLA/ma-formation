@@ -21,8 +21,9 @@ $.ajax('http://geoip.nekudo.com/api/')  //le function(resultat) est la fct de ca
 	console.log(resultat);      // et les données du serveur sont accessible dans la variable resultat. le serveur envoie a ma fct les données au format json
 	console.log(resultat.ip)
 });//$ : jquery    // url de l'api que l'on veut interroger pour recuperer les données du serveur quand une requete [...]
-
 que signifie "$."  
+$.ajax() est la notation utilisee pour faire une requete AJAX
+
 
 
 

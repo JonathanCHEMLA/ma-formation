@@ -1,6 +1,8 @@
 <?php
 require_once("inc/init.php");
 ?>	
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -228,7 +230,7 @@ require_once("inc/init.php");
                   <p class="mb-0 text-dark">A yellow pencil with envelopes on a clean, blue backdrop!</p>
                 </span>
               </span>
-              <img class="img-fluid" src="img/capture_angular.png" alt="">
+              <img class="img-fluid capture-projet" src="img/capture_angular.png" alt="">
             </a>
           </div>
           <div class="col-lg-6">
@@ -239,7 +241,7 @@ require_once("inc/init.php");
                   <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
                 </span>
               </span>
-              <img class="img-fluid" src="img/capture_angular.png" alt="">
+              <img class="img-fluid capture-projet" src="img/capture_angular.png" alt="">
             </a>
           </div>
           <div class="col-lg-6">
@@ -250,7 +252,7 @@ require_once("inc/init.php");
                   <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
                 </span>
               </span>
-              <img class="img-fluid" src="img/capture_angular.png" alt="">
+              <img class="img-fluid capture-projet" src="img/capture_angular.png" alt="">
             </a>
           </div>
           <div class="col-lg-6">
@@ -261,7 +263,7 @@ require_once("inc/init.php");
                   <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
                 </span>
               </span>
-              <img class="img-fluid" src="img/capture_angular.png" alt="">
+              <img class="img-fluid capture-projet" src="img/capture_angular.png" alt="">
             </a>
           </div>
         </div>
@@ -306,7 +308,7 @@ require_once("inc/init.php");
             </a>
           </li>
         </ul>
-        <p class="text-muted small mb-0">Copyright &copy; Your Website 2017</p>
+        <p class="text-muted small mb-0">Copyright &copy; Jonathan CHEMLA 2018</p>
       </div>
     </footer>
 
