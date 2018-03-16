@@ -1,0 +1,28 @@
+PHP
+
+	$tableau = array(
+		'nom' => 'leclercq',
+		'prenom' => 'frédéric'
+	)
+
+	echo json_encode($tableau);
+	ICI ON CONVERTIT LE TABLEAU EN CHAINE D'OBJET JSON:
+
+
+
+--------------------------------------------------
+
+JSON => { 'nom':'leclercq' , 'prenom':'frédéric' }
+
+--------------------------------------------------
+
+
+
+
+JS
+
+	reception= JSON.parse(responseText);
+	ICI ON DECOUPE LA CHAINE D'OBJET JSON , EN RECOLLANT LES INDICES AUX VALEURS
+
+	reception.nom <= leclercq
+	reception.prenom <= frédéric
