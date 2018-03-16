@@ -4,13 +4,13 @@
       <a class="navbar-brand" href="#">Mes tâches à faire</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup"></div>
+      </button>	<!--je ne comprends pas à quoi sert <button></button>  -->
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup"></div>	<!--cette div sert à créer le bel espace entre "mes taches à faire" et le champ "Ajouter une tache"-->
       <app-addtask (newTaskEvent)="newTask($event)"></app-addtask>
     </nav>
   </header>
 
-  <div class="row m-0">
+  <div class="row m-0">	<!-- m-5 aurait séparé les 2 blocs du menu ci-dessus(dans le header) -->
     <div class="col">
       <div class="todolist not-done">
         <h1>A faire</h1>
