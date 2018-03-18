@@ -82,8 +82,8 @@ require_once("inc/init.php");
             <h2>Coder c'est mon métier !</h2>
             <p class="lead mb-5 text-dark"><strong>Confiez-moi vos rêves, j'en ferai une réalité ou je casserai l'internet.</strong></p>
             <a class="btn btn-info btn-xl js-scroll-trigger px-5 mr-5" href="#parcours" id="bouton_parcours">Mon Parcours</a>
-            <a class="btn btn-warning text-primary btn-xl js-scroll-trigger mr-5 px-5" href="#competences">Compétences</a>	
-            <a class="btn btn-primary text-secondary btn-xl js-scroll-trigger px-5" href="#realisations">Réalisations</a>	
+            <a class="btn btn-warning btn-xl text-primary js-scroll-trigger mr-5 px-5" href="#competences">Compétences</a>	
+            <a class="alignement btn btn-primary btn-xl text-secondary js-scroll-trigger px-5" href="#realisations">Réalisations</a>	
   	  
 		  </div>
 		</div>
@@ -230,7 +230,7 @@ require_once("inc/init.php");
                   <p class="mb-0 text-dark">A yellow pencil with envelopes on a clean, blue backdrop!</p>
                 </span>
               </span>
-              <img class="img-fluid capture-projet" src="img/capture_angular.png" alt="">
+              <img class="img-fluid capture-projet" src="img/my_licorn.png" alt="">
             </a>
           </div>
           <div class="col-lg-6">
@@ -241,7 +241,7 @@ require_once("inc/init.php");
                   <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
                 </span>
               </span>
-              <img class="img-fluid capture-projet" src="img/capture_angular.png" alt="">
+              <img class="img-fluid capture-projet" src="img/ps_capture_angular.png" alt="">
             </a>
           </div>
           <div class="col-lg-6">
@@ -252,7 +252,7 @@ require_once("inc/init.php");
                   <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
                 </span>
               </span>
-              <img class="img-fluid capture-projet" src="img/capture_angular.png" alt="">
+              <img class="img-fluid capture-projet" src="img/p_capture_ionic.jpg" alt="">
             </a>
           </div>
           <div class="col-lg-6">
