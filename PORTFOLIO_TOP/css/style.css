@@ -46,8 +46,20 @@ span, p{
 .capture-projet{
 	/*width:45%;*/
 }
-.alignement{
-	margin-right:50px;
-	padding-right:52px;
-	padding-left:52px;
+.btn-jo{
+	width:190px;
 }
+
+.marge-top{
+	margin-top:0;
+}
+@media (max-width: 992px) {
+	.marge-top{
+		margin-top:100px;
+	}
+@media (max-width: 768px) {
+	.marge-top{
+		margin-top:400px;
+	}
+  }
+
