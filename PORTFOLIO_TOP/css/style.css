@@ -46,8 +46,12 @@ span, p{
 .capture-projet{
 	/*width:45%;*/
 }
-.alignement{
-	margin-right:50px;
-	padding-right:52px;
-	padding-left:52px;
+
+a.alignement.btn.btn-primary.btn-xl.text-secondary.js-scroll-trigger{
+	margin-right:50px!important;
+	padding-right:52px!important;
+	padding-left:53px!important;
+}
+.btn-jo{
+	min-width:150px;
 }

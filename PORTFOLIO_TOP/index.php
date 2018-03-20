@@ -81,9 +81,9 @@ require_once("inc/init.php");
           <div class="col-lg-10 mx-auto">
             <h2>Coder c'est mon métier !</h2>
             <p class="lead mb-5 text-dark"><strong>Confiez-moi vos rêves, j'en ferai une réalité ou je casserai l'internet.</strong></p>
-            <a class="btn btn-info btn-xl js-scroll-trigger px-5 mr-5" href="#parcours" id="bouton_parcours">Mon Parcours</a>
-            <a class="btn btn-warning btn-xl text-primary js-scroll-trigger mr-5 px-5" href="#competences">Compétences</a>	
-            <a class="alignement btn btn-primary btn-xl text-secondary js-scroll-trigger px-5" href="#realisations">Réalisations</a>	
+            <a class="btn btn-info btn-xl btn-jo js-scroll-trigger px-5 mr-5 mt-1" href="#parcours" id="bouton_parcours">Mon Parcours</a>
+            <a class="btn btn-warning btn-xl btn-jo text-primary js-scroll-trigger mr-5 px-5 mt-1" href="#competences">Compétences</a>	
+            <a class="btn btn-primary btn-xl btn-jo text-secondary js-scroll-trigger mr-5 px-5 mt-1" href="#realisations">Réalisations</a>	
   	  
 		  </div>
 		</div>

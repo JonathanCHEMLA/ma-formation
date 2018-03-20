@@ -27,6 +27,18 @@ if( !isset($_SESSION['pseudo']))
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <!-- Attention: important que notre fichier js(ajax.js) soit bien chargé APRES jquery -->
     <script src="inc/ajax.js"></script>
+    <script>
+        <?php
+            $result=$pdo->query("SELECT id_dialogue FROM dialogue ORDER BY id_dialogue DESC LIMIT 0,1");
+            $info=$result->fetch(PDO::FETCH_ASSOC);
+        ?>
+        var lastid=<?= $info['id_dialogue'] ?? 0 ?>;
+        /**
+         * If(isset($info['id_dialogue'])) {echo $info['id_dialogue']; } else {echo 'o';}
+         * 
+         * echo isset($info['id_dialogue'])? $info['id_dialogue'] : 0;  //ternaire mode PHP5
+         */
+    </script>
 </head>
 <body>
     <div id="conteneur">
@@ -61,13 +73,22 @@ if( !isset($_SESSION['pseudo']))
         <div class="clear">
         </div>
         <div id="smiley">
+            <img class="smiley" src="smil/smiley1.gif" alt=":)">
+            <img class="smiley" src="smil/smiley2.gif" alt=":|">
+            <img class="smiley" src="smil/smiley3.gif" alt=":d">
+            <img class="smiley" src="smil/smiley4.gif" alt=":p">
+            <img class="smiley" src="smil/smiley5.gif" alt="{3">
+            <img class="smiley" src="smil/smiley6.gif" alt=":o">
+
         </div>
         <div id="formulaire_chate">
             <form method="post" action="#">
                 <input class="textarea" type="text" id="message" name="message" maxlengh="255"><!--un varchar etant limité à 255 caractères en BDD-->
                 <input type="submit" name="envoi" value="envoi" class="submit">
+                <input type='submit' name="deconnexion" value="deconnexion" id="deconnexion">
             </form>
         </div>
+
     </div>
 
 </body>

@@ -1,0 +1,22 @@
+-----
+J1 : 
+01-classes-objet-instance-visibilite
+02-getter-setter-constructeur-this
+03-manipulation-type-argument
+04-constante-static-self
+
+-----
+J2 :
+05-heritage
+06-surcharge-abstraction-finalisation-interface-trait
+07-methodes-magiques
+08-classes-existantes
+09-namespaces
+10-autoload
+11-PDO-avance
+12-architecture-MVC
+
+----
+J3+J4+J5 :
+13-mini-framework-maison (boutique en POO)
+
