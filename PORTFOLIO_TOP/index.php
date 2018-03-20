@@ -80,11 +80,20 @@ require_once("inc/init.php");
         <div class="row text-warning">
           <div class="col-lg-10 mx-auto">
             <h2>Coder c'est mon métier !</h2>
+<<<<<<< HEAD
             <p class="lead mb-5 text-dark"><strong>Confiez-moi vos rêves, j'en ferai une réalité ou je casserai l'internet.</strong></p>
             <a class="btn btn-info btn-xl btn-jo js-scroll-trigger px-5 mr-5 mt-1" href="#parcours" id="bouton_parcours">Mon Parcours</a>
             <a class="btn btn-warning btn-xl btn-jo text-primary js-scroll-trigger mr-5 px-5 mt-1" href="#competences">Compétences</a>	
             <a class="btn btn-primary btn-xl btn-jo text-secondary js-scroll-trigger mr-5 px-5 mt-1" href="#realisations">Réalisations</a>	
   	  
+=======
+            <p class="lead mb-5 text-dark"><strong>Confiez-moi vos rêves, j'en ferai une réalité.</strong></p>
+			<div class="row">
+			<div class="col-md-4"><a class="btn btn-info btn-jo js-scroll-trigger py-3 px-5 mt-2" href="#parcours" id="bouton_parcours">Mon Parcours</a></div>
+			<div class="col-md-4"><a class="btn btn-warning btn-jo text-primary js-scroll-trigger py-3 mt-2 px-5" href="#competences">Compétences</a></div>
+			<div class="col-md-4"><a class="btn btn-primary btn-jo text-secondary js-scroll-trigger py-3 mt-2 px-5" href="#realisations">Réalisations</a></div>
+			</div>
+>>>>>>> 476e211370686b191710bf32352fb2eb34986fcd
 		  </div>
 		</div>
       </div>
@@ -289,7 +298,7 @@ require_once("inc/init.php");
     </section>
 
 	    <!-- Footer -->
-    <footer class="footer text-center mt-1">
+    <footer class="footer text-center marge-top">
       <div class="container">
         <ul class="list-inline mb-5">
           <li class="list-inline-item">

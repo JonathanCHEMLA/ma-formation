@@ -1,11 +1,22 @@
+
+
 <?php
+
+$erreur="";
 
 if($_POST)
 {	
 	if(isset($_POST["message"]) and isset($_POST["email"]) and !empty($_POST["message"])and !empty($_POST["email"]) )
 	{
-/*---------------ENVOI DU MESSAGE-------------------------*/
+		
+	if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))
+	{
+		$erreur.= '<div style="background: red; padding: 10px; color: #fff; width: 300px; border-radius: 5px;">Merci de saisir un email valide</div>';	
 
+	}
+			
+/*---------------ENVOI DU MESSAGE-------------------------*/
+	
 
 	$_POST["email"] = "From: $_POST[email] \r\n";
 	$_POST["email"] .= "MIME-Version: 1.0 \r\n";	
@@ -29,8 +40,8 @@ if($_POST)
 		$insert_membre->bindValue(':societe', $_POST["societe"], PDO::PARAM_STR);
 		$insert_membre->bindValue(':civilite', $_POST["civilite"], PDO::PARAM_STR);		
 		$insert_membre->bindValue(':email', $_POST["email"], PDO::PARAM_STR);
-			$insert_membre->bindValue(':sujet', $_POST["sujet"], PDO::PARAM_STR);
-			$insert_membre->bindValue(':message', $_POST["message"], PDO::PARAM_STR);
+		$insert_membre->bindValue(':sujet', $_POST["sujet"], PDO::PARAM_STR);
+		$insert_membre->bindValue(':message', $_POST["message"], PDO::PARAM_STR);
 			//$insert_membre->bindValue(':date_enregistrement', NOW(), PDO::PARAM_STR);
 
 		$insert_membre->execute();
@@ -46,6 +57,7 @@ if($_POST)
 
 echo $content;	//au premier chargement de la page, on ne rentre pas dans le if donc si on avait fait ici: echo $erreur il y aurait eu un msg d'erreur.
 
+echo $erreur;
 ?>
 
 <!-- Réaliser un formulaire d'inscription correspondant à la table membre de la BDD (sans les champs id_membre, status) -->

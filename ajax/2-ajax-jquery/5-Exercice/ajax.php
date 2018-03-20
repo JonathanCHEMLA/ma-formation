@@ -2,9 +2,6 @@
 
 require_once("init.php");
 extract($_POST);
-// 3. je traite l'appel venant du fichier JS
-// on recupere dans le POST $id  
-//pour info: id=[numéro choisi dans la selection] 
 
 if($action=="affichage")
 {
