@@ -33,15 +33,15 @@ echo $d-> test2().'<hr>';
 
 
 
-//erreur qui apparait si on ne met pas "Espace1\" devant A: 	$c = new Espace1\A;
+//erreur qui apparait si on ne met pas "Espace1\" dans notre page "appel.php": 		$c = new Espace1\A;
 
 //Fatal error: Uncaught Error: Class 'A' not found in C:\xampp\htdocs\formateur\ma-formation\POO\09-namespaces\appel.php:6 Stack trace: #0 {main} thrown in C:\xampp\htdocs\formateur\ma-formation\POO\09-namespaces\appel.php on line 6
 
 
 
 /* Commentaires
-	- Les namespaces sont encontournables dès lors qu'on travaille sur une application vaste et ORGANISEE
-	- Les namespaces permettent de déclarer des espaces virtuels afin dde mieux organiser nos fichiers, et aussi de meiux gérer le travail collaboratif (exemple le dev A peut créer une classe C dans son namespace pendant  que le dev B va créer également une class C dans son namespace...)
+	- Les namespaces sont incontournables dès lors qu'on travaille sur une application vaste et ORGANISEE
+	- Les namespaces permettent de déclarer des espaces virtuels afin de mieux organiser nos fichiers, et aussi de mieux gérer le travail collaboratif (exemple le dev A peut créer une classe C dans son namespace pendant  que le dev B va créer également une class C dans son namespace...)
 		
 	Dès lors qu'on utilise les namespaces, quelques règles s'appliquent:
 		- on instancie une class avec son nom complet: $a=new Espace1\A

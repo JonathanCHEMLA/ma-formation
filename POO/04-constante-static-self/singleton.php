@@ -47,22 +47,27 @@ object(Singleton)#1 (0) {
 object(Singleton)#1 (0) {
 }
 */
-//en fait, on a instancie 2 fois un objet de la classe, mais a recup 2 fois le meme objet.
+
+//EN FAIT, ON A INSTANCIE 2 FOIS UN OBJET DE LA CLASSE, MAIS ON A RECUPERE 2 FOIS LE MEME OBJET.
+//ex d'utilisation: pour être sur d'avoir toujours 1 seul personnage créé
 
 
 
+//DE LA LIGNE 10 A 30, c'est le code du Singleton. 
 
-//DE LA LIGNE 10 A 30,  
-
-//il faut créer:
- //- dans la classe Singleton, une fonction:		public function getPdo($db,$host,$login,$mdp){ /*ici: $pdo = new PDO('mysql:host='.$host.';dbname='.$db.','.$login .','.$mdp.') */ } // getPdo ne sera pas static
- //- et hors de la classe, une instruction 		$pdo = $singleton -> getPdo();
+//Pour exploiter ce singleton dans le cadre de l'obet PDO, il faut créer:
+ //- dans la classe Singleton, une fonction:		
+ public function getPdo($db,$host,$login,$mdp){ /*ici: $pdo = new PDO('mysql:host='.$host.';dbname='.$db.','.$login .','.$mdp.') */ } // getPdo ne sera pas static
+ //- et hors de la classe, une instruction: 		
+ $pdo = $singleton -> getPdo();
  
 
 
 
-//static: appartient  à la classe  &    quand elle modifiée, elle est modifiée durablement
+//static implique: 
+		//appartient  à la classe  &    
+		//quand elle modifiée, elle est modifiée durablement
 
 //personne ne pourra faire un new singleton.
-// est que la propr instance est null? oui! donc je met l'objet unique de la classe Singleton
+// est ce que la propr instance est null? oui! donc je met l'objet unique de la classe Singleton
  

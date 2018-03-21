@@ -39,7 +39,7 @@ echo $joueurFr -> seConnecter() . '<br>';	//18
 $joueurUs= new JoueurUs;
 echo $joueurUs -> seConnecter() . '<br>';	//21
 
-//il n'y a pas de proprietes abstraites. Que les methodes!
+//il n'y a pas de proprietes abstraites. QUE LES METHODES!
 //lorsqu une methode de la classe mere devient abstraite, la classe mere le devient aussi.
 
 

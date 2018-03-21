@@ -1,0 +1,19 @@
+index.php 		c'est notre page d'accueil et aussi notre page unique du site.
+			il a besoin A LA FOIS de connexion_bdd et connexion
+
+
+
+
+connexion.php		necessite le formulaire à controler
+
+formulaire.php		contient notre formulaire
+
+
+
+
+connexion_bdd.php	necessite param pour etablir la connexion avec la bdd
+
+param.php		contient $parameters = array('dbname' => 'entreprise',
+						'host' => 'localhost',
+						'login' => 'root',
+						'password' => '');

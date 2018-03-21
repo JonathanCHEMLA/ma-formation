@@ -1,6 +1,7 @@
 <?php
+// "PARENT"
 
-//surcharge (ou override) : Permet de momdifier le comportement d'une méthode héritée et d'y apporter des traitements SUPPLEMENTAIRES !!
+//surcharge (ou override) : Permet de modifier le comportement d'une méthode héritée et d'y apporter des traitements SUPPLEMENTAIRES !!
 //surcharge VS Redéfinition
 
 //redef: on change tout

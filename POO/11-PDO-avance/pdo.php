@@ -1,14 +1,15 @@
 <?php
 
+//-----------1ERE METHODE :
 //$pdo = new PDO('mysql:host=localhost;dbname=entreprise','root' ,'');
 //$pdo = new PDO('mysql:dbname=entreprise;host=localhost','root' ,'');	ca fonctionne pareil!
 
 //Erreur volontaire de requête :
-//$resultat = $pdo -> query('dfsdfsd');	//ca ne fait aucun affichage.
+//$resultat = $pdo -> query('dfsdfsd');	//----------> ca n'affiche aucun résultat ni message d'erreur.
 
 
 
-
+//-----------2EME METHODE :
 //connexion avec mode erreur warning :
 //$pdo = new PDO('mysql:host=localhost;dbname=entreprise','root' ,'', array(
 //	PDO::ATTR_ERRMODE =>PDO::ERRMODE_WARNING
@@ -16,10 +17,12 @@
 
 //erreur volontaire de requête :
 //$resultat = $pdo -> query('dfsdfsd');	//Warning: PDO::query(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'dfsdfsd' at line 1 in C:\xampp\htdocs\formateur\ma-formation\POO\11-PDO-avance\pdo.php on line 18.  
-//Un site avec une erreur SQL est un site Piratable. 
-//On a 2 serveurs: un serveur de prod' et un de dev'
+//A SAVOIR :  Un site avec une erreur SQL est un site Piratable. 
+
+//A SAVOIR : ON DOIT AVOIR 2 serveurs: un serveur de prod' et un de dev'
 
 
+//-----------3EME METHODE :
 //les exceptions: je ne laisse plus le serveur afficher les erreurs ! que soit PHP ou SQL.
 $pdo = new PDO('mysql:host=localhost;dbname=entreprise','root' ,'',array( 
 PDO::ATTR_ERRMODE =>PDO::ERRMODE_EXCEPTION
@@ -28,7 +31,6 @@ PDO::ATTR_ERRMODE =>PDO::ERRMODE_EXCEPTION
 try{
 	//erreur volontaire de requête:
 	$resultat = $pdo -> query('dfsdfsd');
-
 }
 catch(PDOException $e){
 	//on peut mettre ici, par exemple notre page 404.
@@ -47,15 +49,11 @@ catch(PDOException $e){
 	$ligne= 'Erreur SQL : ' . date('d/m/Y'). '-' . 'code :' .$e -> getCode() . '-' . '192.168.01.01';
 	fwrite($f, $ligne. "\r\n");
 	//header('location:404.php')
-	
+
 	}
-// avec un vpn l'ip change. Grace à l'ip qui change, on est moins trouvable.
-
-// des qu'il y a des bugs, je suis content d'etre informe des erreurs sur mon site de prod'
-
 // avec cette 3e methode je ne laisse pas le serveur gerer les erreurs. Je prends le controle de cette gestion d'affichage
-
-// l'avantage c'est qu'on peut etre en prod', et acceder aux erreurs, dans notre fichier txt, sans que ces erreurs apparaissent sur notre site en prod'.
+// des qu'il y a des bugs, je suis content d'etre informe des erreurs sur mon site de prod'
+// l'avantage c'est qu'on peut etre en prod', et ACCEDER aux erreurs, dans notre fichier txt, SANS QUE ces erreurs apparaissent sur notre site en prod'.
 	// $f =fopen('error.txt', 'a');
 		//Créer un fichier error.txt
 	// $ligne= 'Erreur SQL : ' . date('d/m/Y'). '-' . 'code :' .$e -> getCode() . '-' . '192.168.01.01';
@@ -63,12 +61,17 @@ catch(PDOException $e){
 	// header('location:404.php')
 
 
-//tout notre code doit etre le try{}
+//tout notre code doit etre dans le try{}	
+	
+// POUR INFO: avec un vpn l'ip change. Grace à l'ip qui change, on est moins trouvable.
+
+
+
 
 
 
 try{
-	// Marqueur ':'  :
+						// Avec le Marqueur ':'  :
 	$prenom='Amandine';
 	$nom='Thoyer';
 	
@@ -92,7 +95,7 @@ try{
 	
 	
 	
-	// Marqueur '?' ( marqueur non nominatif ) :
+						// Avec le Marqueur '?' ( marqueur non nominatif ) :
 		// Attention a l'ordre de prenom et nom!
 	$resultat=$pdo-> prepare("SELECT * FROM employes WHERE prenom= ? AND nom= ?");
 	$resultat-> execute( Array(
@@ -104,7 +107,7 @@ try{
 	//autre exemple d'utilisation du marqueur non nominatif:
 	
 	
-		$resultat = $pdo -> prepare("INSERT INTO employes (prenom, nom, sexe, salaire, date_embauche, service) VALUES (?, ?, ?, ?, CURDATE((), ?)");
+		$resultat = $pdo -> prepare("INSERT INTO employes (prenom, nom, sexe, salaire, date_embauche, service) VALUES (?, ?, ?, ?, CURDATE(), ?)");
 	$resultat -> execute(array(
 		'Yakine',
 		'Hamida',

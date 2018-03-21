@@ -34,9 +34,9 @@ commentaires:
 	- une "classe final" peut être instanciée.
 	- une classe finale ne peut pas être héritée.
 	
-	- Les méthodes d'une classe finale sont forcément final par définition, puisque, la classe ne pouvant être héritée, les méthodes ne seront jamais surchargées.
+	- Les méthodes d'une classe finale sont forcément final par définition, puisque, la classe ne pouvant être héritée, les méthodes ne seront jamais surchargées.??
 
 	- Une "méthode final" peut etre présente dans une classe normale.
-	- Une "méthode final" ne peut pas être surchargée ou redéfinie.
+	- Une "méthode final" ne peut pas être surchargée ou redéfinie. ??
 
 */
