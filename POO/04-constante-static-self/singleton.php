@@ -6,7 +6,7 @@
 
 
 //"singleton" est le nom d'un design patern. le singleton repond a la question suivante:"cmt créer une classe qui ne soit instanciable 1 seule et unique fois. ex: connection à la BDD?"
-
+/*---------------------------------------------------------------------------------------------*/
 Class Singleton{
 	
 	private static $instance = NULL;	//propriété qui appartient à la classe, et qui contiendra un objet de cette mêm classe
@@ -25,12 +25,12 @@ Class Singleton{
 		//self::$instance = new self;
 		}
 		return self::$instance;			//on retourne que $instance n'est plus NULL: il est égal à self::$instance
-	}
-	
+	}	
 }
+/*----------------------------------------------------------------------------------------------*/
 //$singleton = new Singleton; // impossible
 
-
+// fabr une class pour laquelle il n existe qu 1 seul objet. creer un seul objet. Bref c'est le chassis . On l'utilise pour l'utilisation qu'on veut en faire.
 
 
 
@@ -61,4 +61,8 @@ object(Singleton)#1 (0) {
 
 
 
+//static: appartient  à la classe  &    quand elle modifiée, elle est modifiée durablement
 
+//personne ne pourra faire un new singleton.
+// est que la propr instance est null? oui! donc je met l'objet unique de la classe Singleton
+ 
