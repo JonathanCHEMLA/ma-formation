@@ -80,20 +80,14 @@ require_once("inc/init.php");
         <div class="row text-warning">
           <div class="col-lg-10 mx-auto">
             <h2>Coder c'est mon métier !</h2>
-<<<<<<< HEAD
-            <p class="lead mb-5 text-dark"><strong>Confiez-moi vos rêves, j'en ferai une réalité ou je casserai l'internet.</strong></p>
-            <a class="btn btn-info btn-xl btn-jo js-scroll-trigger px-5 mr-5 mt-1" href="#parcours" id="bouton_parcours">Mon Parcours</a>
-            <a class="btn btn-warning btn-xl btn-jo text-primary js-scroll-trigger mr-5 px-5 mt-1" href="#competences">Compétences</a>	
-            <a class="btn btn-primary btn-xl btn-jo text-secondary js-scroll-trigger mr-5 px-5 mt-1" href="#realisations">Réalisations</a>	
-  	  
-=======
+
             <p class="lead mb-5 text-dark"><strong>Confiez-moi vos rêves, j'en ferai une réalité.</strong></p>
 			<div class="row">
 			<div class="col-md-4"><a class="btn btn-info btn-jo js-scroll-trigger py-3 px-5 mt-2" href="#parcours" id="bouton_parcours">Mon Parcours</a></div>
 			<div class="col-md-4"><a class="btn btn-warning btn-jo text-primary js-scroll-trigger py-3 mt-2 px-5" href="#competences">Compétences</a></div>
 			<div class="col-md-4"><a class="btn btn-primary btn-jo text-secondary js-scroll-trigger py-3 mt-2 px-5" href="#realisations">Réalisations</a></div>
 			</div>
->>>>>>> 476e211370686b191710bf32352fb2eb34986fcd
+
 		  </div>
 		</div>
       </div>
@@ -235,8 +229,8 @@ require_once("inc/init.php");
             <a class="portfolio-item" href="#">
               <span class="caption">
                 <span class="caption-content">
-                  <h2>Stationary</h2>
-                  <p class="mb-0 text-dark">A yellow pencil with envelopes on a clean, blue backdrop!</p>
+                  <h2>Les Licornes</h2>
+                  <p class="mb-0">Exemple d'une page responsive HTML/CSS</p>
                 </span>
               </span>
               <img class="img-fluid capture-projet" src="img/my_licorn.png" alt="">
@@ -246,8 +240,8 @@ require_once("inc/init.php");
             <a class="portfolio-item" href="#">
               <span class="caption">
                 <span class="caption-content">
-                  <h2>Ice Cream</h2>
-                  <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
+                  <h2> Liste de Tâches 1.1</h2>
+                  <p class="mb-0">Utilisation d'Angular pour réaliser une application ToDO List</p>
                 </span>
               </span>
               <img class="img-fluid capture-projet" src="img/ps_capture_angular.png" alt="">
@@ -257,8 +251,8 @@ require_once("inc/init.php");
             <a class="portfolio-item" href="#">
               <span class="caption">
                 <span class="caption-content">
-                  <h2>Strawberries</h2>
-                  <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
+                  <h2>Liste de Tâches 2.1</h2>
+                  <p class="mb-0">Refactorisation de la liste de tâches en Ionic</p>
                 </span>
               </span>
               <img class="img-fluid capture-projet" src="img/p_capture_ionic.jpg" alt="">
@@ -268,8 +262,8 @@ require_once("inc/init.php");
             <a class="portfolio-item" href="#">
               <span class="caption">
                 <span class="caption-content">
-                  <h2>Workspace</h2>
-                  <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
+                  <h2>Boutique</h2>
+                  <p class="mb-0">Framework pour une boutique avec un BackOffice en PHP</p>
                 </span>
               </span>
               <img class="img-fluid capture-projet" src="img/capture_angular.png" alt="">
@@ -312,7 +306,7 @@ require_once("inc/init.php");
             </a>
           </li>
           <li class="list-inline-item">
-            <a class="social-link rounded-circle text-white" href="https://github.com/JonathanCHEMLA/ma-formation">
+            <a class="social-link rounded-circle text-white" href="https://github.com/JonathanCHEMLA">
               <i class="icon-social-github"></i>
             </a>
           </li>
