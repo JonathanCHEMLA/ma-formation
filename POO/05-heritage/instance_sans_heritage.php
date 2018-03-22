@@ -36,11 +36,12 @@ commentaires :
 
 	-Nous avons un objet A à l'intérieur de l'objet C.
 	
-	L'INTERET d'avoir une instance sans héritage (récupérer un objet dans la propriété d'une classe) est de POUVOIR HERITER D UNE CLASSE MERE d'un côté, ET de RECUPERER LES ELEMENTS D UNE AUTRE CLASSE en même temps.
+	L'INTERET d'avoir une instance sans héritage (et donc de récupérer un objet dans la propriété d'une classe) c'est de POUVOIR HERITER D UNE CLASSE MERE d'un côté, ET de RECUPERER LES ELEMENTS D UNE AUTRE CLASSE en même temps.
 	
 	Pour le rappel le PHP n'accepte pas l'héritage multiple, c'est donc une manière d'aller plus loin dans l'héritage. 
 	
-	Ce concept est ce qui permet à un application de "se déployer"
+	C'est une FACON DE FAIRE UN HERITAGE MULTIPLE. 	
 	
-	C'est une FACON DE FAIRE UN HERITAGE MULTIPLE. 
+	Ce concept est ce qui permet à un application de "se déployer"
+
 */

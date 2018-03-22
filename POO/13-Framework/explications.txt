@@ -1,0 +1,42 @@
+				-----------------------------
+				:Arborescence de notre site :
+				-----------------------------
+
+app/ : La configuration de notre application (info de connexion BDD) <- seul dossier a modifier en cas de deplacement
+src/ : Le code PHP et HTML spécifique à notre app (Notre code)
+vendor/ : C'est le Coeur, le code général de l'app. (dans symphony on n'y touchera pas)
+web/ : c'est ce à quoi aura accès l'user depuis son browser:Le répertoire web racine (index.php, img/(interieur, qui participe au design du site), photo/(exterieur,Upload), js/, css/, font/...bibliothèque FRONT)
+
+
+				---------------------------------
+				:Nature des différents dossiers :
+				---------------------------------
+app/
+	Config/
+		parameters.php: contient toutes les informations de connexion à notre BDD.... et éventuellment d'autres paramètres de notre app
+	
+	Config.php: contient une classe dont l'objectif est de récupérer les infos de connexion et de les "servir" à notre futur PDOManager qui fera la connexion à PDO. PDOManager sera notre singleton
+	
+
+vendor/		
+	autoload.php : Permet d'inclure les bons fichiers au bon moment(lors des instanciations), et nous permet d'éviter d'avoir à faire des nombreux require... Attention, certains fichiers seront dans vendor, et d'autres dans src/. Notre autoload devra donc savoir les distinguer...
+	
+src/	
+	Entity/
+		Produit.php  -  Membre.php  -  Commande.php :
+		Ces classes contiennent toutes les propriétés des entités de notre application (et les getters et les setters). On les appelle des POPO (Plain Old PHP Object).
+		On travaille en objet... Il nous faut donc des classes, qui nous permettent de construire des objets pour chaque entité de notre site.
+
+web/
+	index.php : Clé d'entrée de notre application(sur Symfony c'est app.php ou app_dev.php). C'est à partir de là que le site se déploie. Dans notre application, c'est ici que l'on va créer la session, que nous faisons le require de l'autoload et que nous instancierons la classe Application (interrupteur)
+	
+	
+vendor/
+	Manager/
+		PDOManager : Cette classe représente la connexion à la BDD. Elle contient et nous retourne notre objet PDO grâce auquel nous pourrons effectuer des requêtes.
+		Cette classe est un Singleton, cela signifie qu'il ne peut y avoir qu'un seul objet issu de cette classe. [singleton: classe qui n existe que sur un seul objet]
+		
+	Model/
+		Model.php : un model centralise tout ce qui touche à la BDD. Concrètement, il ne devrait pas y avoir de requête SQL en dehors de l'un de nos models. Dans ce fichier, nous allons coder les outils, communs à tous nos models (ici: membre,commande,et produit), ainsi que les requetes génériques.
+		
+		
