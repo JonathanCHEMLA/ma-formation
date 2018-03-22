@@ -52,9 +52,9 @@ require_once("inc/init.php");
         </li>
           <li class="sidebar-nav-item">
           <a class="js-scroll-trigger" href="#contact">Contact</a>
-        </li>
+        </li>	
         <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#parcours" id="menu_parcours">Parcours</a>
+            <a class="js-scroll-trigger" href="#parcours" id="menu_parcours">Parcours / Formation</a>
         </li>
         
       </ul>
@@ -100,10 +100,11 @@ require_once("inc/init.php");
       <div class="container text-center">
 		<div class="content-section-heading">
           <h3 class="text-light mb-0">Mon Parcours</h3>
-          <h2 class="text-secondary mb-5">Savoir d'où je viens et où je vais</h2>
+          <h2 class="text-secondary mb-5">D'où je viens et où je vais...</h2>
         </div>
         <div class="row text-light">
-          <div class="col-lg-10 mx-auto">
+
+          <div class="col-lg-10 mx-auto mb-5">
 			<!------------------------------------------------->
 			<p><strong>Ma passion pour les messages codés,</strong> est apparue dès mon plus jeune âge : en centre aéré, mes jeux préférés étaient évidemment &#8230; les rébus et les chasses au trésor!</p>
 			<p>Eh oui, je suis un chercheur acharné! 🙂</p>
@@ -112,9 +113,98 @@ require_once("inc/init.php");
 			<p>Curieusement, je ressentis de plus en plus, avec le temps, le <strong>besoin d&#8217;automatiser</strong> toutes mes tâches. Si bien que je mis en place, pour mon entreprise, des fichiers Excel, reliés ou non à la boite email Outlook.</p>
 			<p>Happé par la programmation informatique, ma reconversion professionnelle fût évidente. je commencai à suivre des cours en ligne et découvris le langage PHP.</p>
 			<p>A présent, ma soif de découverte me pousse chaque jour à explorer de nouveaux langages et renforcer mes acquis.</p>
-
-			<!------------------------------------------------->
 		  </div>
+			<!------------------------------------------------->			  
+		  <div class="col-lg-10 mx-auto mb-5">
+			<div class="row">	
+				<div class="col-lg-10 mx-auto mb-2">
+					<H4>Ma formation Web Force 3</H4>					
+				</div>
+				<div class="col-md-4 mx-auto mb-2">
+					<a class="portfolio-item" href="doc/programme_formation_wf3.pdf">
+					  <span class="caption">
+						<span class="caption-content">
+						  <h2>Web Force 3</h2>
+						  <p class="mb-0">Programme de formation</p>
+						</span>
+					  </span>
+					  <img class="img-fluid capture-projet" src="img/metiers_grand_cadre.png" alt="Les métiers">
+					</a>
+				</div>
+				<div class="col-md-4 mx-auto mb-2">				
+					<a class="portfolio-item" href="doc/programme_formation_wf3.pdf">
+					  <span class="caption">
+						<span class="caption-content">
+						  <h2>Web Force 3</h2>
+						  <p class="mb-0">Programme de formation</p>
+						</span>
+					  </span>
+					  <img class="img-fluid capture-projet" src="img/duree_grand_cadre.png" alt="Durée de 3 mois">
+					</a>
+				</div>
+				<div class="col-md-4 mx-auto mb-2">				
+					<a class="portfolio-item" href="doc/programme_formation_wf3.pdf">
+					  <span class="caption">
+						<span class="caption-content">
+						  <h2>Web Force 3</h2>
+						  <p class="mb-0">Programme de formation</p>
+						</span>
+					  </span>
+					  <img class="img-fluid capture-projet" src="img/objectif_grand_cadre.png" alt="Objectif Wf3">
+					</a>			
+				</div>
+				<div class="col-md-12 mx-auto">
+				<H5>Domaines couverts par le programme :</H5>		
+				</div>
+				<div class="col-md-4 mx-auto">
+					<p>– Intégration HTML 5 / CSS 3 -</p>
+					<p>– Responsive Web Design (mobile) -</p>
+					<p>– Bootstrap -</p>
+				</div>
+				<div class="col-md-4 mx-auto">
+					<p>– JavaScript, Jquery et AJAX -</p>
+					<p>– Angular / Ionic -</p>
+					<p>– Base de données MySQL -</p>
+				</div>
+				<div class="col-md-4 mx-auto">
+					<p>– PHP procédure et orienté objet -</p>
+					<p>– Développement MVC / symfony -</p>
+					<p>– CMS WordPress	-</p>
+				</div>
+			</div>
+		  </div>
+			<!------------------------------------------------->		  
+		  
+		  <div class="row">
+				<div class="col-md-12"> 
+					<H4>Unités de valeur obtenues au C.N.A.M</H4>		
+				</div>
+				
+				<div class="col-md-6 mx-auto">				
+					<a class="portfolio-item" href="#">
+					  <span class="caption">
+						<span class="caption-content">
+						  <h2>RSX 101</h2>
+						  <p class="my-5">Réseaux et télécommunication</p>
+						</span>
+					  </span>
+					  <img class="img-fluid capture-projet" src="img/programme_RESEAUX&TELECOM.png" alt="">
+					</a>			
+				</div>				
+				<div class="col-md-6 mx-auto">				
+					<a class="portfolio-item" href="#">
+					  <span class="caption">
+						<span class="caption-content">
+						  <h2>NFP 107</h2>
+						  <p class="my-5">Système de Gestion des Bases de Données Relationnelles</p>
+						</span>
+					  </span>
+					  <img class="img-fluid capture-projet" src="img/programme_SGBDR.png" alt="">
+					</a>			
+				</div>						
+
+		   </div>
+			<!------------------------------------------------->
 		</div>
       </div>
     </section>

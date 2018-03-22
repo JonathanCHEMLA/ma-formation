@@ -74,7 +74,7 @@ class Model
 			return False;
 		}
 		else{
-			return $donnees;
+			return $donnees;	//retourne un objet PDO STATEMENT
 		}
 	}
 	
@@ -94,7 +94,7 @@ class Model
 			return False;
 		}
 		else{
-			return $donnees;
+			return $donnees;	//retourne un objet PDO STATEMENT
 		}
 		
 	}

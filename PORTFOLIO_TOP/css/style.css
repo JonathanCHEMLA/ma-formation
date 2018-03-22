@@ -36,30 +36,36 @@ article.formulaire.p-8.col-md-8{
 .about{
 	background-color:#1D809F;
 }
+
+
 .h3, h3{
-	font-size: 1.55rem;
+	font-size: 3rem;
+}
+.h2, h2{
+	font-size: 2rem;
 }
 
 span, p{
-	font-size: 20px;
+	font-size: 18px;
+	margin-bottom:0
+}
+span.caption-content{
+	width: 395px;
 }
 .capture-projet{
 	/*width:45%;*/
 }
-<<<<<<< HEAD
+
 
 a.alignement.btn.btn-primary.btn-xl.text-secondary.js-scroll-trigger{
 	margin-right:50px!important;
 	padding-right:52px!important;
 	padding-left:53px!important;
 }
-.btn-jo{
-	min-width:150px;
-}
-=======
+
 .btn-jo{
 	width:190px;
-}
+} 
 
 .marge-top{
 	margin-top:0;
@@ -74,4 +80,4 @@ a.alignement.btn.btn-primary.btn-xl.text-secondary.js-scroll-trigger{
 	}
   }
 
->>>>>>> 476e211370686b191710bf32352fb2eb34986fcd
+
