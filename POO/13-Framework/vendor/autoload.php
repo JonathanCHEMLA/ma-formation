@@ -13,7 +13,26 @@ class Autoload
 		
 		$tab = explode('\\', $className);
 		
-		if($tab[0] == 'Manager' || ($tab[0]=='Model' && $tab[1] == 'Model')){	//($tab[0]=='Model' && $tab[1] == 'Model')  signifie: "si on est dans Manager\PDOManager  ou  si on est dans Model\Model"
+		// Manager\PDManager   -->vendor
+		// Manager\application-->vendor
+		// Manager\controle-->vendor
+		// Manager\security-->vendor
+		
+		// Controller\ProduitController-->src
+		// Controller\Membrecontroller-->src
+		// Controller\commandecontroller-->src
+		// Controller\controller-->src
+		
+		// Model\ProduitModel-->src
+		// model\MembreModel-->src
+		// ...-->src
+
+		// ex d'use de str_replace
+		// $phrase="bonjour tout le monde";
+		// str_replacece('o','-',$phrase);--> "b-nj-ur t-ut le m-nde";
+		
+		
+		if($tab[0] == 'Manager' || ($tab[0]=='Model' && $tab[1] == 'Model') || ($tab[0] == 'Controller' && $tab[1] == 'Controller')){	//($tab[0]=='Model' && $tab[1] == 'Model')  signifie: "si on est dans Manager\PDOManager  ou  si on est dans Model\Model"
 		//on va chercher dans vendor:
 			$path = __DIR__ . '/' . implode('/',$tab) . '.php';
 			//$path = __DIR__ . '/Manager/PDOManager.php';
@@ -23,11 +42,10 @@ class Autoload
 			  $path = __DIR__ . '/../src/' . implode('/',$tab) . '.php';
 			//$path = __DIR__ . '/../src/Controller/ProduitController.php';
 		}
-		//----------
-		echo '<pre>Autoload : '.$className .'<br>';
-		echo '===>Require(' . $path .') </pre>';
-		
-		//----------
+		//---------------------------------------
+	//echo '<pre>Autoload : '.$className .'<br>';
+	//echo '===>Require(' . $path .') </pre>';
+		//---------------------------------------
 		require $path;	
 	}
 

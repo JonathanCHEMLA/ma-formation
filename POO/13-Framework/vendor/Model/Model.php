@@ -26,8 +26,8 @@ class Model
 				// get_called_class() contient: Model\ProduitModel
 				//get_called_class() est une fct qui me retourne le nom de la class dans laquelle nous sommes. (ex: nous somme dans la classe Produit: ->donc:Model\ProduitModel:  --> ''Produit''-->produit)
 		$table= strtolower(str_replace(array('Model\\', 'Model'), '', get_called_class()));
-		//return $table;// $table=produit dans notre exemple.
-		return 'produit';	//on a tapé cette ligne et mis la ligne du dessus en commentaire, juste pour le test. 
+		return $table;// $table=produit dans notre exemple.
+		//return 'produit';	//on a tapé cette ligne et mis la ligne du dessus en commentaire, juste pour le test. 
 		
 		// Au moment ou je ferai appel à cette methode, je serai dans la classe ProduitModel, ou MembreModel ou CommandeModel etc...
 		// Et donc cette fonction est capable de récupérer le nom de la classe et d'en extraire le nom de la table correspondante.
@@ -45,7 +45,7 @@ class Model
 		$requete = "SELECT * FROM " . $this -> getTableName();
 		// $requete = "SELECT * FROM produit";
 		
-		$resultat =$this->getDb()->query($requete);
+		$resultat = $this->getDb()->query($requete);
 		//en general on ecrit:   $resultat = $pdo -> query("SELECT * FROM produit");
 		
 		$resultat-> setFetchMode(PDO::FETCH_CLASS, 'Entity\\'. $this->getTableName());

@@ -120,6 +120,17 @@ require_once("inc/init.php");
 				<div class="col-lg-10 mx-auto mb-2">
 					<H4>Ma formation Web Force 3</H4>					
 				</div>
+				<div class="col-md-4 mx-auto mb-2">				
+					<a class="portfolio-item" href="doc/programme_formation_wf3.pdf">
+					  <span class="caption">
+						<span class="caption-content">
+						  <h2>Web Force 3</h2>
+						  <p class="mb-0">Programme de formation</p>
+						</span>
+					  </span>
+					  <img class="img-fluid capture-projet" src="img/objectif_grand_cadre.png" alt="Objectif Wf3">
+					</a>			
+				</div>
 				<div class="col-md-4 mx-auto mb-2">
 					<a class="portfolio-item" href="doc/programme_formation_wf3.pdf">
 					  <span class="caption">
@@ -142,17 +153,7 @@ require_once("inc/init.php");
 					  <img class="img-fluid capture-projet" src="img/duree_grand_cadre.png" alt="Durée de 3 mois">
 					</a>
 				</div>
-				<div class="col-md-4 mx-auto mb-2">				
-					<a class="portfolio-item" href="doc/programme_formation_wf3.pdf">
-					  <span class="caption">
-						<span class="caption-content">
-						  <h2>Web Force 3</h2>
-						  <p class="mb-0">Programme de formation</p>
-						</span>
-					  </span>
-					  <img class="img-fluid capture-projet" src="img/objectif_grand_cadre.png" alt="Objectif Wf3">
-					</a>			
-				</div>
+
 				<div class="col-md-12 mx-auto">
 				<H5>Domaines couverts par le programme :</H5>		
 				</div>
@@ -184,7 +185,6 @@ require_once("inc/init.php");
 					<a class="portfolio-item" href="#">
 					  <span class="caption">
 						<span class="caption-content">
-						  <h2>RSX 101</h2>
 						  <p class="my-5">Réseaux et télécommunication</p>
 						</span>
 					  </span>
@@ -195,7 +195,6 @@ require_once("inc/init.php");
 					<a class="portfolio-item" href="#">
 					  <span class="caption">
 						<span class="caption-content">
-						  <h2>NFP 107</h2>
 						  <p class="my-5">Système de Gestion des Bases de Données Relationnelles</p>
 						</span>
 					  </span>

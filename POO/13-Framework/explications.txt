@@ -39,4 +39,40 @@ vendor/
 	Model/
 		Model.php : un model centralise tout ce qui touche à la BDD. Concrètement, il ne devrait pas y avoir de requête SQL en dehors de l'un de nos models. Dans ce fichier, nous allons coder les outils, communs à tous nos models (ici: membre,commande,et produit), ainsi que les requetes génériques.
 		
+src/
+	Model/
+		ProduitModel.php : ce fichier contiendra toutes les fonctions(requetes car requetes=fonctions) liées à l'entité Produit (table Produit) et demande à Model.php d'executer des requetes. lorsqu'une entité a besoin d'une requête spécifique qui ne peut être générique dans Model.php, on la code ici (jointure par exemple)
 		
+vendor/	
+	Controller/
+		Controller.php: Ce fichier est le controleur général de l'application. Il a 2 missions:
+			1. Récupérer le bon model en fonction de l'entité dans laquelle nous sommes (getModel)			//Models
+			2. Afficher la bonne vue en lui transmettant les infos nécessaires ( render() )				//Views
+src/
+	Controller/
+		ProduitController.php : Cette classe hérite du Controller (donc est capable de récupérer le model correspondant grâce à getModel() ) et permet de déclencher toutes les actions spécifiques à l'entité Poduit.
+View/
+	Produit/
+		boutique.php : Tout le code HTML de la page Boutique :
+			1.retirer tous les traiteents PHP
+			2.remettre le contenu header.inc.php et de footer.inc.php
+web/
+	Coller toutes les ressources CSS, JS, Img/, Photo/, Bootstrap...
+	
+src/
+	View/
+		layout.html : Le layout représente la structure d'une page de notre site (Header/Nav/footer). Il peut y avoir plusieurs Layout si nécessaire (par exemple un pour les membres lamba et un pour les admins...)
+		
+web/	
+	htaccess:
+		1.on crée un fichier text.txt
+		2.on l'ouvre sur l'éditeur
+		3. Enregistrer sous 'all files' .htaccess
+		Le fichier htaccess va donner l'ordre à notre serveur que toutes les liens renvoient vers index.php.
+			De fait, le lien www.monsite.com/produit/afficheAll 
+			donnera          www.monsite.com/index.php/produit/afficheAll	
+		cela signifie que si l'user tape la 1ere ligne, le navigateur renvera la 2e ligne. Et donc on ne quittera jamais index.php.
+		
+vendor/
+	Manager/
+		Application.php : Ce fichier lance notre application, c'est notre interrupteur. Cette classe a pour mission de récupérer les données dans l'URL(le controller,l'action,l'arg) et d'instancier le bon controller, lancer la bonne méthode, et y mettre l'argument.
