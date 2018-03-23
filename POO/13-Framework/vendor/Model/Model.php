@@ -16,10 +16,10 @@ class Model
 		// Lorsque j'instancie un objet Model (ou un enfant(heritié) de cette classe), la fonction construct() se lance, crée un objet PDO (grâce à PDOManager) et le stocke dans la propriété $db.
 	}
 	
-	
 	public function getDb(){
 		return $this-> db;	//me retourne l'objet pdo, stocké dans $Db
 	}
+	
 	
 	public function getTableName(){
 		// pour pouvoir executer un "select * from ..." il nous faut extraire d'abord le nom de la table:

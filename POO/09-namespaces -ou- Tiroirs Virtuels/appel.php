@@ -7,9 +7,9 @@ namespace General;
 //Fatal error: Uncaught Error: Class 'General\Espace1\A' not found in C:\xampp\htdocs\formateur\ma-formation\POO\09-namespaces\appel.php:10 Stack trace: #0 {main} thrown in C:\xampp\htdocs\formateur\ma-formation\POO\09-namespaces\appel.php on line 10
 
 // la solution c'est soit de rajouter un "\" devant Espace1\A, ou devant PDO ... , soit d'utiliser:
-use PDO;		//classe PDO
-use Espace1;	// c'est un namespace dans lequel se trouve  la class A
-use Espace2;	// c'est un namespace dans lequel se trouve  la class A
+//use PDO;		//classe PDO
+//use Espace1;	// c'est un namespace dans lequel se trouve  la class A
+//use Espace2;	// c'est un namespace dans lequel se trouve  la class A
 
 
 require('espace1.php');
@@ -18,6 +18,7 @@ require('espace2.php');
 
 $c = new Espace1\A;
 echo $c-> test().'<hr>';
+
 $d = new Espace2\A;
 echo $d-> test2().'<hr>';
 
@@ -90,3 +91,22 @@ c'est une question de choix d'organisation de mes fichiers. Au meme titre que si
 */
 
 
+
+
+// Explications:
+/*
+*les require servent à récupérer, physiquement, le contenu des fichiers associés:
+require('espace1.php');
+require('espace2.php');	
+
+*Tout d'abord, etant donne que nous avons 2 classes A: le premire dans Espace1 et le deuxieme dans espace2, il nous faut les distinguer d'où les lignes:
+
+$c = new Espace1\A;
+$d = new Espace2\A;
+
+Dès lors qu'on se range dans un tiroir virtuel (donc, en utilisant "namespace MonEspace"), nous ne pourrons acceder à l'espace global et aux autres tiroirs qu'en les faisant précéder de "use":
+use PDO;
+use Espace1;
+use Espace2;
+
+*/

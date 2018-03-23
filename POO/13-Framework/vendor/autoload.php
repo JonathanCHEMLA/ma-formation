@@ -13,7 +13,7 @@ class Autoload
 		
 		$tab = explode('\\', $className);
 		
-		if($tab[0] == 'Manager' || ($tab[0]=='Model' && $tab[1] == 'Model')){	//($tab[0]=='Model' && $tab[1] == 'Model')  signifie "si on est dans Model\Model"
+		if($tab[0] == 'Manager' || ($tab[0]=='Model' && $tab[1] == 'Model')){	//($tab[0]=='Model' && $tab[1] == 'Model')  signifie: "si on est dans Manager\PDOManager  ou  si on est dans Model\Model"
 		//on va chercher dans vendor:
 			$path = __DIR__ . '/' . implode('/',$tab) . '.php';
 			//$path = __DIR__ . '/Manager/PDOManager.php';
@@ -42,7 +42,8 @@ spl_autoload_register en POO attend 1 argument qui soit un ARRAY, avec LES VALEU
 	1. Le nom de la classe
 	2. Le nom de la méthode à exécuter (OBLIGATOIREMENT STATIC)
 	
-	Cela va faire çà:  Autoload::inclusion_automatique($className);      cela est l'equivent aux 2 lignes suivantes:       $a=new ...    +     $a->
+	Cela va faire çà:  Autoload::inclusion_automatique($className);      
+	Cela est l'equivent des 2 lignes suivantes:       $a=new ...;    +     $a->...;
 
 */
 

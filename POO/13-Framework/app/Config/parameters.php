@@ -2,10 +2,10 @@
 
 $parameters= array(
 	'connect' => array(
-	'host'		=>'localhost',
-	'dbname'	=>'boutique',
-	'login' 	=>'root',
-	'password'	=>''
+				'host'		=>'localhost',
+				'dbname'	=>'boutique',
+				'login' 	=>'root',
+				'password'	=>''
 	)
 );
 
