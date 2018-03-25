@@ -34,7 +34,7 @@ final class Application
 			$this->controller = 'Controller\\' .$tab[6] . 'Controller';
 		}
 		else{
-			//Sinon, par défaut, je mancce le ProduitController (pour afficher la home par defaut)
+			//Sinon, par défaut, je lance le ProduitController (pour afficher la home par defaut)
 			$this-> controller = 'Controller\ProduitController';
 		}
 		
@@ -54,11 +54,14 @@ final class Application
 	
 	public function run(){	// Lance les instanciations. bref, lance l'application
 		if (!is_null($this->controller)){
-			$a = new $this-> controller;
+			$a = new $this-> controller;		// $a est, par ex: un objet de la classe 	"ProduitController"
+	// L'instanciation d'un controller crée automatiquement l'instanciation	d'un Model: 	"ProduitModel"
+	// ce Model sera contenu dans la variable $model et sera appelé ensuite grace à getModel().
+
 			
 			if(!is_null($this->action) && method_exists($a,$this->action) ){
-				$action = $this->action;
-				$a->$action($this->argument);
+				$action = $this->action;		// $action va récupérer l'action souhaitée par l'user
+				$a->$action($this->argument);	// cette ligne va déclencher par ex la fonction: 	"affiche(5)"
 				//$a
 			}
 		}

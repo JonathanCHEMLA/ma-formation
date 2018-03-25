@@ -11,15 +11,14 @@ class Model
 	private $db;	// cette propriete contiendra notre objet PDO
 //de 13 a 22 ca me sert juste a me connecter a la BDD	
 	public function __construct(){
-		
+		//?????????????????????Cmt peut-on, grace à getinstance, acceder à getPdo???????????????????????
 		$this->db = PDOManager::getInstance()->getPdo();	// PDOManager::getInstance() est seul moyen d'utiliser l'objet d'un design-Patern singleton
 		// Lorsque j'instancie un objet Model (ou un enfant(heritié) de cette classe), la fonction construct() se lance, crée un objet PDO (grâce à PDOManager) et le stocke dans la propriété $db.
-	}
+	}//??????????????????????cela signifie t'il qu'on va créer 3 objet pdo (membre,produit, commande)????????????????????
 	
 	public function getDb(){
 		return $this-> db;	//me retourne l'objet pdo, stocké dans $Db
 	}
-	
 	
 	public function getTableName(){
 		// pour pouvoir executer un "select * from ..." il nous faut extraire d'abord le nom de la table:
@@ -31,14 +30,11 @@ class Model
 		
 		// Au moment ou je ferai appel à cette methode, je serai dans la classe ProduitModel, ou MembreModel ou CommandeModel etc...
 		// Et donc cette fonction est capable de récupérer le nom de la classe et d'en extraire le nom de la table correspondante.
-
 	}
-
 
 		//---------------------------------
 		//     REQUETES GENERIQUES :
 		//---------------------------------
-		
 		
 	// récupère toutes les infos d'une table et ce, peut importe l'entite dans la quelle je suis: produit, membre ou commande:
 	public function findAll(){
@@ -98,11 +94,8 @@ class Model
 		}
 		
 	}
-	
-	
-	
-	
-		// Méthode générique pour supprimer un enregistrement
+
+	// Méthode générique pour supprimer un enregistrement
 	public function delete($id){
 		$requete = "DELETE FROM " . $this -> getTableName() . ' WHERE id_' . $this -> getTableName() . ' = :id';
 		

@@ -1,1 +1,0 @@
-chaque fois qu'on deplacera notre dossier, on aura juste à modifier le fichier init.php dans le dossier inc !  et pour le reste,il n'yaura pas beosin de modifier

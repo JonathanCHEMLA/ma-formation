@@ -31,7 +31,6 @@ Class ProduitModel extends Model
 	}
 	
 	
-	
 	public function getAllCategorie(){
 		$requete= "SELECT DISTINCT categorie FROM produit";
 		$resultat= $this->getDb()->query($requete);
@@ -65,8 +64,5 @@ Class ProduitModel extends Model
 	}
 	
 	public function getResultatRecherche($term){}
-	
-	
-	
 }
 

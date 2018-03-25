@@ -21,20 +21,18 @@ class ProduitController extends Controller
 			);
 		return $this->render('layout.html', 'boutique.html', $params);	//'boutique.html' car n'oublions pas que nous sommes tjrs dans le dossier index.php
 	}
-	
 	// Afficher un produit (fiche produit)	
 	public function affiche($id){
 		// 1:récupère les infos du produit dont l'id est $id
 		// 2:renvoyer la vue (boutique.php) 
-		$produit = $this->getModel()->getProduitById($id);
+		$produit = $this->getModel()->getProduitById($id);	//getModel:controller.php     get ProduitById:ProduitModel.php
 
 		$params = array(
 			'produit'=>$produit
 			);
 		return $this ->render('layout.html','fiche_produit.html',$params);	
-	}		
+	}			
 		
-
 	// Afficher les produit d'une categorie(boutique/categorie)	
 	public function boutique($cat){
 		// 1:récupère tous les produits de la categorie $cat
@@ -47,9 +45,8 @@ class ProduitController extends Controller
 			'produits'=>$produits,
 			'categories'=>$categories
 			);
-		return $this->render('layout.html', 'boutique.html', $params);	//'boutique.html' car n'oublions pas que nous sommes tjrs dans le dossier index.php
+		return $this->render('layout.html', 'boutique.html', $params);	
 	}
-	
 	// Afficher les produits en fonction d'une recherche
 	public function recherche($term){
 		
