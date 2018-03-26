@@ -20,7 +20,7 @@ class Membre
     private $ville;
     private $code_postal;
     private $adresse;
-    private $statut;
+    private $status;
 
     /**
      * @return mixed
@@ -185,17 +185,17 @@ class Membre
     /**
      * @return mixed
      */
-    public function getStatut()
+    public function getStatus()
     {
-        return $this->statut;
+        return $this->status;
     }
 
     /**
      * @param mixed $statut
      */
-    public function setStatut($statut)
+    public function setStatus($status)
     {
-        $this->statut = $statut;
+        $this->status = $status;
     }
 
     

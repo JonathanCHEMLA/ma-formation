@@ -28,10 +28,10 @@ final class Application
 		// echo '<pre>';
 		// print_r($tab);
 		// echo '</pre>';			
-		if(isset($tab[6]) && !empty($tab[6]) && file_exists(__DIR__ . '/../src/Controller/'.$tab[6].'Controller.php')){
+		if(isset($tab[6]) && !empty($tab[6]) && file_exists(__DIR__ . '/../../src/Controller/'.ucfirst($tab[6]).'Controller.php')){
 			//s'il y a un controller xxxxx dans l'url, et qu le fichier  xxxxxController.php existe
 			
-			$this->controller = 'Controller\\' .$tab[6] . 'Controller';
+			$this->controller = 'Controller\\' .ucfirst($tab[6]) . 'Controller';
 		}
 		else{
 			//Sinon, par défaut, je lance le ProduitController (pour afficher la home par defaut)
@@ -49,8 +49,10 @@ final class Application
 		if(isset($tab[8])  && !empty($tab[8])){
 			$this->argument = $tab[8];
 		}
-		
+	
+
 	}
+	
 	
 	public function run(){	// Lance les instanciations. bref, lance l'application
 		if (!is_null($this->controller)){

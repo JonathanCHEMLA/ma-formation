@@ -43,8 +43,8 @@ class Autoload
 			//$path = __DIR__ . '/../src/Controller/ProduitController.php';
 		}
 		//---------------------------------------
-	//echo '<pre>Autoload : '.$className .'<br>';
-	//echo '===>Require(' . $path .') </pre>';
+			//echo '<pre>Autoload : '.$className .'<br>';	//decommenter ces 2 ligne quand besin de debugger
+			//echo '===>Require(' . $path .') </pre>';
 		//---------------------------------------
 		require $path;	
 	}

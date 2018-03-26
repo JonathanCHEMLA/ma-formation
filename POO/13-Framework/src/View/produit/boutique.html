@@ -7,7 +7,7 @@
 	
 	<?php foreach($categories as $cat) : //voir la fct boutique() de ProduitController?>
 	
-		<a href="" class="list-group-item"><?= $cat['categorie'] //?????????????????????????????></a>
+		<a href="<?= $url?>produit/boutique/<?= $cat['categorie']?>" class="list-group-item"><?= $cat['categorie']?></a>
 		
 	<?php endforeach; //ca s'appelle le mode twig ?> 
 	
@@ -31,9 +31,10 @@
       <div class="col-xs-6 col-lg-4">
 	  <div class="panel-default border">
         <div class="panel-heading text-center"><h2><?= $produit->getTitre() ?></h2></div>
-        <p><a href="fiche_produit.php?id_produit=<?= $produit->getId_Produit() ?>">
+        <p><a href="<?=$url?>produit/affiche/<?= $produit->getId_Produit() ?>">
+		<!--<p><a href="<?//=$url. 'produit/affiche/' .$produit->getId_Produit() ?>">-->
 		
-		<img src="<?=  'photo/' . $produit->getPhoto() ?>" alt="" class="img-responsive"></a></p>
+		<img src="<?=$url?><?=  'photo/' . $produit->getPhoto() ?>" alt="" class="img-responsive"></a></p>
         <p class="text-center"><?= $produit->getPrix() ?> €</p>
         <p class="text-center"><a class="btn btn-primary" href="" role="button">Voir le détails &raquo;</a></p>
 		</div>

@@ -14,10 +14,14 @@ class Config
 //Au moment où j'instancie cette classe, je récupère le fichier parameters.php, et je stocke tous les paramètres de mon application dans la propriété $parameters.
 
 //vu que $parameters est en protected, on aurait du avoir un getter et un setter mais comme je n'ai besoin que du getter:
-		public function getParametersConnect(){	
+	public function getParametersConnect(){	
 		return $this->parameters['connect'];
 		// Cette fonction retourne seuleemnt les informations de connexion qui me seront utilises au moment de la connexion à la BDD
 	
+	}
+	
+	public function getParametersSite(){
+		return $this->parameters['site'];// Cette fonction retourne seulement les informations relatives au site, (tels que url, racine,chemin...) qui me seront utiles dans mes vues.
 	}
 }
 // $config= new Config;

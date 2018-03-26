@@ -6,6 +6,10 @@ $parameters= array(
 				'dbname'	=>'boutique',
 				'login' 	=>'root',
 				'password'	=>''
+	),
+	'site' => array(
+				'url'		=> 'http://localhost/formateur/ma-formation/POO/13-Framework/web/',
+				'racine'	=> ''
 	)
 );
 

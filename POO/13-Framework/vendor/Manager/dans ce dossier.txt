@@ -1,0 +1,1 @@
+on aurait pu aussi crere une fct qui affiche me message de success ou d'erreur si le formulaire est mal rempli

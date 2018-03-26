@@ -35,6 +35,7 @@ Class ProduitModel extends Model
 		$requete= "SELECT DISTINCT categorie FROM produit";
 		$resultat= $this->getDb()->query($requete);
 		
+		//la non utilisation de setFechMode fait qu'on recupére un array. c'est pourquoi, dans notre view, on n'appelle pas $categorie-> mais $cat['categorie'].
 		$donnees= $resultat->fetchAll();
 		
 		if(!$donnees){
@@ -63,6 +64,57 @@ Class ProduitModel extends Model
 		}		
 	}
 	
-	public function getResultatRecherche($term){}
+	public function getProduitBySearch($term){
+		$term='%' . $term .'%';
+		
+		$requete ="
+		SELECT *
+		FROM produit
+		WHERE titre LIKE :term
+		OR description LIKE :term
+		OR categorie LIKE :term
+		OR taille LIKE :term
+		OR prix LIKE :term
+		";
+		
+		$resultat= $this->getDb()->prepare($requete);
+		$resultat->bindValue(':term',$term,PDO::PARAM_STR);
+		$resultat->execute();
+		
+		$resultat->setFetchMode(PDO::FETCH_CLASS, 'Entity\Produit');
+		
+		$donnees = $resultat->fetchAll();
+		
+		if(!$donnees){
+			return FALSE;
+		}
+		else{
+			return $donnees;
+		}			
+	}
+	
+	public function getProduitsSimilaires($id,$categorie,$prix,$taille,$public){
+
+		$prixMaxi=$prix + 0.3 * $prix;
+		$prixMini=$prix - 0.3 * $prix;
+		$requete="SELECT * FROM produit WHERE categorie=".$categorie." AND taille=".$taille." AND public=".$public." And id_produit not in (SELECT id_produit FROM produit where id_produit=".$id. ") AND prix BETWEEN ".$prixMini. " AND ".$prixMaxi." ORDER BY prix LIMIT 0,3";
+
+		
+		$resultat= $this->getDb()->prepare($requete);
+		$resultat->bindValue(':term',$term,PDO::PARAM_STR);
+		$resultat->execute();
+		
+		$resultat->setFetchMode(PDO::FETCH_CLASS, 'Entity\Produit');
+		
+		$donnees = $resultat->fetchAll();
+		
+		if(!$donnees){
+			return FALSE;
+		}
+		else{
+			return $donnees;
+		}	
+	}
+	
 }
 

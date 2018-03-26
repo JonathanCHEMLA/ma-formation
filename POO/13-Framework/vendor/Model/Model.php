@@ -11,10 +11,11 @@ class Model
 	private $db;	// cette propriete contiendra notre objet PDO
 //de 13 a 22 ca me sert juste a me connecter a la BDD	
 	public function __construct(){
-		//?????????????????????Cmt peut-on, grace à getinstance, acceder à getPdo???????????????????????
+
 		$this->db = PDOManager::getInstance()->getPdo();	// PDOManager::getInstance() est seul moyen d'utiliser l'objet d'un design-Patern singleton
 		// Lorsque j'instancie un objet Model (ou un enfant(heritié) de cette classe), la fonction construct() se lance, crée un objet PDO (grâce à PDOManager) et le stocke dans la propriété $db.
-	}//??????????????????????cela signifie t'il qu'on va créer 3 objet pdo (membre,produit, commande)????????????????????
+		//a chaque fois que l'internaute lance une action en rapport avec la bdd,on crée un objet produitController,et donc qu'on crée un objet produitModel, puis on crée un nouvel objet PDO
+	}	// Bref, à chaque action en rapport avec la Bdd, un objet PDO est créé.
 	
 	public function getDb(){
 		return $this-> db;	//me retourne l'objet pdo, stocké dans $Db
@@ -130,8 +131,13 @@ class Model
 	
 	//Méthode générique pour ajouter un enregistrement
 	public function register($infos){	
+	
+
+		echo $this->getTableName();	
+		echo $infos['pseudo'];		
+		exit;
 		$requete = 'INSERT INTO ' . $this -> getTableName() . ' (' . implode(', ', array_keys($infos)) . ') VALUES (' . ":" . implode(", :", array_keys($infos)) . ')';
-		
+
 		//echo $requete; 
 		
 		$resultat = $this -> getDb() -> prepare($requete);
@@ -142,6 +148,7 @@ class Model
 		else{
 			return false;
 		}
+
 	}
 	
 }

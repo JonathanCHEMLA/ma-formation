@@ -1,0 +1,45 @@
+<?= $erreur?>
+<form method="post" action="" class="col-md-8 col-md-offset-2">
+	<h1 class="alert alert-info text-center"><?=$title?></h1>
+
+  <div class="form-group">
+    <label for="pseudo">Pseudo</label>
+    <input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="pseudo">
+  </div>
+  <div class="form-group">
+    <label for="mdp">Mot de passe</label>
+    <input type="text" class="form-control" id="mdp" name="mdp" placeholder="mot de passe">
+  </div>
+  <div class="form-group">
+    <label for="nom">Nom</label>
+    <input type="text" class="form-control" id="nom" name="nom" placeholder="nom">
+  </div>
+  <div class="form-group">
+    <label for="prenom">Prénom</label>
+    <input type="text" class="form-control" id="prenom" name="prenom" placeholder="prenom">
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="text" class="form-control" id="email" name="email" placeholder="email">
+  </div>
+  <div class="form-group">
+	  <label for="civilite">Civilité</label>
+	  <select class="form-control" id="civilite" name="civilite">
+		  <option value="m">Homme</option>
+		  <option value="f">Femme</option>
+	  </select>
+  </div>
+  <div class="form-group">
+    <label for="ville">Ville</label>
+    <input type="text" class="form-control" id="ville" name="ville" placeholder="ville">
+  </div>
+  <div class="form-group">
+    <label for="code_postal">Code postal</label>
+    <input type="text" class="form-control" id="code_postal" name="code_postal" placeholder="code_postal">
+  </div>
+  <div class="form-group">
+    <label for="adresse">Adresse</label>
+	<textarea class="form-control" rows="3" id="adresse" name="adresse"></textarea>
+  </div>	
+  <button type="submit" class="btn btn-primary col-md-12">Inscription</button>
+</form>

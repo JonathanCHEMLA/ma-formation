@@ -28,8 +28,8 @@ class ProduitController extends Controller
 		$produit = $this->getModel()->getProduitById($id);	//getModel:controller.php     get ProduitById:ProduitModel.php
 
 		$params = array(
-			'produit'=>$produit
-			);
+			'produit'	=>$produit
+		);
 		return $this ->render('layout.html','fiche_produit.html',$params);	
 	}			
 		
@@ -48,8 +48,29 @@ class ProduitController extends Controller
 		return $this->render('layout.html', 'boutique.html', $params);	
 	}
 	// Afficher les produits en fonction d'une recherche
-	public function recherche($term){
+	public function recherche(){
+		if($_POST){
+			if(!empty($_POST['term'])){
+				$produits=$this->getModel()->getProduitBySearch($_POST['term']);
+				$params=array(
+					'produits'	=>$produits,
+					'title'		=>count($produits) . ' résultats avec la recherche: <b>'.$_POST['term'].'</b>'
+				);					
+				return $this->render('layout.html','search.html', $params);
+			}
+			else{
+				$this->afficheAll();
+			}	
+		}
+
+	}
+	public function produitSimilaire($id,$categorie,$prix,$taille,$public){
+		$produits = $this->getModel()->getProduitsSimilaires($id,$categorie,$prix,$taille,$public);
 		
-	}	
+		$params = array(
+			'produitsSimilaires'=>	$produits
+		);
+		return $this ->render('layout.html','fiche_produit.html',$params);	
+	}
 	
 }
