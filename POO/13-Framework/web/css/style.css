@@ -19,3 +19,6 @@ footer{
 	border: 1px solid black;
 }
 
+.produits{
+	max-height:5px;
+}
