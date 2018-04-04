@@ -11,28 +11,31 @@
       <p><?=$title?></p>
     </div>
 	
+	<div class="row">
+	<div class="col-xs-6 col-lg-4">
 	<?php  foreach($produits as $produit) : // chaque element de $produits sera mis dans $produit?>
 	<!--{% for produit in produits %}-->
 	
 	<!-- afficher pour chaque produit : la photo, le prix et un lien permettant d'envoyer vers la fichie produit -->
     <!--<div class="row"> -->
-      <div class="col-xs-6 col-lg-4">
+
 	  <div class="panel-default border">
         <div class="panel-heading text-center"><h2><?= $produit->getTitre() ?></h2></div>
         <p><a href="<?=$url?>produit/affiche/<?= $produit->getId_Produit() ?>">
 		<!--<p><a href="<?//=$url. 'produit/affiche/' .$produit->getId_Produit() ?>">-->
 		
-		<img src="<?=$url?><?=  'photo/' . $produit->getPhoto() ?>" alt="" class="img-responsive"></a></p>
+		<img src="<?=$url?><?=  'photo/' . $produit->getPhoto() ?>" alt="" class=" i mg-responsive imag"></a></p>
         <p class="text-center"><?= $produit->getPrix() ?> €</p>
         <p class="text-center"><a class="btn btn-primary" href="" role="button">Voir le détails &raquo;</a></p>
-		</div>
+	  </div>
 
       <!--/.col-xs-6.col-lg-4-->
     <!-- </div> -->
     <!--/row-->
 	<!--{% endfor %}--> 
 	<?php endforeach; ?>
-	
+
+	</div>
   </div>
   <!--/.col-xs-12.col-sm-9-->
 </div>

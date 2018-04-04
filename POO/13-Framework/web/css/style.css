@@ -22,3 +22,8 @@ footer{
 .produits{
 	max-height:5px;
 }
+.imag{
+	
+	min-height:205px;
+	min-width:405px;
+}
