@@ -81,3 +81,34 @@ a.alignement.btn.btn-primary.btn-xl.text-secondary.js-scroll-trigger{
   }
 
 
+element.style {
+}
+.portfolio-item .caption .caption-content p {
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+.mb-0, .my-0 {
+    margin-bottom: 0!important;
+}
+span, p {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+.portfolio-item .caption .caption-content {
+background: #ffc107 !important;
+}
