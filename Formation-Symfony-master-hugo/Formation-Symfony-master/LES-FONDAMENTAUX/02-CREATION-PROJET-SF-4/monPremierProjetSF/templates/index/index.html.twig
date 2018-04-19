@@ -1,0 +1,98 @@
+{% extends 'layout.html.twig' %}
+{% set active = 'index' %}
+{% block page_title %}
+    Accueil
+{% endblock %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+
+{#{{ dump(app.user) }}#}
+{#{{ dump(yamlArticles) }}#}
+
+{% for article in yamlArticles %}
+    {{ article.titre }} <br>
+    {{ article.categorie.libelle }} <br>
+    {{ article.auteur.prenom ~ ' ' ~ article.auteur.nom }}
+    <hr>
+{% endfor %}
+
+<div class="row">
+    <!--colleft-->
+    <div class="col-md-8 col-sm-12">
+        <div class="box-caption">
+            <span>spotlight</span>
+        </div>
+        <!--sportlight-->
+        <section class="owl-carousel owl-spotlight">
+            {% for article in spotlight %}
+                <div>
+                    <article class="spotlight-item">
+                        <div class="spotlight-img">
+                            <img alt="{{ article.titre }}" src="{{ asset('images/product/' ~ article.featuredimage) }}" class="img-responsive" />
+                            <a href="{{ article.categorie | catlink }}" class="cate-tag">{{ article.categorie.libelle }}</a>
+                        </div>
+                        <div class="spotlight-item-caption">
+                            <h2 class="font-heading">
+                                <a href="{{ article | artlink }}">
+                                    {{ article.titre }}
+                                </a>
+                            </h2>
+                            <div class="meta-post">
+                                <a href="javascript:void(0)">
+                                    {{ article.auteur.prenom ~ ' ' ~ article.auteur.nom }}
+                                </a>
+                                <em></em>
+                                <span>
+                                {{ article.datecreation | date('d/m/Y') }}
+                            </span>
+                            </div>
+                        </div>
+                        {{ article.contenu | accroche }}
+                    </article>
+                </div>
+            {% endfor %}
+        </section>
+
+        <!--spotlight-thumbs-->
+        <section class="spotlight-thumbs">
+            <div class="row">
+                {% for article in articles %}
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="spotlight-item-thumb">
+                            <div class="spotlight-item-thumb-img">
+                                <a href="{{ article | artlink }}">
+                                    <img alt="{{ article.titre }}" src="{{ asset('images/product/'~article.featuredimage) }}" />
+                                </a>
+                                <a href="{{ article.categorie | catlink }}" class="cate-tag">{{ article.categorie.libelle }}</a>
+                            </div>
+                            <h3><a href="{{ article | artlink }}">{{ article.titre }}</a></h3>
+                            <div class="meta-post">
+                                <a href="javascript:void(0)">
+                                    {{ article.auteur.prenom ~ ' ' ~ article.auteur.nom }}
+                                </a>
+                                <em></em>
+                                <span>
+                                {{ article.datecreation | date('d/m/Y') }}
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+
+    {# Sidebar #}
+    {#{% include "components/_sidebar.html.twig" %}#}
+    {{ render(controller('App\\Controller\\TechNews\\IndexController::sidebar')) }}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

@@ -1,0 +1,74 @@
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: 'fr'
+    articles_assets_directory: '%kernel.project_dir%/public/images/product'
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        public: false       # Allows optimizing the container by removing unused services; this also means
+                            # fetching services directly from the container via $container->get() won't work.
+                            # The best practice is to be explicit about your dependencies anyway.
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{Entity,Migrations,Tests,Kernel.php}'
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+
+#    App\Mediator\Article\YamlColleague:
+#      tags:
+#        - app.article_source
+#
+#    App\Mediator\Article\DoctrineColleague:
+#      tags:
+#        - app.article_source
+
+# tous ce qui va etre du type de ... aura le tags ...
+    _instanceof:
+      App\Mediator\Article\ArticleAbstractColleague:
+        tags:
+          - app.article_source
+
+#    App\Mediator\Article\ArticleMediator:
+#      calls:
+#        - ['addSources', ['@App\Mediator\Article\YamlColleague']]
+#        - ['addSources', ['@App\Mediator\Article\DoctrineColleague']]
+
+    App\Mediator\Article\ArticleMediator:
+      calls:
+        - ['setSources', [!tagged app.article_source]]
+
+
+    App\DataCollector\SourceCollector:
+        tags:
+            -
+                name:     data_collector
+                template: 'collector/catalogue.html.twig'
+                # must match the value returned by the getName() method
+                id:       'app.source_collector'
+                # optional priority
+                # priority: 300
+        public: false
+
+#    App\DataCollector\SourceCollector:
+#      tags:
+#        - { name: data_collector, id: '@App\DataCollector\SourceCollector', template: 'collector/sourcecollector.html.twig' }
+#      public: false
+
+#    app.source_collector:
+#      class: App\DataCollector\SourceCollector
+#      tags:
+#        - { name: app.source_collector, template: "@WebProfiler/Collector/cache.html.twig", id: "app.source_collector" }

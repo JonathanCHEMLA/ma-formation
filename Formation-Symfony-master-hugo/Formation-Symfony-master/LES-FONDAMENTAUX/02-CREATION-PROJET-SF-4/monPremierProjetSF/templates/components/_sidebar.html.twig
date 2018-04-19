@@ -1,0 +1,142 @@
+{% trans_default_domain 'sidebar' %}
+{#{{ dump(articles) }}#}
+
+<!--colright-->
+<div class="col-md-4 col-sm-12">
+
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+        <h3 class="text-center">{{ 'bar.hi' | trans }} {{ app.user.prenom }}</h3>
+        <h4 class="text-center">
+            {% if is_granted('ROLE_ADMIN') %}
+                {{ 'role.admin'|trans({},'roles') }}
+                {% trans from "roles" %}role.admin{% endtrans %}
+            {% elseif is_granted('ROLE_AUTEUR') %}
+                {% trans from "roles" %}role.author{% endtrans %}
+            {% else %}
+                {% trans from "roles" %}role.member{% endtrans %}
+            {% endif %}
+        </h4>
+
+        <ul class="list-group">
+            {% if is_granted('ROLE_AUTEUR') %}
+                <li class="list-group-item">
+                    <a href="{{ url('article_add') }}">{{ 'bar.create.article' | trans }}</a>
+                </li>
+            {% endif %}
+            <li class="list-group-item">
+                <a href="{{ url('deconnexion') }}">{% trans from "nav" %}nav.logout{% endtrans %}</a>
+            </li>
+        </ul>
+
+    {% endif %}
+
+    <!--tab popular-->
+    <ul role="tablist" class="tab-popular">
+        <li class="active">
+            <a href="#tab1" role="tab" data-toggle="tab">
+                {{ 'bar.last.publications' | trans }}
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="tab1">
+            <ul class="list-news-popular">
+                {% for article in articles %}
+                    <li>
+                        <a href="{{ article | artlink }}">
+                            <img alt="{{ article.titre }}" src="{{ asset('images/product/' ~ article.featuredimage) }}">
+                        </a>
+                        <h3><a href="{{ article | artlink }}">{{ article.titre }}</a></h3>
+                        <div class="meta-post">
+                            <a href="javascript:void(0)">
+                                {{ article.auteur.prenom ~ ' ' ~ article.auteur.nom }}
+                            </a>
+                            <em></em>
+                            <span>
+                                {{ article.datecreation | date('d/m/Y') }}
+                            </span>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+
+    <!-- subcribe box-->
+    <div class="subcribe-box">
+        <h3>{{ 'bar.newsletter.titre' | trans }}</h3>
+        <p>{{ 'bar.newsletter.intro' | trans }}</p>
+        <input type="text" placeholder="{{ 'bar.newsletter.placeholder' | trans }}" />
+        <button class="my-btn">{{ 'bar.newsletter.btn' | trans }}</button>
+    </div>
+    <!-- connect us-->
+    <div class="connect-us">
+        <div class="widget-title">
+			<span>
+				{{ 'bar.social.followus' | trans }}
+			</span>
+        </div>
+        <ul class="list-social-icon">
+            <li>
+                <a href="javascript:void(0)" class="facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" class="twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" class="google">
+                    <i class="fa fa-google"></i>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" class="youtube">
+                    <i class="fa fa-youtube-play"></i>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" class="pinterest">
+                    <i class="fa fa-pinterest-p"></i>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" class="rss">
+                    <i class="fa fa-rss"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- special post-->
+    <div class="connect-us">
+        <div class="widget-title">
+			<span>
+				{{ 'bar.articles.special' | trans }}
+			</span>
+        </div>
+        <div class="list-special">
+            {% for article in special %}
+                <article class="news-two-large">
+                    <a href="{{ article | artlink }}">
+                        <img alt="{{ article.titre }}" src="{{ asset('images/product/' ~ article.featuredimage) }}">
+                    </a>
+                    <h3><a href="{{ article | artlink }}">{{ article.titre }}</a></h3>
+                    <div class="meta-post">
+                        <a href="javascript:void(0)">
+                            {{ article.auteur.prenom ~ ' ' ~ article.auteur.nom }}
+                        </a>
+                        <em></em>
+                        <span>
+                            {{ article.datecreation | date('d/m/Y') }}
+                        </span>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</div>

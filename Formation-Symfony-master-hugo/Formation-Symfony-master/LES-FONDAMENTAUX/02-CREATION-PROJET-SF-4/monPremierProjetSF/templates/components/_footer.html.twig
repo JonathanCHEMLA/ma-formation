@@ -1,0 +1,86 @@
+{% trans_default_domain 'footer' %}
+</div>
+</div>
+<!--footer-->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4  col-sm-4 col-xs-12">
+                <div class="about">
+                    <a href="{{ url('index') }}" class="logo">
+                        <img alt="" src="{{ asset('images/logo_footer.png') }}" />
+                    </a>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-md-offset-1 col-sm-4 col-xs-12">
+                <h3>{{ 'footer.categories' | trans }}</h3>
+                <ul class="list-category">
+                    {% for categorie in categories %}
+                        <li><a href="{{ url('index_categorie', { 'libellecategorie' : categorie.libelle | slugify }) }}">{{ categorie.libelle }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-md-3 col-md-offset-1 col-sm-4 col-xs-12">
+                <h3>{{ 'footer.tag.search' | trans }}</h3>
+
+                <div class="list-tags">
+                    <a href="javascript:void(0)">iPhone 7</a>
+                    <a href="javascript:void(0)">News</a>
+                    <a href="javascript:void(0)">Sport</a>
+                    <a href="javascript:void(0)">Apple</a>
+                    <a href="javascript:void(0)">Alcatel</a>
+                    <a href="javascript:void(0)">Pixi 4</a>
+                    <a href="javascript:void(0)">Elon Musk </a>
+                    <a href="javascript:void(0)">Smart phone</a>
+                    <a href="javascript:void(0)">Nexus</a>
+                    <a href="javascript:void(0)">Canvas</a>
+                </div>
+            </div>
+        </div>
+        <!--All right-->
+        <div class="allright">
+            <div class="row">
+                <div class="col-sm-6 col-xs-12">
+                    <p> © 2018 <a href="javascript:void(0)">TECH NEWS</a>. {{ 'footer.legals' | trans }}.</p>
+                </div>
+
+                <div class="col-sm-6 col-xs-12">
+                    <ul class="list-social-icon list-social-icon-footer">
+                        <li>
+                            <a href="javascript:void(0)" class="facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="google">
+                                <i class="fa fa-google"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="youtube">
+                                <i class="fa fa-youtube-play"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="pinterest">
+                                <i class="fa fa-pinterest-p"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="rss">
+                                <i class="fa fa-rss"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
