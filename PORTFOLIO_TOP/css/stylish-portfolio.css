@@ -249,8 +249,14 @@ h6 {
 }
 
 .portfolio-item .caption .caption-content {
+
   color: #eee;
   margin: auto 2rem 2rem;
+}
+.portfolio-item .caption .caption-content:hover {
+	
+  color: #ffff00;
+
 }
 
 .portfolio-item .caption .caption-content h2 {

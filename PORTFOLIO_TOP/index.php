@@ -319,7 +319,7 @@ require_once("inc/init.php");
               <span class="caption">
                 <span class="caption-content">
                   <h2>Les Licornes</h2>
-                  <p class="mb-0">Exemple d'une page responsive HTML/CSS</p>
+                  <p class="mb-0">Exemple d'une page responsive HTML/CSS avec les Media-Queries</p>
                 </span>
               </span>
               <img class="img-fluid capture-projet" src="img/my_licorn.png" alt="">
@@ -330,10 +330,10 @@ require_once("inc/init.php");
               <span class="caption">
                 <span class="caption-content">
                   <h2> Liste de Tâches 1.1</h2>
-                  <p class="mb-0">Utilisation d'Angular pour réaliser une application ToDO List</p>
+                  <p class="mb-0">Réalisation d'une application "Liste de contacts" en Angular</p>
                 </span>
               </span>
-              <img class="img-fluid capture-projet" src="img/ps_capture_angular.png" alt="">
+              <img class="img-fluid capture-projet" src="img/capture_angular_1_3_sauvegarde.png" alt="">
             </a>
           </div>
           <div class="col-lg-6">
@@ -341,7 +341,7 @@ require_once("inc/init.php");
               <span class="caption">
                 <span class="caption-content">
                   <h2>Liste de Tâches 2.1</h2>
-                  <p class="mb-0">Refactorisation de la liste de tâches en Ionic</p>
+                  <p class="mb-0">Utilisation de Ionic pour la gestion d'une liste de tâches</p>
                 </span>
               </span>
               <img class="img-fluid capture-projet" src="img/p_capture_ionic.jpg" alt="">
@@ -355,7 +355,7 @@ require_once("inc/init.php");
                   <p class="mb-0">Framework pour une boutique avec un BackOffice en PHP</p>
                 </span>
               </span>
-              <img class="img-fluid capture-projet" src="img/capture_angular.png" alt="">
+              <img class="img-fluid capture-projet" src="img/boutique_php.png" alt="">
             </a>
           </div>
         </div>
